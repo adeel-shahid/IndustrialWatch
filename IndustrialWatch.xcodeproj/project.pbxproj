@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		212E9E2132D138F98D23E96D /* Pods_IndustrialWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D494E09CDE91DF213437980 /* Pods_IndustrialWatch.framework */; };
+		52165BE82B13772300110579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BE72B13772300110579 /* AppDelegate.swift */; };
+		52165BEA2B13772300110579 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BE92B13772300110579 /* SceneDelegate.swift */; };
+		52165BEC2B13772300110579 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BEB2B13772300110579 /* LoginViewController.swift */; };
+		52165BEF2B13772300110579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52165BED2B13772300110579 /* Main.storyboard */; };
+		52165BF12B13772400110579 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52165BF02B13772400110579 /* Assets.xcassets */; };
+		52165BF42B13772400110579 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52165BF22B13772400110579 /* LaunchScreen.storyboard */; };
+		52165BFF2B13772500110579 /* IndustrialWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BFE2B13772500110579 /* IndustrialWatchTests.swift */; };
+		52165C092B13772500110579 /* IndustrialWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165C082B13772500110579 /* IndustrialWatchUITests.swift */; };
+		52165C0B2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */; };
+		52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */; };
+		52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A892B91C278007B549C /* BatchTableViewCell.swift */; };
+		52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */; };
+		52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */; };
+		52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8F2B91D16E007B549C /* RawMaterial.swift */; };
+		52C14A922B91D83E007B549C /* AddRawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */; };
+		52C14A942B91EF80007B549C /* BatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A932B91EF80007B549C /* BatchDetailViewController.swift */; };
+		52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */; };
+		52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */; };
+		52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */; };
+		52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */; };
+		52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DAD2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift */; };
+		52FA8DB02B85D3F9007F5AFE /* ProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DAF2B85D3F9007F5AFE /* ProductionViewController.swift */; };
+		52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DB12B85EFE4007F5AFE /* SectionsTableViewCell.swift */; };
+		52FA8DB42B85FC68007F5AFE /* SectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */; };
+		52FA8DB62B8626DC007F5AFE /* RulesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DB52B8626DC007F5AFE /* RulesTableViewCell.swift */; };
+		52FA8DBA2B8628D9007F5AFE /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DB92B8628D9007F5AFE /* Rule.swift */; };
+		52FA8DBC2B86292F007F5AFE /* RuleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DBB2B86292F007F5AFE /* RuleViewModel.swift */; };
+		52FA8DBE2B86326F007F5AFE /* AddSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DBD2B86326F007F5AFE /* AddSectionViewController.swift */; };
+		52FA8DC02B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DBF2B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift */; };
+		52FA8DC22B8645D0007F5AFE /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC12B8645D0007F5AFE /* EditViewController.swift */; };
+		52FA8DC42B8875C5007F5AFE /* SupervisorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC32B8875C5007F5AFE /* SupervisorTableViewCell.swift */; };
+		52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC52B887787007F5AFE /* Supervisor.swift */; };
+		52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC72B88780F007F5AFE /* SupervisorViewModel.swift */; };
+		52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */; };
+		52FA8DCC2B8885D0007F5AFE /* AddSupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */; };
+		695FD89D19D30D2A6E04AB22 /* Pods_IndustrialWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0430D8193EEB2B3ABFBCABD0 /* Pods_IndustrialWatchTests.framework */; };
+		E68B58458601D952EAEEBCA7 /* Pods_IndustrialWatch_IndustrialWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52165BFB2B13772500110579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52165BDC2B13772200110579 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52165BE32B13772300110579;
+			remoteInfo = IndustrialWatch;
+		};
+		52165C052B13772500110579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52165BDC2B13772200110579 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52165BE32B13772300110579;
+			remoteInfo = IndustrialWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0349A2C40FAAE439A937BB3D /* Pods-IndustrialWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatch.release.xcconfig"; path = "Target Support Files/Pods-IndustrialWatch/Pods-IndustrialWatch.release.xcconfig"; sourceTree = "<group>"; };
+		0430D8193EEB2B3ABFBCABD0 /* Pods_IndustrialWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D3562E3E9347C26F271969 /* Pods-IndustrialWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-IndustrialWatchTests/Pods-IndustrialWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		52165BE42B13772300110579 /* IndustrialWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndustrialWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52165BE72B13772300110579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52165BE92B13772300110579 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		52165BEB2B13772300110579 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52165BEE2B13772300110579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52165BF02B13772400110579 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52165BF32B13772400110579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52165BF52B13772400110579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52165BFA2B13772500110579 /* IndustrialWatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndustrialWatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52165BFE2B13772500110579 /* IndustrialWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialWatchTests.swift; sourceTree = "<group>"; };
+		52165C042B13772500110579 /* IndustrialWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndustrialWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52165C082B13772500110579 /* IndustrialWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialWatchUITests.swift; sourceTree = "<group>"; };
+		52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialWatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatch_IndustrialWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDownTableViewCell.swift; sourceTree = "<group>"; };
+		52C14A892B91C278007B549C /* BatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchTableViewCell.swift; sourceTree = "<group>"; };
+		52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBatchViewController.swift; sourceTree = "<group>"; };
+		52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialsTableViewCell.swift; sourceTree = "<group>"; };
+		52C14A8F2B91D16E007B549C /* RawMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterial.swift; sourceTree = "<group>"; };
+		52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRawMaterialViewController.swift; sourceTree = "<group>"; };
+		52C14A932B91EF80007B549C /* BatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDetailViewController.swift; sourceTree = "<group>"; };
+		52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
+		52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
+		52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorViewController.swift; sourceTree = "<group>"; };
+		52FA8DAD2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeProductivityViewController.swift; sourceTree = "<group>"; };
+		52FA8DAF2B85D3F9007F5AFE /* ProductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionViewController.swift; sourceTree = "<group>"; };
+		52FA8DB12B85EFE4007F5AFE /* SectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewCell.swift; sourceTree = "<group>"; };
+		52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailsViewController.swift; sourceTree = "<group>"; };
+		52FA8DB52B8626DC007F5AFE /* RulesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesTableViewCell.swift; sourceTree = "<group>"; };
+		52FA8DB92B8628D9007F5AFE /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
+		52FA8DBB2B86292F007F5AFE /* RuleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViewModel.swift; sourceTree = "<group>"; };
+		52FA8DBD2B86326F007F5AFE /* AddSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSectionViewController.swift; sourceTree = "<group>"; };
+		52FA8DBF2B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesAddorEditTableViewCell.swift; sourceTree = "<group>"; };
+		52FA8DC12B8645D0007F5AFE /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		52FA8DC32B8875C5007F5AFE /* SupervisorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorTableViewCell.swift; sourceTree = "<group>"; };
+		52FA8DC52B887787007F5AFE /* Supervisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
+		52FA8DC72B88780F007F5AFE /* SupervisorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorViewModel.swift; sourceTree = "<group>"; };
+		52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSupervisorViewController.swift; sourceTree = "<group>"; };
+		52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSupervisorViewController.swift; sourceTree = "<group>"; };
+		89DDD90D836219D9A5FE99E9 /* Pods-IndustrialWatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatchTests.release.xcconfig"; path = "Target Support Files/Pods-IndustrialWatchTests/Pods-IndustrialWatchTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D494E09CDE91DF213437980 /* Pods_IndustrialWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97F22864B34F65B51D9C5B4C /* Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig"; path = "Target Support Files/Pods-IndustrialWatch-IndustrialWatchUITests/Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B153E4A4F77AE886C46D1876 /* Pods-IndustrialWatch-IndustrialWatchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatch-IndustrialWatchUITests.debug.xcconfig"; path = "Target Support Files/Pods-IndustrialWatch-IndustrialWatchUITests/Pods-IndustrialWatch-IndustrialWatchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C73D0081B72A1FA1761976C7 /* Pods-IndustrialWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatch.debug.xcconfig"; path = "Target Support Files/Pods-IndustrialWatch/Pods-IndustrialWatch.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52165BE12B13772300110579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				212E9E2132D138F98D23E96D /* Pods_IndustrialWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52165BF72B13772500110579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				695FD89D19D30D2A6E04AB22 /* Pods_IndustrialWatchTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52165C012B13772500110579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E68B58458601D952EAEEBCA7 /* Pods_IndustrialWatch_IndustrialWatchUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52165BDB2B13772200110579 = {
+			isa = PBXGroup;
+			children = (
+				52FA8DB82B8628C0007F5AFE /* ViewModels */,
+				52FA8DB72B8628B6007F5AFE /* Models */,
+				52FA8DA62B85C544007F5AFE /* ViewControllers */,
+				52FA8DA32B84B619007F5AFE /* CustomItems */,
+				52165BE62B13772300110579 /* IndustrialWatch */,
+				52165BFD2B13772500110579 /* IndustrialWatchTests */,
+				52165C072B13772500110579 /* IndustrialWatchUITests */,
+				52165BE52B13772300110579 /* Products */,
+				EF6BA648E8CBA317F6C1A51F /* Pods */,
+				EB4E31067633E1EAE2DC0D5F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52165BE52B13772300110579 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52165BE42B13772300110579 /* IndustrialWatch.app */,
+				52165BFA2B13772500110579 /* IndustrialWatchTests.xctest */,
+				52165C042B13772500110579 /* IndustrialWatchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52165BE62B13772300110579 /* IndustrialWatch */ = {
+			isa = PBXGroup;
+			children = (
+				52165BE72B13772300110579 /* AppDelegate.swift */,
+				52165BE92B13772300110579 /* SceneDelegate.swift */,
+				52165BED2B13772300110579 /* Main.storyboard */,
+				52165BF02B13772400110579 /* Assets.xcassets */,
+				52165BF22B13772400110579 /* LaunchScreen.storyboard */,
+				52165BF52B13772400110579 /* Info.plist */,
+			);
+			path = IndustrialWatch;
+			sourceTree = "<group>";
+		};
+		52165BFD2B13772500110579 /* IndustrialWatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				52165BFE2B13772500110579 /* IndustrialWatchTests.swift */,
+			);
+			path = IndustrialWatchTests;
+			sourceTree = "<group>";
+		};
+		52165C072B13772500110579 /* IndustrialWatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52165C082B13772500110579 /* IndustrialWatchUITests.swift */,
+				52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */,
+			);
+			path = IndustrialWatchUITests;
+			sourceTree = "<group>";
+		};
+		52FA8DA32B84B619007F5AFE /* CustomItems */ = {
+			isa = PBXGroup;
+			children = (
+				52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */,
+				52FA8DB12B85EFE4007F5AFE /* SectionsTableViewCell.swift */,
+				52FA8DB52B8626DC007F5AFE /* RulesTableViewCell.swift */,
+				52FA8DBF2B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift */,
+				52FA8DC32B8875C5007F5AFE /* SupervisorTableViewCell.swift */,
+				52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */,
+				52C14A892B91C278007B549C /* BatchTableViewCell.swift */,
+				52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */,
+			);
+			path = CustomItems;
+			sourceTree = "<group>";
+		};
+		52FA8DA62B85C544007F5AFE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52165BEB2B13772300110579 /* LoginViewController.swift */,
+				52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */,
+				52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */,
+				52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */,
+				52FA8DAD2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift */,
+				52FA8DAF2B85D3F9007F5AFE /* ProductionViewController.swift */,
+				52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */,
+				52FA8DBD2B86326F007F5AFE /* AddSectionViewController.swift */,
+				52FA8DC12B8645D0007F5AFE /* EditViewController.swift */,
+				52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */,
+				52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */,
+				52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */,
+				52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */,
+				52C14A932B91EF80007B549C /* BatchDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		52FA8DB72B8628B6007F5AFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				52FA8DB92B8628D9007F5AFE /* Rule.swift */,
+				52FA8DC52B887787007F5AFE /* Supervisor.swift */,
+				52C14A8F2B91D16E007B549C /* RawMaterial.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		52FA8DB82B8628C0007F5AFE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				52FA8DBB2B86292F007F5AFE /* RuleViewModel.swift */,
+				52FA8DC72B88780F007F5AFE /* SupervisorViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EB4E31067633E1EAE2DC0D5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8D494E09CDE91DF213437980 /* Pods_IndustrialWatch.framework */,
+				5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */,
+				0430D8193EEB2B3ABFBCABD0 /* Pods_IndustrialWatchTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF6BA648E8CBA317F6C1A51F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C73D0081B72A1FA1761976C7 /* Pods-IndustrialWatch.debug.xcconfig */,
+				0349A2C40FAAE439A937BB3D /* Pods-IndustrialWatch.release.xcconfig */,
+				B153E4A4F77AE886C46D1876 /* Pods-IndustrialWatch-IndustrialWatchUITests.debug.xcconfig */,
+				97F22864B34F65B51D9C5B4C /* Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig */,
+				42D3562E3E9347C26F271969 /* Pods-IndustrialWatchTests.debug.xcconfig */,
+				89DDD90D836219D9A5FE99E9 /* Pods-IndustrialWatchTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52165BE32B13772300110579 /* IndustrialWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52165C0E2B13772500110579 /* Build configuration list for PBXNativeTarget "IndustrialWatch" */;
+			buildPhases = (
+				79B9DC62FBCEBC61A66C0F07 /* [CP] Check Pods Manifest.lock */,
+				52165BE02B13772300110579 /* Sources */,
+				52165BE12B13772300110579 /* Frameworks */,
+				52165BE22B13772300110579 /* Resources */,
+				A371B5CDDB27C157B4316765 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IndustrialWatch;
+			productName = IndustrialWatch;
+			productReference = 52165BE42B13772300110579 /* IndustrialWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52165BF92B13772500110579 /* IndustrialWatchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52165C112B13772500110579 /* Build configuration list for PBXNativeTarget "IndustrialWatchTests" */;
+			buildPhases = (
+				93552E10FB40757AACEA6A13 /* [CP] Check Pods Manifest.lock */,
+				52165BF62B13772500110579 /* Sources */,
+				52165BF72B13772500110579 /* Frameworks */,
+				52165BF82B13772500110579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52165BFC2B13772500110579 /* PBXTargetDependency */,
+			);
+			name = IndustrialWatchTests;
+			productName = IndustrialWatchTests;
+			productReference = 52165BFA2B13772500110579 /* IndustrialWatchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52165C032B13772500110579 /* IndustrialWatchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52165C142B13772500110579 /* Build configuration list for PBXNativeTarget "IndustrialWatchUITests" */;
+			buildPhases = (
+				CC92A1CB3B1C540424ADB7AD /* [CP] Check Pods Manifest.lock */,
+				52165C002B13772500110579 /* Sources */,
+				52165C012B13772500110579 /* Frameworks */,
+				52165C022B13772500110579 /* Resources */,
+				BFEC0FC7DD3389556B1FBFE7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52165C062B13772500110579 /* PBXTargetDependency */,
+			);
+			name = IndustrialWatchUITests;
+			productName = IndustrialWatchUITests;
+			productReference = 52165C042B13772500110579 /* IndustrialWatchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52165BDC2B13772200110579 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					52165BE32B13772300110579 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					52165BF92B13772500110579 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 52165BE32B13772300110579;
+					};
+					52165C032B13772500110579 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 52165BE32B13772300110579;
+					};
+				};
+			};
+			buildConfigurationList = 52165BDF2B13772200110579 /* Build configuration list for PBXProject "IndustrialWatch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52165BDB2B13772200110579;
+			productRefGroup = 52165BE52B13772300110579 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52165BE32B13772300110579 /* IndustrialWatch */,
+				52165BF92B13772500110579 /* IndustrialWatchTests */,
+				52165C032B13772500110579 /* IndustrialWatchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52165BE22B13772300110579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52165BF42B13772400110579 /* LaunchScreen.storyboard in Resources */,
+				52165BF12B13772400110579 /* Assets.xcassets in Resources */,
+				52165BEF2B13772300110579 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52165BF82B13772500110579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52165C022B13772500110579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		79B9DC62FBCEBC61A66C0F07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndustrialWatch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93552E10FB40757AACEA6A13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndustrialWatchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A371B5CDDB27C157B4316765 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndustrialWatch/Pods-IndustrialWatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndustrialWatch/Pods-IndustrialWatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IndustrialWatch/Pods-IndustrialWatch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFEC0FC7DD3389556B1FBFE7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndustrialWatch-IndustrialWatchUITests/Pods-IndustrialWatch-IndustrialWatchUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IndustrialWatch-IndustrialWatchUITests/Pods-IndustrialWatch-IndustrialWatchUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IndustrialWatch-IndustrialWatchUITests/Pods-IndustrialWatch-IndustrialWatchUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC92A1CB3B1C540424ADB7AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IndustrialWatch-IndustrialWatchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52165BE02B13772300110579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */,
+				52FA8DBC2B86292F007F5AFE /* RuleViewModel.swift in Sources */,
+				52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */,
+				52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */,
+				52FA8DB42B85FC68007F5AFE /* SectionDetailsViewController.swift in Sources */,
+				52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */,
+				52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */,
+				52FA8DC42B8875C5007F5AFE /* SupervisorTableViewCell.swift in Sources */,
+				52FA8DCC2B8885D0007F5AFE /* AddSupervisorViewController.swift in Sources */,
+				52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */,
+				52FA8DBE2B86326F007F5AFE /* AddSectionViewController.swift in Sources */,
+				52FA8DC22B8645D0007F5AFE /* EditViewController.swift in Sources */,
+				52FA8DB62B8626DC007F5AFE /* RulesTableViewCell.swift in Sources */,
+				52165BEC2B13772300110579 /* LoginViewController.swift in Sources */,
+				52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */,
+				52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */,
+				52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */,
+				52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */,
+				52165BE82B13772300110579 /* AppDelegate.swift in Sources */,
+				52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */,
+				52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */,
+				52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */,
+				52FA8DB02B85D3F9007F5AFE /* ProductionViewController.swift in Sources */,
+				52C14A942B91EF80007B549C /* BatchDetailViewController.swift in Sources */,
+				52FA8DBA2B8628D9007F5AFE /* Rule.swift in Sources */,
+				52165BEA2B13772300110579 /* SceneDelegate.swift in Sources */,
+				52FA8DC02B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift in Sources */,
+				52C14A922B91D83E007B549C /* AddRawMaterialViewController.swift in Sources */,
+				52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52165BF62B13772500110579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52165BFF2B13772500110579 /* IndustrialWatchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52165C002B13772500110579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52165C092B13772500110579 /* IndustrialWatchUITests.swift in Sources */,
+				52165C0B2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52165BFC2B13772500110579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52165BE32B13772300110579 /* IndustrialWatch */;
+			targetProxy = 52165BFB2B13772500110579 /* PBXContainerItemProxy */;
+		};
+		52165C062B13772500110579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52165BE32B13772300110579 /* IndustrialWatch */;
+			targetProxy = 52165C052B13772500110579 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52165BED2B13772300110579 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52165BEE2B13772300110579 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52165BF22B13772400110579 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52165BF32B13772400110579 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52165C0C2B13772500110579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52165C0D2B13772500110579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52165C0F2B13772500110579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C73D0081B72A1FA1761976C7 /* Pods-IndustrialWatch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IndustrialWatch/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OptimalSolutions.IndustrialWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52165C102B13772500110579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0349A2C40FAAE439A937BB3D /* Pods-IndustrialWatch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = IndustrialWatch/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OptimalSolutions.IndustrialWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52165C122B13772500110579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42D3562E3E9347C26F271969 /* Pods-IndustrialWatchTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OptimalSolutions.IndustrialWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IndustrialWatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IndustrialWatch";
+			};
+			name = Debug;
+		};
+		52165C132B13772500110579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89DDD90D836219D9A5FE99E9 /* Pods-IndustrialWatchTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OptimalSolutions.IndustrialWatchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IndustrialWatch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IndustrialWatch";
+			};
+			name = Release;
+		};
+		52165C152B13772500110579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B153E4A4F77AE886C46D1876 /* Pods-IndustrialWatch-IndustrialWatchUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OptimalSolutions.IndustrialWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IndustrialWatch;
+			};
+			name = Debug;
+		};
+		52165C162B13772500110579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F22864B34F65B51D9C5B4C /* Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OptimalSolutions.IndustrialWatchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IndustrialWatch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52165BDF2B13772200110579 /* Build configuration list for PBXProject "IndustrialWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52165C0C2B13772500110579 /* Debug */,
+				52165C0D2B13772500110579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52165C0E2B13772500110579 /* Build configuration list for PBXNativeTarget "IndustrialWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52165C0F2B13772500110579 /* Debug */,
+				52165C102B13772500110579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52165C112B13772500110579 /* Build configuration list for PBXNativeTarget "IndustrialWatchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52165C122B13772500110579 /* Debug */,
+				52165C132B13772500110579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52165C142B13772500110579 /* Build configuration list for PBXNativeTarget "IndustrialWatchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52165C152B13772500110579 /* Debug */,
+				52165C162B13772500110579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52165BDC2B13772200110579 /* Project object */;
+}
