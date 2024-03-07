@@ -7,21 +7,36 @@
 
 import UIKit
 
-class AddSupervisorViewController: UIViewController,UITableViewDataSource {
+class AddSupervisorViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allSections.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        uibuttons[indexPath.row].isSelected = !uibuttons[indexPath.row].isSelected
+        if uibuttons[indexPath.row].isSelected == true{
+            selectedSections.append(allSections[indexPath.row])
+        }
+        else{
+            if let sec = selectedSections.index(of:uibuttons[indexPath.row].accessibilityLabel!){
+                selectedSections.remove(at: sec)
+            }
+        }
+        setSections()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! CustomDropDownTableViewCell
         cell.lblCheckbox.text = allSections[indexPath.row]
-        cell.btnCheckbox.tag = indexPath.row
         cell.btnCheckbox.addTarget(self, action: #selector(btnCheckbox(_:)), for: .touchUpInside)
+        cell.btnCheckbox.tag = indexPath.row
+        cell.btnCheckbox.accessibilityLabel = allSections[indexPath.row]
+        uibuttons.append(cell.btnCheckbox)
+        cell.isUserInteractionEnabled = true
         return cell
     }
     
     @IBOutlet weak var btnShowDropDown: UIButton!
-    
     @IBOutlet weak var lblSelectSection: UILabel!
     @IBOutlet weak var dropdownTable: UITableView!
     @IBOutlet weak var sectioAssignContainer: UIView!
@@ -31,6 +46,7 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource {
     
     var allSections = [String]()
     var selectedSections = [String]()
+    var uibuttons = [UIButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +58,8 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource {
         allSections.append("Management")
         allSections.append("Marketing")
         dropdownTable.dataSource = self
+        dropdownTable.delegate = self
+        sectioAssignContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showNhideDropDown(_ :))))
     }
 
     @IBAction func btnBack(_ sender: Any) {
@@ -57,20 +75,19 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource {
         if sender.isSelected == true {
             selectedSections.append(allSections[sender.tag])
         }else{
-            if selectedSections.contains(allSections[sender.tag]){
-                selectedSections.remove(at: sender.tag)
+            if let sec = selectedSections.index(of:sender.accessibilityLabel!){
+                selectedSections.remove(at: sec)
             }
         }
         setSections()
     }
-    
     
     @IBAction func btnShowDropDownAction(_ sender: Any) {
         btnShowDropDown.isSelected = !btnShowDropDown.isSelected
         dropdownTable.isHidden = !dropdownTable.isHidden
     }
     
-    func setSections(){
+    private func setSections(){
         if selectedSections.count == 0{
             lblSelectSection.text = "--Select Section--"
             return
@@ -79,6 +96,11 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource {
         for sec in selectedSections{
             lblSelectSection.text! += "\(sec),"
         }
+    }
+    
+    @objc func showNhideDropDown(_ sender: Any){
+        dropdownTable.isHidden = !dropdownTable.isHidden
+        btnShowDropDown.isSelected = !btnShowDropDown.isSelected
     }
     
 }

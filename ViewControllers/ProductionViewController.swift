@@ -14,6 +14,12 @@ class ProductionViewController: UIViewController,UITableViewDataSource,UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 46
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "BatchDetailViewController") as! BatchDetailViewController
+        controller.batch = batches[indexPath.row]
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! BatchTableViewCell
         cell.lblBatchNumber.text = batches[indexPath.row]

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ejF-LI-Cv7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JY8-fQ-SEi">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -1546,6 +1546,7 @@
                                 <state key="normal" image="filledBack"/>
                                 <connections>
                                     <action selector="btnBack:" destination="Epj-Xr-G91" eventType="touchUpInside" id="AcR-01-B5v"/>
+                                    <action selector="btnBack:" destination="ypc-n1-XJ5" eventType="touchUpInside" id="LrK-j4-mJ8"/>
                                 </connections>
                             </button>
                             <view alpha="0.64999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMG-gB-ndy">
@@ -1585,14 +1586,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Formula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZu-dZ-W3P">
-                                <rect key="frame" x="75" y="430" width="103" height="33"/>
+                                <rect key="frame" x="111" y="430" width="103" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="per item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzq-6F-WD1">
-                                <rect key="frame" x="183" y="440" width="63" height="21"/>
+                                <rect key="frame" x="219" y="440" width="63" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1602,6 +1603,12 @@
                         <viewLayoutGuide key="safeArea" id="oD8-oV-4UA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="expectedYieldView" destination="jR8-bx-hOu" id="jZS-hL-hI1"/>
+                        <outlet property="lblBatchNumber" destination="WbZ-db-Ur5" id="sjQ-MZ-arb"/>
+                        <outlet property="outputYeildView" destination="oGZ-5g-cgp" id="TBt-Mg-45O"/>
+                        <outlet property="productView" destination="RMG-gB-ndy" id="ucB-Ep-3od"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcq-lo-Utx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
