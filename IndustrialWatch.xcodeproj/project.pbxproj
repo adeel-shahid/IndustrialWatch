@@ -18,6 +18,8 @@
 		52165C092B13772500110579 /* IndustrialWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165C082B13772500110579 /* IndustrialWatchUITests.swift */; };
 		52165C0B2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */; };
 		52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */; };
+		5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */; };
+		5289FB532B99D1C200570BEA /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB522B99D1C200570BEA /* Formula.swift */; };
 		52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A892B91C278007B549C /* BatchTableViewCell.swift */; };
 		52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */; };
 		52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */; };
@@ -83,6 +85,8 @@
 		52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialWatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatch_IndustrialWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDownTableViewCell.swift; sourceTree = "<group>"; };
+		5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaTableViewCell.swift; sourceTree = "<group>"; };
+		5289FB522B99D1C200570BEA /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		52C14A892B91C278007B549C /* BatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchTableViewCell.swift; sourceTree = "<group>"; };
 		52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBatchViewController.swift; sourceTree = "<group>"; };
 		52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialsTableViewCell.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */,
 				52C14A892B91C278007B549C /* BatchTableViewCell.swift */,
 				52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */,
+				5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				52FA8DB92B8628D9007F5AFE /* Rule.swift */,
 				52FA8DC52B887787007F5AFE /* Supervisor.swift */,
 				52C14A8F2B91D16E007B549C /* RawMaterial.swift */,
+				5289FB522B99D1C200570BEA /* Formula.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 				52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */,
 				52FA8DBC2B86292F007F5AFE /* RuleViewModel.swift in Sources */,
 				52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */,
+				5289FB532B99D1C200570BEA /* Formula.swift in Sources */,
 				52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */,
 				52FA8DB42B85FC68007F5AFE /* SectionDetailsViewController.swift in Sources */,
 				52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */,
@@ -534,6 +541,7 @@
 				52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */,
 				52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */,
 				52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */,
+				5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */,
 				52165BE82B13772300110579 /* AppDelegate.swift in Sources */,
 				52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */,
 				52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */,
