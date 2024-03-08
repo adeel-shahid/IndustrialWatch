@@ -44,6 +44,13 @@ class BatchDetailViewController: UIViewController, UITableViewDataSource {
         outputYeildView.layer.cornerRadius = 20
     }
 
+    @IBAction func btnDefects(_ sender: Any) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "DefectProductViewController") as! DefectProductViewController
+        controller.batchNumber = batch
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
+        
+    }
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true)
     }

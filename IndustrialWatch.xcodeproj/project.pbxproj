@@ -20,6 +20,8 @@
 		52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */; };
 		5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */; };
 		5289FB532B99D1C200570BEA /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB522B99D1C200570BEA /* Formula.swift */; };
+		5289FB552B9AE30900570BEA /* DefectProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB542B9AE30900570BEA /* DefectProductViewController.swift */; };
+		5289FB572B9AE8B600570BEA /* DefectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */; };
 		52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A892B91C278007B549C /* BatchTableViewCell.swift */; };
 		52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */; };
 		52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */; };
@@ -87,6 +89,8 @@
 		52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDownTableViewCell.swift; sourceTree = "<group>"; };
 		5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaTableViewCell.swift; sourceTree = "<group>"; };
 		5289FB522B99D1C200570BEA /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
+		5289FB542B9AE30900570BEA /* DefectProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectProductViewController.swift; sourceTree = "<group>"; };
+		5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectDetailsViewController.swift; sourceTree = "<group>"; };
 		52C14A892B91C278007B549C /* BatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchTableViewCell.swift; sourceTree = "<group>"; };
 		52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBatchViewController.swift; sourceTree = "<group>"; };
 		52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialsTableViewCell.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */,
 				52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */,
 				52C14A932B91EF80007B549C /* BatchDetailViewController.swift */,
+				5289FB542B9AE30900570BEA /* DefectProductViewController.swift */,
+				5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */,
 				52FA8DBE2B86326F007F5AFE /* AddSectionViewController.swift in Sources */,
 				52FA8DC22B8645D0007F5AFE /* EditViewController.swift in Sources */,
+				5289FB572B9AE8B600570BEA /* DefectDetailsViewController.swift in Sources */,
 				52FA8DB62B8626DC007F5AFE /* RulesTableViewCell.swift in Sources */,
 				52165BEC2B13772300110579 /* LoginViewController.swift in Sources */,
 				52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */,
@@ -543,6 +550,7 @@
 				52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */,
 				5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */,
 				52165BE82B13772300110579 /* AppDelegate.swift in Sources */,
+				5289FB552B9AE30900570BEA /* DefectProductViewController.swift in Sources */,
 				52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */,
 				52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */,
 				52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */,

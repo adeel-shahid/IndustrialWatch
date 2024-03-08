@@ -19,9 +19,7 @@ class AdminDashboardViewController: UIViewController {
         optimizeUI()
     }
     @IBAction func btnLogout(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
     
     
