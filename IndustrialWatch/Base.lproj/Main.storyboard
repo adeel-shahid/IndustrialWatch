@@ -17,42 +17,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IndustrialWatch" translatesAutoresizingMaskIntoConstraints="NO" id="44B-rZ-ukg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IndustrialWatch" translatesAutoresizingMaskIntoConstraints="NO" id="44B-rZ-ukg">
                                 <rect key="frame" x="22" y="109" width="346" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="346" id="F8G-75-zN1"/>
+                                    <constraint firstAttribute="height" constant="170" id="WbL-qi-OYE"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Industral Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBA-dq-bGx">
-                                <rect key="frame" x="89" y="254" width="213" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Industral Watch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBA-dq-bGx">
+                                <rect key="frame" x="89" y="254" width="279" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="279" id="hFw-ze-Hdn"/>
+                                    <constraint firstAttribute="height" constant="35" id="vvJ-mP-0Jr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Username" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="0ok-tP-BBT" customClass="UITexfield_Additions" customModule="IndustrialWatch" customModuleProvider="target">
+                            <textField opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Username" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="0ok-tP-BBT" customClass="UITexfield_Additions" customModule="IndustrialWatch" customModuleProvider="target">
                                 <rect key="frame" x="44" y="441" width="303" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="c21-Fj-Q5K"/>
+                                    <constraint firstAttribute="height" constant="52" id="ipK-Us-QEb"/>
+                                </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Password" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="48j-AD-v3d" customClass="UITexfield_Additions" customModule="IndustrialWatch" customModuleProvider="target">
+                            <textField opaque="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Password" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="48j-AD-v3d" customClass="UITexfield_Additions" customModule="IndustrialWatch" customModuleProvider="target">
                                 <rect key="frame" x="44" y="532" width="303" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="sGJ-ob-bAU"/>
+                                    <constraint firstAttribute="height" constant="51" id="uiF-4r-egD"/>
+                                </constraints>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3f-Ck-DPy">
-                                <rect key="frame" x="44" y="719" width="303" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3f-Ck-DPy">
+                                <rect key="frame" x="44" y="719" width="303" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="303" id="fqL-6j-qkw"/>
+                                    <constraint firstAttribute="height" constant="47" id="t7L-jv-fXl"/>
+                                </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="capsule"/>
                                 <connections>
                                     <action selector="btnLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpI-uI-1Nr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLh-BW-52C">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLh-BW-52C">
                                 <rect key="frame" x="314" y="540" width="27" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="27" id="qQU-PA-Y09"/>
+                                    <constraint firstAttribute="height" constant="35" id="vzN-sQ-IRK"/>
+                                </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="eye.slash" catalog="system">
@@ -66,6 +84,31 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BLh-BW-52C" secondAttribute="trailing" constant="52" id="1Xt-5N-iFD"/>
+                            <constraint firstItem="BLh-BW-52C" firstAttribute="top" secondItem="0ok-tP-BBT" secondAttribute="bottom" constant="47" id="5uM-NE-BK6"/>
+                            <constraint firstItem="xBA-dq-bGx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="151" id="6ex-ls-zRi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="44B-rZ-ukg" secondAttribute="trailing" constant="25" id="7cg-Jd-aPS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="48j-AD-v3d" secondAttribute="trailing" constant="46" id="8O5-53-3FL"/>
+                            <constraint firstItem="m3f-Ck-DPy" firstAttribute="top" secondItem="48j-AD-v3d" secondAttribute="bottom" constant="136" id="9OY-B1-Jja"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m3f-Ck-DPy" secondAttribute="trailing" constant="46" id="9gf-0J-PI0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0ok-tP-BBT" secondAttribute="trailing" constant="46" id="CJb-wt-HWQ"/>
+                            <constraint firstItem="48j-AD-v3d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="KIg-QP-xWb"/>
+                            <constraint firstItem="0ok-tP-BBT" firstAttribute="top" secondItem="xBA-dq-bGx" secondAttribute="bottom" constant="152" id="SFk-nn-wic"/>
+                            <constraint firstItem="xBA-dq-bGx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="St3-5A-KpI"/>
+                            <constraint firstItem="48j-AD-v3d" firstAttribute="top" secondItem="0ok-tP-BBT" secondAttribute="bottom" constant="39" id="XQi-wI-VWp"/>
+                            <constraint firstItem="BLh-BW-52C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="314" id="YkO-fp-lyY"/>
+                            <constraint firstItem="m3f-Ck-DPy" firstAttribute="top" secondItem="BLh-BW-52C" secondAttribute="bottom" constant="144" id="ak2-7c-OFR"/>
+                            <constraint firstItem="0ok-tP-BBT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="dyc-ZJ-VuA"/>
+                            <constraint firstItem="44B-rZ-ukg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="mD1-NR-dzY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m3f-Ck-DPy" secondAttribute="bottom" constant="52" id="mHH-Gw-7wU"/>
+                            <constraint firstItem="44B-rZ-ukg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="6" id="qTk-HB-k25"/>
+                            <constraint firstItem="48j-AD-v3d" firstAttribute="top" secondItem="0ok-tP-BBT" secondAttribute="bottom" constant="39" id="wwb-JF-T3O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xBA-dq-bGx" secondAttribute="trailing" constant="25" id="y4V-TO-bbB"/>
+                            <constraint firstItem="m3f-Ck-DPy" firstAttribute="top" secondItem="48j-AD-v3d" secondAttribute="bottom" constant="136" id="yjb-ym-Yg4"/>
+                            <constraint firstItem="0ok-tP-BBT" firstAttribute="top" secondItem="44B-rZ-ukg" secondAttribute="bottom" constant="162" id="ymU-jD-9Y5"/>
+                            <constraint firstItem="m3f-Ck-DPy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="zdh-n0-xxv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uoC-9K-waa"/>
                     <connections>
@@ -76,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064.6153846153845" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1063.3587786259541" y="3.5211267605633805"/>
         </scene>
         <!--Admin Dashboard View Controller-->
         <scene sceneID="4Dd-kA-Nks">
@@ -1114,15 +1157,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Search Batch" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Da0-2E-POB" customClass="UITexfield_Additions" customModule="IndustrialWatch" customModuleProvider="target">
-                                <rect key="frame" x="29" y="140" width="331" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <attributedString key="attributedText"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oLq-k0-uyC">
-                                <rect key="frame" x="29" y="216" width="331" height="481"/>
+                                <rect key="frame" x="29" y="199" width="331" height="481"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -1162,6 +1198,25 @@
                                     <action selector="btnCreateBatch:" destination="Epj-Xr-G91" eventType="touchUpInside" id="4ij-7A-6M6"/>
                                 </connections>
                             </button>
+                            <view alpha="0.55000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-c1-jcq">
+                                <rect key="frame" x="29" y="131" width="331" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" alpha="0.55000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search Batch" minimumFontSize="18" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Da0-2E-POB">
+                                        <rect key="frame" x="45" y="0.0" width="286" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Search" translatesAutoresizingMaskIntoConstraints="NO" id="adA-EL-1lW">
+                                        <rect key="frame" x="8" y="8" width="28" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PJX-3b-0GH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1169,6 +1224,7 @@
                     <navigationItem key="navigationItem" id="6If-C3-Jbq"/>
                     <connections>
                         <outlet property="tableView" destination="oLq-k0-uyC" id="Do3-ru-yf7"/>
+                        <outlet property="tbxBatchContainer" destination="3eZ-c1-jcq" id="QHK-51-c8T"/>
                         <outlet property="txtSearchBatch" destination="Da0-2E-POB" id="Nmb-Rg-3CB"/>
                     </connections>
                 </viewController>
@@ -1814,6 +1870,7 @@
         <image name="PencilB" width="24" height="22"/>
         <image name="Production" width="121" height="121"/>
         <image name="Rectangle" width="356" height="60"/>
+        <image name="Search" width="50" height="50"/>
         <image name="Section" width="121" height="121"/>
         <image name="SectionGroup" width="407" height="91"/>
         <image name="Supervisor" width="484" height="484"/>

@@ -26,12 +26,14 @@ class ProductionViewController: UIViewController,UITableViewDataSource,UITableVi
         return cell
     }
     
+    @IBOutlet weak var tbxBatchContainer: UIView!
     var batches = [String]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var txtSearchBatch: UITexfield_Additions!
     override func viewDidLoad() {
         super.viewDidLoad()
         txtSearchBatch.layer.cornerRadius = 15
+        tbxBatchContainer.layer.cornerRadius = 15
         batches.append("Batch#11320051123")
         batches.append("Batch#21320051123")
         batches.append("Batch#31320051123")
