@@ -22,6 +22,7 @@
 		5289FB532B99D1C200570BEA /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB522B99D1C200570BEA /* Formula.swift */; };
 		5289FB552B9AE30900570BEA /* DefectProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB542B9AE30900570BEA /* DefectProductViewController.swift */; };
 		5289FB572B9AE8B600570BEA /* DefectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */; };
+		5289FB592B9AEE3400570BEA /* DefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB582B9AEE3400570BEA /* DefectsTableViewCell.swift */; };
 		52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A892B91C278007B549C /* BatchTableViewCell.swift */; };
 		52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */; };
 		52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */; };
@@ -91,6 +92,7 @@
 		5289FB522B99D1C200570BEA /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		5289FB542B9AE30900570BEA /* DefectProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectProductViewController.swift; sourceTree = "<group>"; };
 		5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectDetailsViewController.swift; sourceTree = "<group>"; };
+		5289FB582B9AEE3400570BEA /* DefectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectsTableViewCell.swift; sourceTree = "<group>"; };
 		52C14A892B91C278007B549C /* BatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchTableViewCell.swift; sourceTree = "<group>"; };
 		52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBatchViewController.swift; sourceTree = "<group>"; };
 		52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialsTableViewCell.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				52C14A892B91C278007B549C /* BatchTableViewCell.swift */,
 				52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */,
 				5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */,
+				5289FB582B9AEE3400570BEA /* DefectsTableViewCell.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5289FB592B9AEE3400570BEA /* DefectsTableViewCell.swift in Sources */,
 				52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */,
 				52FA8DBC2B86292F007F5AFE /* RuleViewModel.swift in Sources */,
 				52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */,

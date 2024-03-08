@@ -13,9 +13,9 @@ class DefectDetailsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1")
-        cell?.textLabel?.text = ". \(defects[indexPath.row])"
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! DefectsTableViewCell
+        cell.lblDefectName.text = defects[indexPath.row]
+        return cell
     }
     
 
