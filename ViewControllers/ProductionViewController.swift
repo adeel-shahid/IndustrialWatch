@@ -16,27 +16,29 @@ class ProductionViewController: UIViewController,UITableViewDataSource,UITableVi
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "BatchDetailViewController") as! BatchDetailViewController
-        controller.batch = batches[indexPath.row]
+        controller.batch = "Batch#\(batches[indexPath.row].id)"
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! BatchTableViewCell
-        cell.lblBatchNumber.text = batches[indexPath.row]
+        cell.lblBatchNumber.text = "Batch#\(batches[indexPath.row].id)"
         return cell
     }
     
     @IBOutlet weak var tbxBatchContainer: UIView!
-    var batches = [String]()
+//    var batches = [String]()
+    var batches = [Batch]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var txtSearchBatch: UITexfield_Additions!
     override func viewDidLoad() {
         super.viewDidLoad()
         txtSearchBatch.layer.cornerRadius = 15
         tbxBatchContainer.layer.cornerRadius = 15
-        batches.append("Batch#11320051123")
-        batches.append("Batch#21320051123")
-        batches.append("Batch#31320051123")
+//        batches.append("Batch#11320051123")
+//        batches.append("Batch#21320051123")
+//        batches.append("Batch#31320051123")
+        batches = BatchViewModel().getAllBatches()
         tableView.dataSource = self
         tableView.delegate = self
     }

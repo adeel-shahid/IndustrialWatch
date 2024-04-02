@@ -9,7 +9,7 @@ import UIKit
 
 class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        rules.count
+        return self.section.rules.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -19,9 +19,9 @@ class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rulesCell") as! RulesTableViewCell
         cell.lblCount.text = "\(indexPath.row + 1)"
-        cell.lblRuleName.text = rules[indexPath.row].name
-        cell.lblTime.text = rules[indexPath.row].allowedTime
-        cell.lblFine.text = "Rs.\(rules[indexPath.row].fine)"
+        cell.lblRuleName.text = self.section.rules[indexPath.row].rule_name
+        cell.lblTime.text = self.section.rules[indexPath.row].allowed_time
+        cell.lblFine.text = "Rs.\(self.section.rules[indexPath.row].fine)"
         return cell
     }
     
@@ -30,19 +30,18 @@ class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblSectionName: UILabel!
     var sectionName : String = "Not Found"
-    var rules = [Rule]()
+    var section : Section = Section(id: 0, name: "", rules: [])
+    var id : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         lblSectionName.text = sectionName
+        section = SectionViewModel().getSectionByID(id: id)
         tableView.dataSource = self
         tableView.delegate = self
-        rules = RuleViewModel().getRules()
     }
     
     @IBAction func btnBack(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
     
     

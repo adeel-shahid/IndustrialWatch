@@ -19,7 +19,7 @@ class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rulesCell") as! RulesAddorEditTableViewCell
-        cell.lblRuleName.text = rules[indexPath.row].name
+        cell.lblRuleName.text = rules[indexPath.row].rule_name
         return cell
     }
     var rules = [Rule]()
@@ -38,14 +38,10 @@ class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     
     @IBAction func btnBack(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
     
     @IBAction func btnUpdateSection(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
 }

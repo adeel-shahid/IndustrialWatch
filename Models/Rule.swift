@@ -6,9 +6,10 @@
 //
 
 import Foundation
-struct Rule{
-    var id : Int
-    var name : String
-    var allowedTime : String
+struct Rule:Codable{
+    var rule_id : Int
+    var rule_name : String
+    var allowed_time : String
     var fine : Int
+    var status : String?
 }

@@ -12,12 +12,13 @@ struct RuleViewModel{
     
     public func getRules() -> [Rule]{
         var rules : [Rule] = []
-        var r = Rule(id: 0, name: "Smoking", allowedTime: "05:00", fine: 500)
-        rules.append(r)
-        r = Rule(id: 1, name: "Mobile Usage", allowedTime: "10:00", fine: 300)
-        rules.append(r)
-        r = Rule(id: 2, name: "Gossiping", allowedTime: "08:00", fine: 600)
-        rules.append(r)
+        let api = APIWrapper()
+        var response = api.getMethodCall(controllerName: "Rule", actionName: "get_all_rules")
+        if response.ResponseCode == 200 {
+            if let data = response.ResponseData{
+                rules = try! JSONDecoder().decode([Rule].self, from: data)
+            }
+        }
         return rules
     }
 }

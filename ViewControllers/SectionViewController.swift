@@ -16,15 +16,15 @@ class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 74
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row is \(indexPath.row)")
         let controller = storyboard?.instantiateViewController(withIdentifier: "SectionDetailsViewController") as! SectionDetailsViewController
-        controller.sectionName = sections[indexPath.row]
+        controller.sectionName = sections[indexPath.row].name
+        controller.id = sections[indexPath.row].id
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! SectionsTableViewCell
-        cell.sectionName = sections[indexPath.row]
+        cell.sectionName = sections[indexPath.row].name
         cell.btnEditOutlet.tag = indexPath.row
         cell.btnDeleteOutlet.tag = indexPath.row
         cell.btnEditOutlet.addTarget(self, action: #selector(btnEdit(_:)), for: .touchUpInside)
@@ -33,25 +33,21 @@ class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     @IBOutlet weak var tableView: UITableView!
-    var sections = [String]()
+    var sections = [Section]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        sections = SectionViewModel().getAllSections()
         tableView.dataSource = self
         tableView.delegate = self
-        sections.append("Packing")
-        sections.append("Management")
-        sections.append("ManuFacturing")
     }
     
     @IBAction func btnBack(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AdminDashboardViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
     
     @objc func btnEdit(_ sender: UIButton){
         let controller = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
-        controller.sectionName = sections[sender.tag]
+        controller.sectionName = sections[sender.tag].name
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }

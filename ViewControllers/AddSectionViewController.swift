@@ -8,6 +8,8 @@
 import UIKit
 
 class AddSectionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rules.count
     }
@@ -18,12 +20,17 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rulesCell") as! RulesAddorEditTableViewCell
-        cell.lblRuleName.text = rules[indexPath.row].name
+        cell.lblRuleName.text = rules[indexPath.row].rule_name
+        cell.btnCheckBoxOutlet.tag = indexPath.row
+        cell.btnCheckBoxOutlet.addTarget(self, action: #selector(btnCheckbox(_ :)), for: .touchUpInside)
+        cells.append(cell)
         return cell
     }
-    
+    var selectedRules = [Rule]()
     var rules = [Rule]()
+    var cells = [RulesAddorEditTableViewCell]()
     @IBOutlet weak var tableView: UITableView!
+    
     @IBOutlet weak var txtSectionName: UITexfield_Additions!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,14 +42,82 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
     
     
     @IBAction func btnConfirmSection(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
     @IBAction func btnBack(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
+    }
+ 
+    @objc func btnCheckbox(_ sender: UIButton){
+        if cells[sender.tag].btnCheckBoxOutlet.isSelected{
+            cells[sender.tag].btnCheckBoxOutlet.isSelected = false
+            cells[sender.tag].txtFine.text = ""
+            cells[sender.tag].txtTime.text = ""
+            rules[sender.tag].status = nil
+            rules[sender.tag].fine = 0
+            rules[sender.tag].allowed_time = ""
+            print("\nRemoval\(rules)")
+            return
+        }
+        
+        
+        guard let time = cells[sender.tag].txtTime.text,let fine = cells[sender.tag].txtFine.text, !cells[sender.tag].txtTime.text!.isEmpty,!cells[sender.tag].txtFine.text!.isEmpty else {
+            
+            //Swift tost Notification
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+               let topViewController = window.rootViewController?.topMostViewController() {
+                topViewController.view.makeToast("Please fill text fields", duration: 3.0, position: .bottom)
+            }
+
+            return
+        }
+        let pattern = #"^(\d{1,2}):(\d{2})$"#
+        let finepattern = #"^(\d)$"#
+
+        // Define a sample string to validate
+        let timeString = cells[sender.tag].txtTime.text!
+        let fineString = cells[sender.tag].txtFine.text!
+        // Create an NSRegularExpression object with the pattern
+        do {
+            let regex = try NSRegularExpression(pattern: pattern, options: [])
+            
+            // Perform the match
+            let matches = regex.matches(in: timeString, options: [], range: NSRange(location: 0, length: timeString.utf16.count))
+            
+            // Check if there is at least one match
+            if matches.count > 0 {
+                print("Valid time format: \(timeString)")
+            } else {
+                //Swift tost Notification
+                if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+                   let topViewController = window.rootViewController?.topMostViewController() {
+                    topViewController.view.makeToast("Invalid fine format: \(timeString)", duration: 3.0, position: .bottom)
+                }
+                return
+            }
+        } catch {
+            print("Error creating regular expression: \(error)")
+            return
+        }
+        //Fine Validation
+        var amount : Int = 0
+        if let rulefine = Int(fineString){
+            amount = rulefine
+        }
+        else{
+            //Swift tost Notification
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+               let topViewController = window.rootViewController?.topMostViewController() {
+                topViewController.view.makeToast("Invalid fine format: \(fineString)", duration: 3.0, position: .bottom)
+            }
+
+            return
+        }
+        rules[sender.tag].status = "Checked"
+        rules[sender.tag].fine = amount
+        rules[sender.tag].allowed_time = timeString
+        print("\n\(rules)")
+        cells[sender.tag].btnCheckBoxOutlet.isSelected = true
     }
     
 }

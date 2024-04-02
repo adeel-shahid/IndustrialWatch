@@ -19,6 +19,7 @@ class DefectDetailsViewController: UIViewController, UITableViewDataSource {
     }
     
 
+    @IBOutlet weak var imageView4Container: UIView!
     @IBOutlet weak var lblProductNumber: UILabel!
     @IBOutlet weak var imageView1: UIImageView!
     @IBOutlet weak var imageView2: UIImageView!
@@ -32,14 +33,29 @@ class DefectDetailsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblProductNumber.text = productNumber
+        imageView1.layer.cornerRadius = 10
+        imageView2.layer.cornerRadius = 10
+        imageView3.layer.cornerRadius = 10
+        imageView4Container.layer.cornerRadius = 10
+        
+        imageView4.isUserInteractionEnabled = true
         defects.append("SideCut")
         defects.append("Pinhole")
         tableView.dataSource = self
+        imageView4.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showMoreImages(_ :))))
     }
 
     
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+ 
+    
+    @objc func showMoreImages(_ sender: Any){
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ImageDetailsViewController") as! ImageDetailsViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.productNumber = lblProductNumber.text!
+        self.present(controller, animated: true)
     }
     
 }
