@@ -34,7 +34,7 @@ class AdminDashboardViewController: UIViewController {
         btnSupervisors.addGestureRecognizer(gesture)
         gesture = UITapGestureRecognizer(target: self, action: #selector(navigateToEmployeeProductivityView))
         btnEmployeeProductivity.addGestureRecognizer(gesture)
-        gesture = UITapGestureRecognizer(target: self, action: #selector(navigateToProductionView))
+        gesture = UITapGestureRecognizer(target: self, action: #selector(navigateToProductionMenuView))
         btnProduction.addGestureRecognizer(gesture)
     }
     
@@ -56,8 +56,8 @@ class AdminDashboardViewController: UIViewController {
         self.present(controller!, animated: true)
     }
     
-    @objc private func navigateToProductionView(){
-        let controller = storyboard?.instantiateViewController(withIdentifier: "ProductionViewController")
+    @objc private func navigateToProductionMenuView(){
+        let controller = storyboard?.instantiateViewController(withIdentifier: "ProductionMenuViewController")
         controller?.modalPresentationStyle = .fullScreen
         self.present(controller!, animated: true)
     }

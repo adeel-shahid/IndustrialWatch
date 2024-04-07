@@ -21,16 +21,38 @@
 		525D926E2BB14D1C00F2EA73 /* BatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */; };
 		525D92712BB14DDF00F2EA73 /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D92702BB14DDF00F2EA73 /* APIWrapper.swift */; };
 		52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */; };
+		526D32262BBD7A37008807CC /* ProductionMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D32252BBD7A37008807CC /* ProductionMenuViewController.swift */; };
+		526D32282BBDA829008807CC /* RawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D32272BBDA829008807CC /* RawMaterialViewController.swift */; };
+		526D322C2BBDBBE0008807CC /* RawMaterials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D322B2BBDBBE0008807CC /* RawMaterials.swift */; };
+		526D322E2BBDBC4A008807CC /* RawMaterialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D322D2BBDBC4A008807CC /* RawMaterialViewModel.swift */; };
+		526D32302BBE3050008807CC /* RawTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D322F2BBE3050008807CC /* RawTableViewCell.swift */; };
+		526D32322BBE596E008807CC /* UpdateRawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D32312BBE596E008807CC /* UpdateRawMaterialViewController.swift */; };
+		526D32342BBE8079008807CC /* AddRawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D32332BBE8079008807CC /* AddRawMaterialViewController.swift */; };
+		526D32362BBE8B7C008807CC /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D32352BBE8B7C008807CC /* AddProductViewController.swift */; };
 		5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */; };
 		5289FB532B99D1C200570BEA /* Formula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB522B99D1C200570BEA /* Formula.swift */; };
 		5289FB552B9AE30900570BEA /* DefectProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB542B9AE30900570BEA /* DefectProductViewController.swift */; };
 		5289FB572B9AE8B600570BEA /* DefectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */; };
 		5289FB592B9AEE3400570BEA /* DefectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5289FB582B9AEE3400570BEA /* DefectsTableViewCell.swift */; };
+		52AD3F0A2BBEA177002E5587 /* FormulaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F092BBEA177002E5587 /* FormulaViewModel.swift */; };
+		52AD3F0C2BBEA435002E5587 /* CustomDropDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F0B2BBEA435002E5587 /* CustomDropDownViewController.swift */; };
+		52AD3F0E2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F0D2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift */; };
+		52AD3F102BBF3CDA002E5587 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F0F2BBF3CDA002E5587 /* Product.swift */; };
+		52AD3F122BBF3E61002E5587 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F112BBF3E61002E5587 /* ProductViewModel.swift */; };
+		52AD3F142BBF4D03002E5587 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F132BBF4D03002E5587 /* InventoryViewController.swift */; };
+		52AD3F162BBF7EF7002E5587 /* InventoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F152BBF7EF7002E5587 /* InventoryTableViewCell.swift */; };
+		52AD3F182BBF7FB0002E5587 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F172BBF7FB0002E5587 /* Inventory.swift */; };
+		52AD3F1A2BBF802B002E5587 /* InventoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F192BBF802B002E5587 /* InventoryViewModel.swift */; };
+		52AD3F1C2BBF8837002E5587 /* RawMaterialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F1B2BBF8837002E5587 /* RawMaterialDetailViewController.swift */; };
+		52AD3F1E2BBF8941002E5587 /* RawMaterialDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F1D2BBF8941002E5587 /* RawMaterialDetailsTableViewCell.swift */; };
+		52AD3F202BBF8A23002E5587 /* RawMaterialDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F1F2BBF8A23002E5587 /* RawMaterialDetails.swift */; };
+		52AD3F222BBF928C002E5587 /* AddNewStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F212BBF928C002E5587 /* AddNewStockViewController.swift */; };
+		52AD3F242BBF9BBE002E5587 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3F232BBF9BBE002E5587 /* Stock.swift */; };
 		52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A892B91C278007B549C /* BatchTableViewCell.swift */; };
 		52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */; };
 		52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */; };
 		52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8F2B91D16E007B549C /* RawMaterial.swift */; };
-		52C14A922B91D83E007B549C /* AddRawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */; };
+		52C14A922B91D83E007B549C /* AddRawMaterialOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A912B91D83E007B549C /* AddRawMaterialOldViewController.swift */; };
 		52C14A942B91EF80007B549C /* BatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A932B91EF80007B549C /* BatchDetailViewController.swift */; };
 		52D848E52BAC0BDB00795ACB /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D848E42BAC0BDB00795ACB /* ImageDetailsViewController.swift */; };
 		52D848E72BAC0D0800795ACB /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D848E62BAC0D0800795ACB /* Slide.swift */; };
@@ -99,16 +121,38 @@
 		525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchViewModel.swift; sourceTree = "<group>"; };
 		525D92702BB14DDF00F2EA73 /* APIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
 		52641ED42B91ACB600C490E4 /* CustomDropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDownTableViewCell.swift; sourceTree = "<group>"; };
+		526D32252BBD7A37008807CC /* ProductionMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionMenuViewController.swift; sourceTree = "<group>"; };
+		526D32272BBDA829008807CC /* RawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialViewController.swift; sourceTree = "<group>"; };
+		526D322B2BBDBBE0008807CC /* RawMaterials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterials.swift; sourceTree = "<group>"; };
+		526D322D2BBDBC4A008807CC /* RawMaterialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialViewModel.swift; sourceTree = "<group>"; };
+		526D322F2BBE3050008807CC /* RawTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawTableViewCell.swift; sourceTree = "<group>"; };
+		526D32312BBE596E008807CC /* UpdateRawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateRawMaterialViewController.swift; sourceTree = "<group>"; };
+		526D32332BBE8079008807CC /* AddRawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRawMaterialViewController.swift; sourceTree = "<group>"; };
+		526D32352BBE8B7C008807CC /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 		5289FB502B99D0FE00570BEA /* FormulaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaTableViewCell.swift; sourceTree = "<group>"; };
 		5289FB522B99D1C200570BEA /* Formula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formula.swift; sourceTree = "<group>"; };
 		5289FB542B9AE30900570BEA /* DefectProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectProductViewController.swift; sourceTree = "<group>"; };
 		5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectDetailsViewController.swift; sourceTree = "<group>"; };
 		5289FB582B9AEE3400570BEA /* DefectsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectsTableViewCell.swift; sourceTree = "<group>"; };
+		52AD3F092BBEA177002E5587 /* FormulaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormulaViewModel.swift; sourceTree = "<group>"; };
+		52AD3F0B2BBEA435002E5587 /* CustomDropDownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDownViewController.swift; sourceTree = "<group>"; };
+		52AD3F0D2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseRawMaterialViewController.swift; sourceTree = "<group>"; };
+		52AD3F0F2BBF3CDA002E5587 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		52AD3F112BBF3E61002E5587 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		52AD3F132BBF4D03002E5587 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		52AD3F152BBF7EF7002E5587 /* InventoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTableViewCell.swift; sourceTree = "<group>"; };
+		52AD3F172BBF7FB0002E5587 /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		52AD3F192BBF802B002E5587 /* InventoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewModel.swift; sourceTree = "<group>"; };
+		52AD3F1B2BBF8837002E5587 /* RawMaterialDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialDetailViewController.swift; sourceTree = "<group>"; };
+		52AD3F1D2BBF8941002E5587 /* RawMaterialDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		52AD3F1F2BBF8A23002E5587 /* RawMaterialDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialDetails.swift; sourceTree = "<group>"; };
+		52AD3F212BBF928C002E5587 /* AddNewStockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStockViewController.swift; sourceTree = "<group>"; };
+		52AD3F232BBF9BBE002E5587 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		52C14A892B91C278007B549C /* BatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchTableViewCell.swift; sourceTree = "<group>"; };
 		52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBatchViewController.swift; sourceTree = "<group>"; };
 		52C14A8D2B91CF79007B549C /* RawMaterialsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterialsTableViewCell.swift; sourceTree = "<group>"; };
 		52C14A8F2B91D16E007B549C /* RawMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterial.swift; sourceTree = "<group>"; };
-		52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRawMaterialViewController.swift; sourceTree = "<group>"; };
+		52C14A912B91D83E007B549C /* AddRawMaterialOldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRawMaterialOldViewController.swift; sourceTree = "<group>"; };
 		52C14A932B91EF80007B549C /* BatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDetailViewController.swift; sourceTree = "<group>"; };
 		52D848E42BAC0BDB00795ACB /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		52D848E62BAC0D0800795ACB /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
@@ -249,6 +293,10 @@
 				5289FB582B9AEE3400570BEA /* DefectsTableViewCell.swift */,
 				52D848E62BAC0D0800795ACB /* Slide.swift */,
 				52D848E82BAC0D4000795ACB /* Slide.xib */,
+				526D322F2BBE3050008807CC /* RawTableViewCell.swift */,
+				52AD3F0B2BBEA435002E5587 /* CustomDropDownViewController.swift */,
+				52AD3F152BBF7EF7002E5587 /* InventoryTableViewCell.swift */,
+				52AD3F1D2BBF8941002E5587 /* RawMaterialDetailsTableViewCell.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -268,11 +316,20 @@
 				52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */,
 				52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */,
 				52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */,
-				52C14A912B91D83E007B549C /* AddRawMaterialViewController.swift */,
+				52C14A912B91D83E007B549C /* AddRawMaterialOldViewController.swift */,
 				52C14A932B91EF80007B549C /* BatchDetailViewController.swift */,
 				5289FB542B9AE30900570BEA /* DefectProductViewController.swift */,
 				5289FB562B9AE8B600570BEA /* DefectDetailsViewController.swift */,
 				52D848E42BAC0BDB00795ACB /* ImageDetailsViewController.swift */,
+				526D32252BBD7A37008807CC /* ProductionMenuViewController.swift */,
+				526D32272BBDA829008807CC /* RawMaterialViewController.swift */,
+				526D32312BBE596E008807CC /* UpdateRawMaterialViewController.swift */,
+				526D32332BBE8079008807CC /* AddRawMaterialViewController.swift */,
+				526D32352BBE8B7C008807CC /* AddProductViewController.swift */,
+				52AD3F0D2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift */,
+				52AD3F132BBF4D03002E5587 /* InventoryViewController.swift */,
+				52AD3F1B2BBF8837002E5587 /* RawMaterialDetailViewController.swift */,
+				52AD3F212BBF928C002E5587 /* AddNewStockViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +343,11 @@
 				5289FB522B99D1C200570BEA /* Formula.swift */,
 				525D926B2BB14B1200F2EA73 /* Batch.swift */,
 				52E3E0662BBAE5F400E4E107 /* Section.swift */,
+				526D322B2BBDBBE0008807CC /* RawMaterials.swift */,
+				52AD3F0F2BBF3CDA002E5587 /* Product.swift */,
+				52AD3F172BBF7FB0002E5587 /* Inventory.swift */,
+				52AD3F1F2BBF8A23002E5587 /* RawMaterialDetails.swift */,
+				52AD3F232BBF9BBE002E5587 /* Stock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,6 +359,10 @@
 				52FA8DC72B88780F007F5AFE /* SupervisorViewModel.swift */,
 				525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */,
 				52E3E0682BBAE6E200E4E107 /* SectionViewModel.swift */,
+				526D322D2BBDBC4A008807CC /* RawMaterialViewModel.swift */,
+				52AD3F092BBEA177002E5587 /* FormulaViewModel.swift */,
+				52AD3F112BBF3E61002E5587 /* ProductViewModel.swift */,
+				52AD3F192BBF802B002E5587 /* InventoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -564,18 +630,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				526D32262BBD7A37008807CC /* ProductionMenuViewController.swift in Sources */,
+				52AD3F0E2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift in Sources */,
 				5289FB592B9AEE3400570BEA /* DefectsTableViewCell.swift in Sources */,
 				52E3E0692BBAE6E200E4E107 /* SectionViewModel.swift in Sources */,
 				52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */,
 				52FA8DBC2B86292F007F5AFE /* RuleViewModel.swift in Sources */,
 				52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */,
 				5289FB532B99D1C200570BEA /* Formula.swift in Sources */,
+				52AD3F0C2BBEA435002E5587 /* CustomDropDownViewController.swift in Sources */,
 				52E3E0672BBAE5F400E4E107 /* Section.swift in Sources */,
 				52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */,
+				526D322C2BBDBBE0008807CC /* RawMaterials.swift in Sources */,
+				52AD3F222BBF928C002E5587 /* AddNewStockViewController.swift in Sources */,
 				52FA8DB42B85FC68007F5AFE /* SectionDetailsViewController.swift in Sources */,
+				526D32322BBE596E008807CC /* UpdateRawMaterialViewController.swift in Sources */,
+				52AD3F122BBF3E61002E5587 /* ProductViewModel.swift in Sources */,
 				52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */,
+				52AD3F242BBF9BBE002E5587 /* Stock.swift in Sources */,
+				526D322E2BBDBC4A008807CC /* RawMaterialViewModel.swift in Sources */,
 				52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */,
 				52D848E52BAC0BDB00795ACB /* ImageDetailsViewController.swift in Sources */,
+				52AD3F1A2BBF802B002E5587 /* InventoryViewModel.swift in Sources */,
 				52FA8DC42B8875C5007F5AFE /* SupervisorTableViewCell.swift in Sources */,
 				52FA8DCC2B8885D0007F5AFE /* AddSupervisorViewController.swift in Sources */,
 				52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */,
@@ -587,8 +663,12 @@
 				525D926C2BB14B1200F2EA73 /* Batch.swift in Sources */,
 				52FA8DB62B8626DC007F5AFE /* RulesTableViewCell.swift in Sources */,
 				52165BEC2B13772300110579 /* LoginViewController.swift in Sources */,
+				52AD3F182BBF7FB0002E5587 /* Inventory.swift in Sources */,
 				52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */,
+				52AD3F202BBF8A23002E5587 /* RawMaterialDetails.swift in Sources */,
 				52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */,
+				52AD3F162BBF7EF7002E5587 /* InventoryTableViewCell.swift in Sources */,
+				52AD3F102BBF3CDA002E5587 /* Product.swift in Sources */,
 				52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */,
 				52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */,
 				5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */,
@@ -598,12 +678,20 @@
 				52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */,
 				52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */,
 				52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */,
+				526D32342BBE8079008807CC /* AddRawMaterialViewController.swift in Sources */,
 				52FA8DB02B85D3F9007F5AFE /* ProductionViewController.swift in Sources */,
+				526D32282BBDA829008807CC /* RawMaterialViewController.swift in Sources */,
 				52C14A942B91EF80007B549C /* BatchDetailViewController.swift in Sources */,
 				52FA8DBA2B8628D9007F5AFE /* Rule.swift in Sources */,
+				526D32362BBE8B7C008807CC /* AddProductViewController.swift in Sources */,
 				52165BEA2B13772300110579 /* SceneDelegate.swift in Sources */,
+				52AD3F0A2BBEA177002E5587 /* FormulaViewModel.swift in Sources */,
 				52FA8DC02B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift in Sources */,
-				52C14A922B91D83E007B549C /* AddRawMaterialViewController.swift in Sources */,
+				52AD3F1E2BBF8941002E5587 /* RawMaterialDetailsTableViewCell.swift in Sources */,
+				52C14A922B91D83E007B549C /* AddRawMaterialOldViewController.swift in Sources */,
+				52AD3F142BBF4D03002E5587 /* InventoryViewController.swift in Sources */,
+				52AD3F1C2BBF8837002E5587 /* RawMaterialDetailViewController.swift in Sources */,
+				526D32302BBE3050008807CC /* RawTableViewCell.swift in Sources */,
 				52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

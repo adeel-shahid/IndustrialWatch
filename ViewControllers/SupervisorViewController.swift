@@ -37,28 +37,47 @@ class SupervisorViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     @IBAction func btnBack(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AdminDashboardViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        self.dismiss(animated: true)
     }
     
     
     @IBAction func btnAddSupervisor(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AddSupervisorViewController")
-        
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AddSupervisorViewController") as! AddSupervisorViewController
+        controller.predicate = {[unowned self] in
+            supervisors = SupervisorViewModel().getSupervisors()
+            tableView.reloadData()
+        }
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
     }
     
     @objc func btnEdit(_ sender: UIButton){
         let controller = storyboard?.instantiateViewController(withIdentifier: "EditSupervisorViewController") as! EditSupervisorViewController
-        controller.name = supervisors[sender.tag].name
+        controller.id = supervisors[sender.tag].id
+        controller.predicate = { [unowned self] in
+            supervisors = SupervisorViewModel().getSupervisors()
+            tableView.reloadData()
+            
+        }
         controller.modalPresentationStyle = .automatic
         self.present(controller, animated: true)
     }
+    
     @objc func btnDelete(_ sender: UIButton){
-        supervisors.remove(at: sender.tag)
-        tableView.reloadData()
+        let response = SupervisorViewModel().deleteSupervisor(id: supervisors[sender.tag].id)
+        if response.ResponseCode == 200 {
+            supervisors.remove(at: sender.tag)
+            tableView.reloadData()
+            //Swift tost Notification
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+               let topViewController = window.rootViewController?.topMostViewController() {
+                topViewController.view.makeToast("Supervisor Deleted SeccuessFully", duration: 3.0, position: .bottom)
+            }
+        }else{
+            let alert = UIAlertController(title: "Error", message: response.ResponseMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
+            self.present(alert, animated: true)
+        }
     }
     
 }

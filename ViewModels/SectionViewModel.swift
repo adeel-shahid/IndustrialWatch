@@ -38,4 +38,11 @@ struct SectionViewModel{
         return section
     }
     
+    func insertSectionWithRules(section: Section)->APIMessage{
+        let jsonData = try! JSONEncoder().encode(section)
+        let api = APIWrapper()
+        let response = api.postMethodCall(controllerName: "Section", actionName: "insert_section", httpBody: jsonData)
+        return response
+    }
+    
 }

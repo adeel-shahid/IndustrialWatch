@@ -48,6 +48,7 @@ class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDat
     @objc func btnEdit(_ sender: UIButton){
         let controller = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
         controller.sectionName = sections[sender.tag].name
+        controller.section_id = sections[sender.tag].id
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
@@ -57,8 +58,12 @@ class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDat
     }
     
     @IBAction func btnAddSection(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "AddSectionViewController")
-        controller?.modalPresentationStyle = .fullScreen
-        self.present(controller!, animated: true)
+        let controller = storyboard?.instantiateViewController(withIdentifier: "AddSectionViewController") as! AddSectionViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.predicate = { [unowned self] in
+            self.sections = SectionViewModel().getAllSections()
+            self.tableView.reloadData()
+        }
+        self.present(controller, animated: true)
     }
 }

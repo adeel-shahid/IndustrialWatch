@@ -40,9 +40,39 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
         tableView.delegate = self
     }
     
-    
+    var predicate: (() -> Void)?
     @IBAction func btnConfirmSection(_ sender: Any) {
-        self.dismiss(animated: true)
+        
+        guard let section = txtSectionName.text, !txtSectionName.text!.isEmpty else {
+            //Swift tost Notification
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+               let topViewController = window.rootViewController?.topMostViewController() {
+                topViewController.view.makeToast("Please fill the Section Name!", duration: 3.0, position: .bottom)
+            }
+                return
+            }
+        
+        for rule in rules{
+            if rule.status == "Checked"{
+                selectedRules.append(rule)
+            }
+        }
+        let s = Section(id: 0, name: section, rules: selectedRules)
+        let response = SectionViewModel().insertSectionWithRules(section: s)
+        if response.ResponseCode == 200{
+//            //Swift tost Notification
+            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
+               let topViewController = window.rootViewController?.topMostViewController() {
+                topViewController.view.makeToast("Section Inserted Seccessfully", duration: 3.0, position: .bottom)
+            }
+            predicate?()
+            self.dismiss(animated: true,completion: predicate)
+        }else{
+            let alert = UIAlertController(title: "Error", message: response.ResponseMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
+            self.present(alert, animated: true)
+        }
+        
     }
     @IBAction func btnBack(_ sender: Any) {
         self.dismiss(animated: true)

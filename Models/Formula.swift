@@ -6,8 +6,9 @@
 //
 
 import Foundation
-struct Formula{
-    var id : Int
+struct Formula:Codable{
+    var raw_material_id : Int
     var material : String
-    var quantity : String
+    var quantity : Int
+    var unit : String
 }

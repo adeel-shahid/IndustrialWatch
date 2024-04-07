@@ -6,7 +6,11 @@
 //
 
 import Foundation
-struct Supervisor{
+struct Supervisor:Codable{
+    var id: Int
     var name : String
     var username : String
+    var password : String
+    var role : String
+    var sections : [Section]
 }

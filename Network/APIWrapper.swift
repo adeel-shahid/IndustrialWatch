@@ -56,8 +56,8 @@ class APIMessage{
 //////////////////////
 /// This class Is a wrapper which will handle Web API get and post method calls.
 class APIWrapper{
-    static let imgBaseURLString = "http://192.168.43.136/"
-    private let baseURLString = "http://10.211.55.3:88/api/"
+    static let imgBaseURLString = "http://10.211.55.3:5000/"
+    private let baseURLString = "http://10.211.55.3:5000/api/"
     
     ///////////////////////////
     //// This is for HTTPGet methods
@@ -483,6 +483,109 @@ class APIWrapper{
 //        }
 //    }
     
+
+extension APIWrapper {
+    
+    // Delete Method
+    func deleteMethodCall(controllerName: String, actionName: String) -> APIMessage {
+        let apiMessage = APIMessage()
+        
+        let completePath = "\(baseURLString)\(controllerName)/\(actionName)"
+        guard let url = URL(string: completePath) else {
+            apiMessage.ResponseCode = 209 // Error
+            apiMessage.ResponseMessage = "Error: Cannot create URL"
+            return apiMessage
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let session = URLSession.shared
+        let group = DispatchGroup()
+        group.enter()
+        
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+                apiMessage.ResponseMessage = error.debugDescription
+                print("Error calling \(controllerName)\(actionName)")
+                group.leave()
+                print(error!)
+                return
+            }
+            
+            let rurl = response as! HTTPURLResponse
+            apiMessage.ResponseCode = rurl.statusCode
+            
+            guard let responseData = data else {
+                apiMessage.ResponseMessage = "Error: Did not receive data"
+                group.leave()
+                return
+            }
+            
+            apiMessage.ResponseData = responseData
+            apiMessage.ResponseMessage = String(data: data!, encoding: .utf8) ?? rurl.description
+            group.leave()
+        }
+        
+        task.resume()
+        group.wait()
+        
+        return apiMessage
+    }
+    
+    // PUT Method
+    func putMethodCall(controllerName: String, actionName: String, httpBody: Data) -> APIMessage {
+        let apiMessage = APIMessage()
+        
+        let completePath = "\(baseURLString)\(controllerName)/\(actionName)"
+        guard let url = URL(string: completePath) else {
+            apiMessage.ResponseCode = 209 // Error
+            apiMessage.ResponseMessage = "Error: Cannot create URL"
+            return apiMessage
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.httpBody = httpBody
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let session = URLSession.shared
+        let group = DispatchGroup()
+        group.enter()
+        
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+                apiMessage.ResponseMessage = error.debugDescription
+                print("Error calling \(controllerName)\(actionName)")
+                group.leave()
+                print(error!)
+                return
+            }
+            
+            let rurl = response as! HTTPURLResponse
+            apiMessage.ResponseCode = rurl.statusCode
+            
+            guard let responseData = data else {
+                apiMessage.ResponseMessage = "Error: Did not receive data"
+                group.leave()
+                return
+            }
+            
+            apiMessage.ResponseData = responseData
+            apiMessage.ResponseMessage = String(data: data!, encoding: .utf8) ?? rurl.description
+            group.leave()
+        }
+        
+        task.resume()
+        group.wait()
+        
+        return apiMessage
+    }
+}
+
 
 extension NSMutableData {
     func appendString(_ string: String) {

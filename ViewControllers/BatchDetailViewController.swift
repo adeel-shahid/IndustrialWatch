@@ -15,9 +15,9 @@ class BatchDetailViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! FormulaTableViewCell
-        cell.lblserial.text = "\(formula[indexPath.row].id + 1)"
+        cell.lblserial.text = "\(formula[indexPath.row].raw_material_id + 1)"
         cell.lblMaterial.text = formula[indexPath.row].material
-        cell.lblQuantity.text = formula[indexPath.row].quantity
+        cell.lblQuantity.text = "\(formula[indexPath.row].quantity)"
         return cell
     }
     
@@ -33,9 +33,9 @@ class BatchDetailViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var f = Formula(id: 0, material: "Iron", quantity: "500 G")
+        var f = Formula(raw_material_id: 0, material: "Iron", quantity: 500,unit: "G")
         formula.append(f)
-        f = Formula(id: 1, material: "Copper", quantity: "52 G")
+        f = Formula(raw_material_id: 1, material: "Copper", quantity: 52,unit: "G")
         formula.append(f)
         tableView.dataSource = self
         lblBatchNumber.text = batch
