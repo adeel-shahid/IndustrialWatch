@@ -14,9 +14,9 @@ class RawMaterialDetailViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! RawMaterialDetailsTableViewCell
-        cell.lblSerial.text = "\(indexPath.row + 1)"
+        cell.lblSerial.text = rawMaterialDetails[indexPath.row].stock_number
         cell.lblQuantity.text = "\(rawMaterialDetails[indexPath.row].quantity) KG"
-        cell.lblPrice.text = "\(rawMaterialDetails[indexPath.row].price_per_unit.split(separator: ".")[0])"
+        cell.lblPrice.text = "\(rawMaterialDetails[indexPath.row].price_per_kg)"
         cell.lblDate.text = rawMaterialDetails[indexPath.row].purchased_date
         return cell
     }

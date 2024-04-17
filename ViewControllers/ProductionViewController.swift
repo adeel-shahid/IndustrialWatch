@@ -38,7 +38,7 @@ class ProductionViewController: UIViewController,UITableViewDataSource,UITableVi
 //        batches.append("Batch#11320051123")
 //        batches.append("Batch#21320051123")
 //        batches.append("Batch#31320051123")
-        batches = BatchViewModel().getAllBatches()
+//        batches = BatchViewModel().getAllBatches()
         tableView.dataSource = self
         tableView.delegate = self
     }

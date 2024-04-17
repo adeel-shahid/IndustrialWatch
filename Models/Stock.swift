@@ -10,8 +10,7 @@ struct Stock:Codable{
     var stock_number : String
     var raw_material_id : Int
     var quantity : Int
-    var unit : String
-    var price_per_unit : Int
+    var price_per_kg : Int
     var purchased_date : String
 }
 

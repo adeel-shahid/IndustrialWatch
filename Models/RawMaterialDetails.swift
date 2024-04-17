@@ -6,8 +6,9 @@
 //
 
 import Foundation
-struct RawMaterialDetails:Decodable{
-    var price_per_unit : String
+struct RawMaterialDetails:Codable{
+    var stock_number : String
+    var price_per_kg : Int
     var purchased_date : String
     var quantity : Int
 }

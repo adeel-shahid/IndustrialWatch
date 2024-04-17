@@ -29,8 +29,7 @@ class AddProductViewController: UIViewController, UITableViewDataSource ,UITable
     
     @IBOutlet weak var cbxBackOutlet: UIButton!
     @IBOutlet weak var cbxFrontOutlet: UIButton!
-    
-    @IBOutlet weak var txtRejectionTolerance: UITexfield_Additions!
+
     @IBOutlet weak var txtName: UITexfield_Additions!
     
     @IBOutlet weak var tableView: UITableView!
@@ -40,7 +39,6 @@ class AddProductViewController: UIViewController, UITableViewDataSource ,UITable
         super.viewDidLoad()
         tableView.dataSource = self
         txtName.layer.cornerRadius = 15
-        txtRejectionTolerance.layer.cornerRadius = 15
         checkboxContainer.layer.cornerRadius = 15
     }
     
@@ -134,7 +132,7 @@ class AddProductViewController: UIViewController, UITableViewDataSource ,UITable
     
     @IBAction func btnAddProduct(_ sender: Any) {
         guard let name = txtName.text, !txtName.text!.isEmpty,
-              let tolrance = txtRejectionTolerance.text, !txtRejectionTolerance.text!.isEmpty,
+              //let tolrance = txtRejectionTolerance.text, !txtRejectionTolerance.text!.isEmpty,
               !selectedAnglesList.isEmpty,
               !formlas.isEmpty
         else{
@@ -142,20 +140,20 @@ class AddProductViewController: UIViewController, UITableViewDataSource ,UITable
             return
         }
         
-        guard let rejTolerance = Float(tolrance) else{
-            view.makeToast("Tolrance Must be in Points", duration: 3.0, position: .bottom)
-            return
-        }
+//        guard let rejTolerance = Float(tolrance) else{
+//            view.makeToast("Tolrance Must be in Points", duration: 3.0, position: .bottom)
+//            return
+//        }
         var inspectionAngles : String = ""
         for angles in selectedAnglesList{
             inspectionAngles = inspectionAngles + "\(angles),"
         }
-        let p = Product(name: name, rejection_tolerance: rejTolerance, inspection_angles: inspectionAngles, product_number: "generate", materials: formlas)
+        let p = Product(name: name , inspection_angles: inspectionAngles, product_number: "generate", materials: formlas)
         let response = ProductViewModel().insertProduct(product: p)
         if response.ResponseCode == 200{
             view.makeToast("Product \(name) inserted Successfully", duration: 2.0, position: .bottom)
             txtName.text = ""
-            txtRejectionTolerance.text = ""
+            //txtRejectionTolerance.text = ""
             selectedAnglesList = []
             formlas = []
             tableView.reloadData()

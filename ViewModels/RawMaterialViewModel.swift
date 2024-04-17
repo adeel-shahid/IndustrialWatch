@@ -36,4 +36,16 @@ struct RawMaterialViewModel{
         return response
     }
     
+    func getStockDetailOfRawMaterial(rawMaterialId: Int)->[RawMaterialDetails]{
+        var rawMaterials = [RawMaterialDetails]()
+        let api = APIWrapper()
+        let response = api.getMethodCall(controllerName: "Production", actionName: "GetStockDetailOfRawMaterial?id=\(rawMaterialId)")
+        if response.ResponseCode == 200{
+            if let data = response.ResponseData{
+                rawMaterials = try! JSONDecoder().decode([RawMaterialDetails].self, from: data)
+            }
+        }
+        return rawMaterials
+    }
+    
 }
