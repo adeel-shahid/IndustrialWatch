@@ -22,8 +22,8 @@ class BatchesDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         statusContainer.layer.cornerRadius = 20
-        lblBatchNumber.text = "Batch#\(batchNumber)"
-        batchStatus = BatchViewModel().getBatcheDetailOf(batchNumber: "B002")
+        lblBatchNumber.text = "\(batchNumber)"
+        batchStatus = BatchViewModel().getBatcheDetailOf(batchNumber: batchNumber)
         if batchStatus.status == 1 && batchStatus.batch_number != ""{
             lblStatus.text = "Rejected"
             lblStatus.textColor = UIColor.white
@@ -32,21 +32,21 @@ class BatchesDetailViewController: UIViewController {
             lblStatus.text = "Accepted"
             lblStatus.textColor = UIColor.black
             statusContainer.backgroundColor = UIColor.gray
-        }else{
-            lblStatus.text = "UnManufactured"
+        }else if batchStatus.status == 2 && batchStatus.batch_number != ""{
+            lblStatus.text = "Pending"
             lblStatus.textColor = UIColor.white
             statusContainer.backgroundColor = UIColor.black
-            let newWidth: CGFloat = statusContainer.frame.width + 40 // Set your desired width
+            let newWidth: CGFloat = statusContainer.frame.width + 40
             var frame = statusContainer.frame
             frame.size.width = newWidth
             statusContainer.frame = frame
         }
         
-        lblDated.text = batchStatus.date
-        lblTotalPieces.text = "\(batchStatus.total_piece!)"
-        lblDefectedPieces.text = "\(batchStatus.defected_piece)"
-        lblRejectionTolerance.text = "\(batchStatus.rejection_tolerance!)"
-        lblTotalYield.text = "\(batchStatus.batch_yeild)"
+//        lblDated.text = batchStatus.date
+//        lblTotalPieces.text = "\(batchStatus.total_piece!)"
+//        lblDefectedPieces.text = "\(batchStatus.defected_piece)"
+//        lblRejectionTolerance.text = "\(batchStatus.rejection_tolerance!)"
+//        lblTotalYield.text = "\(batchStatus.batch_yeild)"
     }
 
     @IBAction func btnBack(_ sender: Any) {

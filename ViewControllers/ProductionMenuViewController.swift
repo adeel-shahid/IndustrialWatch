@@ -24,6 +24,7 @@ class ProductionMenuViewController: UIViewController {
         btnRawMaterial.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToRawMaterial(_:))))
         btnAddProduct.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToAddProduct(_ :))))
         btnInventory.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToInventory(_ :))))
+        btnBatch.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToProductViewController(_ :))))
     }
 
     @IBAction func btnBack(_ sender: Any) {
@@ -44,6 +45,12 @@ class ProductionMenuViewController: UIViewController {
     
     @objc func navigateToInventory(_ sender: Any){
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "InventoryViewController")
+        controller?.modalPresentationStyle = .fullScreen
+        self.present(controller!, animated: true)
+        
+    }
+    @objc func navigateToProductViewController(_ sender: Any){
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ProductViewController")
         controller?.modalPresentationStyle = .fullScreen
         self.present(controller!, animated: true)
         

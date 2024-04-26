@@ -44,14 +44,27 @@ struct ProductViewModel{
  
     
     func getProductFormulaOf(productNumber: String)->[ProductFormula]{
+        var product = Product(name: "", product_number: productNumber)
+        
+        // Encoding the string according to api format
+        if productNumber.contains("#"){
+            let originalString = productNumber
+            if let encodedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                print("Encoded String:", encodedString)
+                product.product_number = encodedString
+            }
+        }
+        
         var productFormula = [ProductFormula]()
         let api = APIWrapper()
-        let response = api.getMethodCall(controllerName: "Production", actionName: "GetFormulaOfProduct?product_number=\(productNumber)")
+        let response = api.getMethodCall(controllerName: "Production", actionName: "GetFormulaOfProduct?product_number=\(product.product_number)")
         if response.ResponseCode == 200{
             if let data = response.ResponseData {
+                print(data)
                 productFormula = try! JSONDecoder().decode([ProductFormula].self, from: data)
             }
         }
+        
         return productFormula
     }
     

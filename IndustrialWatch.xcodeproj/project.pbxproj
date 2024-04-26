@@ -72,6 +72,8 @@
 		52E6F21A2BCFBE1B0070DA67 /* ProductFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2192BCFBE1B0070DA67 /* ProductFormula.swift */; };
 		52E6F21C2BCFC9F50070DA67 /* ChooseStockForSpecificRawMaterialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F21B2BCFC9F50070DA67 /* ChooseStockForSpecificRawMaterialViewController.swift */; };
 		52E6F21E2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */; };
+		52E6F2212BD02ACC0070DA67 /* StaticList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2202BD02ACC0070DA67 /* StaticList.swift */; };
+		52E6F2232BD245140070DA67 /* DownloadManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */; };
 		52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */; };
 		52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */; };
 		52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */; };
@@ -185,6 +187,8 @@
 		52E6F2192BCFBE1B0070DA67 /* ProductFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFormula.swift; sourceTree = "<group>"; };
 		52E6F21B2BCFC9F50070DA67 /* ChooseStockForSpecificRawMaterialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStockForSpecificRawMaterialViewController.swift; sourceTree = "<group>"; };
 		52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStockForRawMaterialTableViewCell.swift; sourceTree = "<group>"; };
+		52E6F2202BD02ACC0070DA67 /* StaticList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticList.swift; sourceTree = "<group>"; };
+		52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerViewController.swift; sourceTree = "<group>"; };
 		52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
 		52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 		52165BDB2B13772200110579 = {
 			isa = PBXGroup;
 			children = (
+				52E6F21F2BD02AB00070DA67 /* StaticItems */,
 				525D926F2BB14DBE00F2EA73 /* Network */,
 				52FA8DB82B8628C0007F5AFE /* ViewModels */,
 				52FA8DB72B8628B6007F5AFE /* Models */,
@@ -304,6 +309,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		52E6F21F2BD02AB00070DA67 /* StaticItems */ = {
+			isa = PBXGroup;
+			children = (
+				52E6F2202BD02ACC0070DA67 /* StaticList.swift */,
+			);
+			path = StaticItems;
+			sourceTree = "<group>";
+		};
 		52FA8DA32B84B619007F5AFE /* CustomItems */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +340,7 @@
 				52E6F2072BC5452F0070DA67 /* ProductTableViewCell.swift */,
 				52E6F2172BCFBB320070DA67 /* ChoosedStockTableViewCell.swift */,
 				52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */,
+				52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -743,6 +757,8 @@
 				52C14A922B91D83E007B549C /* AddRawMaterialOldViewController.swift in Sources */,
 				52AD3F142BBF4D03002E5587 /* InventoryViewController.swift in Sources */,
 				52AD3F1C2BBF8837002E5587 /* RawMaterialDetailViewController.swift in Sources */,
+				52E6F2232BD245140070DA67 /* DownloadManagerViewController.swift in Sources */,
+				52E6F2212BD02ACC0070DA67 /* StaticList.swift in Sources */,
 				526D32302BBE3050008807CC /* RawTableViewCell.swift in Sources */,
 				52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */,
 			);
