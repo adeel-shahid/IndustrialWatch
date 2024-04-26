@@ -28,25 +28,32 @@ class BatchesDetailViewController: UIViewController {
             lblStatus.text = "Rejected"
             lblStatus.textColor = UIColor.white
             statusContainer.backgroundColor = UIColor.red
+            lblDated.text = batchStatus.date
+            lblTotalPieces.text = "\(batchStatus.total_piece!)"
+            lblDefectedPieces.text = "\(batchStatus.defected_piece!)"
+            lblRejectionTolerance.text = "\(batchStatus.rejection_tolerance!)"
+            lblTotalYield.text = "\(batchStatus.batch_yield!)"
         }else if batchStatus.status == 0 && batchStatus.batch_number != ""{
             lblStatus.text = "Accepted"
             lblStatus.textColor = UIColor.black
-            statusContainer.backgroundColor = UIColor.gray
+            statusContainer.backgroundColor = UIColor.green
+            lblDated.text = batchStatus.date
+            lblTotalPieces.text = "\(batchStatus.total_piece!)"
+            lblDefectedPieces.text = "\(batchStatus.defected_piece!)"
+            lblRejectionTolerance.text = "\(batchStatus.rejection_tolerance!)"
+            lblTotalYield.text = "\(batchStatus.batch_yield!)"
         }else if batchStatus.status == 2 && batchStatus.batch_number != ""{
             lblStatus.text = "Pending"
             lblStatus.textColor = UIColor.white
             statusContainer.backgroundColor = UIColor.black
-            let newWidth: CGFloat = statusContainer.frame.width + 40
-            var frame = statusContainer.frame
-            frame.size.width = newWidth
-            statusContainer.frame = frame
+            lblDated.text = batchStatus.date
+            lblTotalPieces.text = "None"
+            lblDefectedPieces.text = "None"
+            lblRejectionTolerance.text = "None"
+            lblTotalYield.text = "None"
+        }else{
+            lblStatus.text = "Not Found"
         }
-        
-//        lblDated.text = batchStatus.date
-//        lblTotalPieces.text = "\(batchStatus.total_piece!)"
-//        lblDefectedPieces.text = "\(batchStatus.defected_piece)"
-//        lblRejectionTolerance.text = "\(batchStatus.rejection_tolerance!)"
-//        lblTotalYield.text = "\(batchStatus.batch_yeild)"
     }
 
     @IBAction func btnBack(_ sender: Any) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cV3-ZD-HnI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="G3C-pM-xa1">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -4206,17 +4206,17 @@
         <image name="SectionGroup" width="407" height="91"/>
         <image name="Supervisor" width="484" height="484"/>
         <image name="ZipIconBlack" width="50" height="50"/>
-        <image name="arrow.backward" catalog="system" width="32" height="32"/>
-        <image name="chevron.down" catalog="system" width="32" height="32"/>
-        <image name="chevron.forward" catalog="system" width="32" height="32"/>
-        <image name="chevron.right" catalog="system" width="32" height="32"/>
-        <image name="chevron.up" catalog="system" width="32" height="32"/>
-        <image name="eye" catalog="system" width="32" height="32"/>
-        <image name="eye.slash" catalog="system" width="32" height="32"/>
+        <image name="arrow.backward" catalog="system" width="128" height="95"/>
+        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <image name="chevron.forward" catalog="system" width="97" height="128"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="chevron.up" catalog="system" width="128" height="70"/>
+        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="eye.slash" catalog="system" width="128" height="84"/>
         <image name="filledBack" width="43" height="43"/>
-        <image name="icloud.and.arrow.down.fill" catalog="system" width="32" height="32"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="32" height="32"/>
-        <image name="square" catalog="system" width="32" height="32"/>
+        <image name="icloud.and.arrow.down.fill" catalog="system" width="128" height="111"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
+        <image name="square" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

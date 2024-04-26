@@ -8,7 +8,7 @@
 import Foundation
 struct BatchStatus:Codable{
     var batch_number : String
-    var batch_yeild : Float?
+    var batch_yield : Float?
     var date : String?
     var defected_piece : Int?
     var rejection_tolerance : Float?

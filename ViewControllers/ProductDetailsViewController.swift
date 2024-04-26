@@ -24,8 +24,8 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! BatchesTableViewCell
         cell.lblBatchNumber.text = "\(batches[indexPath.row].batch_number)"
         let rejectedColor = UIColor.red.withAlphaComponent(0.2)
-        let acceptedColor = UIColor.green.withAlphaComponent(0.2)
-        let simpleColor = UIColor.gray.withAlphaComponent(0.2)
+        let acceptedColor = UIColor.green.withAlphaComponent(0.5)
+        let simpleColor = UIColor.gray.withAlphaComponent(0.5)
         if batches[indexPath.row].status == 1{
             cell.backgroundColor = rejectedColor
         }else if batches[indexPath.row].status == 0{
