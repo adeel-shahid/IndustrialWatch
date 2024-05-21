@@ -8,10 +8,10 @@
 import Foundation
 struct SectionViewModel{
     
-    func getAllSections()->[Section]{
+    func getAllSections(withStatus: Int) -> [Section]{
         var sections = [Section]()
         let api = APIWrapper()
-        let response : APIMessage = api.getMethodCall(controllerName: "Section", actionName: "get_all_sections")
+        let response : APIMessage = api.getMethodCall(controllerName: "Section", actionName: "GetAllSections?status=\(withStatus)")
         if response.ResponseCode == 200{
             if let data = response.ResponseData{
                 sections = try! JSONDecoder().decode([Section].self, from: data)
@@ -25,8 +25,8 @@ struct SectionViewModel{
     
     func getSectionByID(id: Int)->Section{
         let api = APIWrapper()
-        var section : Section = Section(id: 0, name: "", rules: [])
-        let response = api.getMethodCall(controllerName: "Section", actionName: "get_section_rules/\(id)")
+        var section : Section = Section(id: 0, name: "", status: 0)
+        let response = api.getMethodCall(controllerName: "Section", actionName: "GetSectionDetail?section_id=\(id)")
         if response.ResponseCode == 200{
             if let data = response.ResponseData{
                 section = try! JSONDecoder().decode(Section.self, from: data)
@@ -41,8 +41,40 @@ struct SectionViewModel{
     func insertSectionWithRules(section: Section)->APIMessage{
         let jsonData = try! JSONEncoder().encode(section)
         let api = APIWrapper()
-        let response = api.postMethodCall(controllerName: "Section", actionName: "insert_section", httpBody: jsonData)
+        let response = api.postMethodCall(controllerName: "Section", actionName: "InsertSection", httpBody: jsonData)
         return response
+    }
+    
+    func changeSectionStatus(withId: Int)->APIMessage{
+        let api = APIWrapper()
+        let response = api.getMethodCall(controllerName: "Section", actionName: "ChangeSectionAcitivityStatus?section_id=\(withId)")
+        return response
+    }
+    
+    func update(section: Section)->APIMessage{
+        let json = try! JSONEncoder().encode(section)
+        let api = APIWrapper()
+        let response = api.putMethodCall(controllerName: "Section", actionName: "UpdateSection", httpBody: json)
+        return response
+    }
+    
+    func getAllSectionNames(withStatus: Int)->[String]{
+        var sections = [Section]()
+        var sectionNames = [String]()
+        let api = APIWrapper()
+        let response : APIMessage = api.getMethodCall(controllerName: "Section", actionName: "GetAllSections?status=\(withStatus)")
+        if response.ResponseCode == 200{
+            if let data = response.ResponseData{
+                sections = try! JSONDecoder().decode([Section].self, from: data)
+            }
+        }
+        else{
+            print(response.ResponseMessage)
+        }
+        for section in sections {
+            sectionNames.append(section.name)
+        }
+        return sectionNames
     }
     
 }

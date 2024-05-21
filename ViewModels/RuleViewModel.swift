@@ -13,7 +13,7 @@ struct RuleViewModel{
     public func getRules() -> [Rule]{
         var rules : [Rule] = []
         let api = APIWrapper()
-        var response = api.getMethodCall(controllerName: "Rule", actionName: "get_all_rules")
+        var response = api.getMethodCall(controllerName: "Section", actionName: "GetAllRule")
         if response.ResponseCode == 200 {
             if let data = response.ResponseData{
                 rules = try! JSONDecoder().decode([Rule].self, from: data)

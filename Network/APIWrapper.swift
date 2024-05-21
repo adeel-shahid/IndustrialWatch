@@ -601,3 +601,31 @@ extension Data {
       }
    }
 }
+
+extension APIWrapper {
+    func getImageURL(imagePath: String)->URL{
+        var Converted = imagePath
+        if imagePath.contains("#"){
+            let originalString = imagePath
+            if let encodedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                Converted = encodedString
+            }
+        }
+        let api = APIWrapper()
+        let url = URL(string: "\(baseURLString)EmployeeImage/\(Converted)")
+        return url!
+    }
+    
+    func getViolationImageURL(imagePath: String)->URL{
+        var Converted = imagePath
+        if imagePath.contains("#"){
+            let originalString = imagePath
+            if let encodedString = originalString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+                Converted = encodedString
+            }
+        }
+        let api = APIWrapper()
+        let url = URL(string: "\(baseURLString)ViolationImage/\(Converted)")
+        return url!
+    }
+}

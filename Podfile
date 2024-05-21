@@ -6,6 +6,8 @@ target 'IndustrialWatch' do
   use_frameworks!
 	pod 'DropDown'
 	pod 'Toast-Swift'
+	pod 'BSImagePicker'
+	pod 'Kingfisher'
 
   # Pods for IndustrialWatch
 

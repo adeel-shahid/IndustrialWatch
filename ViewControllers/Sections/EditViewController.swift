@@ -1,15 +1,14 @@
 //
-//  AddOrEditSectionViewController.swift
+//  EditViewController.swift
 //  IndustrialWatch
 //
 //  Created by Adeel's MacBook on 21/02/2024.
 //
 
 import UIKit
+import Toast_Swift
+class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-class AddSectionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rules.count
     }
@@ -20,29 +19,45 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rulesCell") as! RulesAddorEditTableViewCell
-        cell.lblRuleName.text = rules[indexPath.row].rule_name
+        cell.lblRuleName.text = rules[indexPath.row].name
         cell.btnCheckBoxOutlet.tag = indexPath.row
         cell.btnCheckBoxOutlet.addTarget(self, action: #selector(btnCheckbox(_ :)), for: .touchUpInside)
+        for rule in selectedRules{
+            if rule.id == rules[indexPath.row].id{
+                cell.btnCheckBoxOutlet.isSelected = true
+                cell.txtFine.text = "\(rule.fine!)"
+                cell.txtTime.text = "\(rule.allowed_time!)"
+            }
+        }
         cells.append(cell)
         return cell
     }
-    var selectedRules = [Rule]()
     var rules = [Rule]()
     var cells = [RulesAddorEditTableViewCell]()
-    @IBOutlet weak var tableView: UITableView!
-    
+    var selectedRules = [Rule]()
     @IBOutlet weak var txtSectionName: UITexfield_Additions!
+    @IBOutlet weak var tableView: UITableView!
+    var sectionName : String = ""
+    var section_id : Int = 0
+    var section : Section = Section(id: 0, name: "", status: 0)
     override func viewDidLoad() {
         super.viewDidLoad()
         txtSectionName.layer.cornerRadius = 15
+        txtSectionName.text = sectionName
+        section = SectionViewModel().getSectionByID(id: section_id)
+        selectedRules = section.rules!
         rules = RuleViewModel().getRules()
-        tableView.dataSource = self
+        print(rules)
         tableView.delegate = self
+        tableView.dataSource = self
+    }
+
+    var predicate: (() -> Void)?
+    @IBAction func btnBack(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
-    var predicate: (() -> Void)?
-    @IBAction func btnConfirmSection(_ sender: Any) {
-        
+    @IBAction func btnUpdateSection(_ sender: Any) {
         guard let section = txtSectionName.text, !txtSectionName.text!.isEmpty else {
             //Swift tost Notification
             if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
@@ -57,27 +72,29 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
                 selectedRules.append(rule)
             }
         }
-        let s = Section(id: 0, name: section, rules: selectedRules)
-        let response = SectionViewModel().insertSectionWithRules(section: s)
+        // updating selected rules list
+        selectedRules = [Rule]()
+        for cell in cells {
+            if cell.btnCheckBoxOutlet.isSelected{
+                let r = Rule(id: rules[cell.btnCheckBoxOutlet.tag].id, name: rules[cell.btnCheckBoxOutlet.tag].name,allowed_time:cell.txtTime.text!, fine:Int(cell.txtFine.text!))
+                selectedRules.append(r)
+            }
+        }
+        
+        
+        let s = Section(id: self.section_id, name: section, rules: selectedRules, status: 1)
+        let response = SectionViewModel().update(section: s)
         if response.ResponseCode == 200{
 //            //Swift tost Notification
-            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
-               let topViewController = window.rootViewController?.topMostViewController() {
-                topViewController.view.makeToast("Section Inserted Seccessfully", duration: 3.0, position: .bottom)
-            }
+            view.makeToast("Section Updated Successfully", duration: 2, position: .bottom)
             predicate?()
-            self.dismiss(animated: true,completion: predicate)
+            self.dismiss(animated: true,completion: nil)
         }else{
             let alert = UIAlertController(title: "Error", message: response.ResponseMessage, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
             self.present(alert, animated: true)
         }
-        
     }
-    @IBAction func btnBack(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
- 
     @objc func btnCheckbox(_ sender: UIButton){
         if cells[sender.tag].btnCheckBoxOutlet.isSelected{
             cells[sender.tag].btnCheckBoxOutlet.isSelected = false
@@ -149,5 +166,4 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
         print("\n\(rules)")
         cells[sender.tag].btnCheckBoxOutlet.isSelected = true
     }
-    
 }

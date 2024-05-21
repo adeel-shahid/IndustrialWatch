@@ -163,6 +163,7 @@ class AddProductViewController: UIViewController, UITableViewDataSource ,UITable
             cbxBackOutlet.isSelected = false
             cbxLeftOutlet.isSelected = false
             cbxRightOutlet.isSelected = false
+            self.dismiss(animated: true)
         }else{
             view.makeToast(response.ResponseMessage, duration: 3.0, position: .bottom)
         }

@@ -16,6 +16,7 @@ class AdminDashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicator.isHidden = true
         optimizeUI()
     }
     @IBAction func btnLogout(_ sender: Any) {
@@ -23,6 +24,7 @@ class AdminDashboardViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private func optimizeUI(){
         btnSection.layer.cornerRadius = 20
         btnProduction.layer.cornerRadius = 20
@@ -39,9 +41,17 @@ class AdminDashboardViewController: UIViewController {
     }
     
     @objc private func navigateToSectionView(){
+        Task{
+            await asyncNavigationToSectionView()
+        }
+    }
+    
+    func asyncNavigationToSectionView() async {
+        showActivityIndicator()
         let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
         controller?.modalPresentationStyle = .fullScreen
         self.present(controller!, animated: true)
+        hideActivityIndicator()
     }
     
     @objc private func navigateToSupervisorView(){
@@ -62,4 +72,13 @@ class AdminDashboardViewController: UIViewController {
         self.present(controller!, animated: true)
     }
     
+    private func showActivityIndicator(){
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+    }
+    
+    private func hideActivityIndicator(){
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.isHidden = true
+    }
 }

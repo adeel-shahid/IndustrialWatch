@@ -9,7 +9,7 @@ import UIKit
 
 class SectionsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var btnDeleteOutlet: UIButton!
+    @IBOutlet weak var btnArchievedOutlet: UIButton!
     @IBOutlet weak var btnEditOutlet: UIButton!
     @IBOutlet weak var lblSectionName: UILabel!
     var sectionName : String = ""

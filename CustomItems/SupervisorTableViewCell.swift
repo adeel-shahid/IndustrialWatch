@@ -9,9 +9,8 @@ import UIKit
 
 class SupervisorTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var btnEdit: UIButton!
-    @IBOutlet weak var lbluserName: UILabel!
+    @IBOutlet weak var lblSections: UILabel!
     @IBOutlet weak var lblName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

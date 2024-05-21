@@ -17,6 +17,7 @@ class LinkProductViewController: UIViewController {
     @IBOutlet weak var txtrejTolerance: UITexfield_Additions!
     @IBOutlet weak var txtPieces: UITexfield_Additions!
     
+    @IBOutlet weak var btnShowDropDownOutlet: UIButton!
     var predicate: (() -> Void)?
     
     var products = [Product]()
@@ -32,6 +33,13 @@ class LinkProductViewController: UIViewController {
         var productsString = [String]()
         for product in products {
             productsString.append(product.name)
+        }
+        if products.count == 0{
+            txtSelectedText.text = "No Product Found"
+            btnShowDropDownOutlet.isHidden = true
+        }else{
+            txtSelectedText.text = "--Select Product--"
+            btnShowDropDownOutlet.isHidden = false
         }
         // Products Drop Down
         DropDownView.layer.cornerRadius = 15

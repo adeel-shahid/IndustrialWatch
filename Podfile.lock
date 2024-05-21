@@ -1,20 +1,28 @@
 PODS:
+  - BSImagePicker (3.3.2)
   - DropDown (2.3.13)
+  - Kingfisher (7.10.1)
   - Toast-Swift (5.1.0)
 
 DEPENDENCIES:
+  - BSImagePicker
   - DropDown
+  - Kingfisher
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
+    - BSImagePicker
     - DropDown
+    - Kingfisher
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  BSImagePicker: 568ba98dcd066fb10f85dc84e3f8385881bdd1f8
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
   Toast-Swift: dd369e68ee529f542c65bd0d0c6c50cd743cf6f2
 
-PODFILE CHECKSUM: da96d9199404afd3b42b20d86d2ef51ca38a8f9b
+PODFILE CHECKSUM: 4fd520012fa15bcdf67cecd089fad8f8a448c6dd
 
 COCOAPODS: 1.8.4

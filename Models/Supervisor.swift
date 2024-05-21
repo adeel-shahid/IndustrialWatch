@@ -7,10 +7,16 @@
 
 import Foundation
 struct Supervisor:Codable{
-    var id: Int
-    var name : String
+    var employee_id : Int
+    var employee_name : String
+    var sections : [String]
+}
+
+struct SupervisorDetail : Codable{
+    var employee_id : Int?
+    var name : String?
     var username : String
     var password : String
-    var role : String
     var sections : [Section]
+    var sections_id : [Int]?
 }

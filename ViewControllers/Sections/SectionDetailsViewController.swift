@@ -9,7 +9,7 @@ import UIKit
 
 class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.section.rules.count
+        return self.section.rules!.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -19,9 +19,13 @@ class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rulesCell") as! RulesTableViewCell
         cell.lblCount.text = "\(indexPath.row + 1)"
-        cell.lblRuleName.text = self.section.rules[indexPath.row].rule_name
-        cell.lblTime.text = self.section.rules[indexPath.row].allowed_time
-        cell.lblFine.text = "Rs.\(self.section.rules[indexPath.row].fine)"
+        cell.lblRuleName.text = self.section.rules?[indexPath.row].name
+        cell.lblTime.text = self.section.rules?[indexPath.row].allowed_time
+        if let fine = self.section.rules?[indexPath.row].fine{
+            cell.lblFine.text = "Rs.\(fine)"
+        }else{
+            cell.lblFine.text = "Rs.0"
+        }
         return cell
     }
     
@@ -30,7 +34,7 @@ class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITab
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblSectionName: UILabel!
     var sectionName : String = "Not Found"
-    var section : Section = Section(id: 0, name: "", rules: [])
+    var section : Section = Section(id: 0, name: "", status: 0)
     var id : Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +52,11 @@ class SectionDetailsViewController: UIViewController,UITableViewDataSource,UITab
     @IBAction func btnEditSection(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "EditViewController") as! EditViewController
         controller.sectionName = sectionName
+        controller.section_id = self.id
+        controller.predicate = { [unowned self] in
+            self.section = SectionViewModel().getSectionByID(id: self.id)
+            tableView.reloadData()
+        }
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }

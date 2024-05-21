@@ -9,5 +9,6 @@ import Foundation
 struct Section:Codable{
     var id : Int
     var name : String
-    var rules : [Rule]
+    var rules : [Rule]?
+    var status : Int?
 }

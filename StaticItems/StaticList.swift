@@ -13,6 +13,7 @@ struct NavigationStock:Encodable{
 }
 
 struct Stocks:Encodable{
+    var raw_material_id : Int
     var stocks : [String]
 }
 

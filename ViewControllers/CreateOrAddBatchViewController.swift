@@ -51,9 +51,9 @@ class CreateOrAddBatchViewController: UIViewController, UITableViewDataSource, U
     
     @objc func btnChooseStock(_ sender:UIButton){
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "ChooseStockForSpecificRawMaterialViewController") as! ChooseStockForSpecificRawMaterialViewController
-        controller.predicate = {[unowned self] stocks in
+        controller.predicate = {[unowned self] stocks, raw_material_id in
             stockList = stocks
-            let s = Stocks(stocks: stockList)
+            let s = Stocks(raw_material_id: raw_material_id, stocks: stockList)
             self.stocks.append(s)
         }
         controller.modalPresentationStyle = .fullScreen

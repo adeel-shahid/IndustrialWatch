@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		212E9E2132D138F98D23E96D /* Pods_IndustrialWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D494E09CDE91DF213437980 /* Pods_IndustrialWatch.framework */; };
+		520265882BDBBA06008C3A64 /* EmployeeProductivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520265872BDBBA06008C3A64 /* EmployeeProductivityViewController.swift */; };
+		5202658A2BDBC000008C3A64 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520265892BDBC000008C3A64 /* AddEmployeeViewController.swift */; };
+		52056A792BF9CB1500C157AA /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A782BF9CB1500C157AA /* AttendanceTableViewCell.swift */; };
+		52056A7B2BF9CBD300C157AA /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A7A2BF9CBD300C157AA /* AttendanceViewController.swift */; };
+		52056A7D2BF9CD0200C157AA /* Attendance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A7C2BF9CD0200C157AA /* Attendance.swift */; };
+		52056A7F2BF9DA3100C157AA /* ViolationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A7E2BF9DA3100C157AA /* ViolationTableViewCell.swift */; };
+		52056A812BF9DBB400C157AA /* ViolationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A802BF9DBB400C157AA /* ViolationsViewController.swift */; };
+		52056A832BF9DD2400C157AA /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A822BF9DD2400C157AA /* Violation.swift */; };
+		52056A852BF9E6B600C157AA /* ViolationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A842BF9E6B600C157AA /* ViolationDetailViewController.swift */; };
+		520DF2312BF342A700775512 /* EmployeesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DF2302BF342A700775512 /* EmployeesDetailTableViewCell.swift */; };
+		520DF2332BF34EB900775512 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DF2322BF34EB900775512 /* Employee.swift */; };
 		52165BE82B13772300110579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BE72B13772300110579 /* AppDelegate.swift */; };
 		52165BEA2B13772300110579 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BE92B13772300110579 /* SceneDelegate.swift */; };
 		52165BEC2B13772300110579 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BEB2B13772300110579 /* LoginViewController.swift */; };
@@ -17,6 +28,13 @@
 		52165BFF2B13772500110579 /* IndustrialWatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BFE2B13772500110579 /* IndustrialWatchTests.swift */; };
 		52165C092B13772500110579 /* IndustrialWatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165C082B13772500110579 /* IndustrialWatchUITests.swift */; };
 		52165C0B2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */; };
+		52172CD82BF1EB8300165117 /* EmployeeRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52172CD72BF1EB8300165117 /* EmployeeRecordViewController.swift */; };
+		52172CE02BF2028700165117 /* EmployeeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52172CDE2BF2028700165117 /* EmployeeCollectionViewCell.swift */; };
+		52172CE12BF2028700165117 /* EmployeeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52172CDF2BF2028700165117 /* EmployeeCollectionViewCell.xib */; };
+		522848512BE25508002600FF /* ArchivedSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522848502BE25508002600FF /* ArchivedSectionViewController.swift */; };
+		5228AD672BF3537400940D8E /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228AD662BF3537400940D8E /* EmployeeViewModel.swift */; };
+		522EBEE52BFBB5DF006A41D1 /* HorizontalImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EBEE42BFBB5DF006A41D1 /* HorizontalImageSlider.swift */; };
+		522EBEE82BFBC866006A41D1 /* SupervisorDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */; };
 		525D926C2BB14B1200F2EA73 /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D926B2BB14B1200F2EA73 /* Batch.swift */; };
 		525D926E2BB14D1C00F2EA73 /* BatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */; };
 		525D92712BB14DDF00F2EA73 /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D92702BB14DDF00F2EA73 /* APIWrapper.swift */; };
@@ -54,6 +72,7 @@
 		52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A8F2B91D16E007B549C /* RawMaterial.swift */; };
 		52C14A922B91D83E007B549C /* AddRawMaterialOldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A912B91D83E007B549C /* AddRawMaterialOldViewController.swift */; };
 		52C14A942B91EF80007B549C /* BatchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C14A932B91EF80007B549C /* BatchDetailViewController.swift */; };
+		52C5CB8C2BF4A2FD00DCCEE0 /* JobRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5CB8B2BF4A2FD00DCCEE0 /* JobRole.swift */; };
 		52D848E52BAC0BDB00795ACB /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D848E42BAC0BDB00795ACB /* ImageDetailsViewController.swift */; };
 		52D848E72BAC0D0800795ACB /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D848E62BAC0D0800795ACB /* Slide.swift */; };
 		52D848E92BAC0D4000795ACB /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D848E82BAC0D4000795ACB /* Slide.xib */; };
@@ -74,11 +93,12 @@
 		52E6F21E2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */; };
 		52E6F2212BD02ACC0070DA67 /* StaticList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2202BD02ACC0070DA67 /* StaticList.swift */; };
 		52E6F2232BD245140070DA67 /* DownloadManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */; };
+		52F4F3AA2BF8AD7800FCF4B5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F3A92BF8AD7800FCF4B5 /* CircularProgressView.swift */; };
+		52F4F3AC2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F3AB2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift */; };
 		52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */; };
 		52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */; };
 		52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */; };
 		52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */; };
-		52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DAD2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift */; };
 		52FA8DB02B85D3F9007F5AFE /* ProductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DAF2B85D3F9007F5AFE /* ProductionViewController.swift */; };
 		52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DB12B85EFE4007F5AFE /* SectionsTableViewCell.swift */; };
 		52FA8DB42B85FC68007F5AFE /* SectionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */; };
@@ -91,8 +111,7 @@
 		52FA8DC42B8875C5007F5AFE /* SupervisorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC32B8875C5007F5AFE /* SupervisorTableViewCell.swift */; };
 		52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC52B887787007F5AFE /* Supervisor.swift */; };
 		52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC72B88780F007F5AFE /* SupervisorViewModel.swift */; };
-		52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */; };
-		52FA8DCC2B8885D0007F5AFE /* AddSupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */; };
+		52FA8DCC2B8885D0007F5AFE /* EditSupervisorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8DCB2B8885D0007F5AFE /* EditSupervisorViewController.swift */; };
 		695FD89D19D30D2A6E04AB22 /* Pods_IndustrialWatchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0430D8193EEB2B3ABFBCABD0 /* Pods_IndustrialWatchTests.framework */; };
 		E68B58458601D952EAEEBCA7 /* Pods_IndustrialWatch_IndustrialWatchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */; };
 /* End PBXBuildFile section */
@@ -118,6 +137,17 @@
 		0349A2C40FAAE439A937BB3D /* Pods-IndustrialWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatch.release.xcconfig"; path = "Target Support Files/Pods-IndustrialWatch/Pods-IndustrialWatch.release.xcconfig"; sourceTree = "<group>"; };
 		0430D8193EEB2B3ABFBCABD0 /* Pods_IndustrialWatchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42D3562E3E9347C26F271969 /* Pods-IndustrialWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-IndustrialWatchTests/Pods-IndustrialWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		520265872BDBBA06008C3A64 /* EmployeeProductivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeProductivityViewController.swift; sourceTree = "<group>"; };
+		520265892BDBC000008C3A64 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		52056A782BF9CB1500C157AA /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
+		52056A7A2BF9CBD300C157AA /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
+		52056A7C2BF9CD0200C157AA /* Attendance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendance.swift; sourceTree = "<group>"; };
+		52056A7E2BF9DA3100C157AA /* ViolationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationTableViewCell.swift; sourceTree = "<group>"; };
+		52056A802BF9DBB400C157AA /* ViolationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationsViewController.swift; sourceTree = "<group>"; };
+		52056A822BF9DD2400C157AA /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
+		52056A842BF9E6B600C157AA /* ViolationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationDetailViewController.swift; sourceTree = "<group>"; };
+		520DF2302BF342A700775512 /* EmployeesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesDetailTableViewCell.swift; sourceTree = "<group>"; };
+		520DF2322BF34EB900775512 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		52165BE42B13772300110579 /* IndustrialWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndustrialWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52165BE72B13772300110579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52165BE92B13772300110579 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,7 +161,14 @@
 		52165C042B13772500110579 /* IndustrialWatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IndustrialWatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52165C082B13772500110579 /* IndustrialWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialWatchUITests.swift; sourceTree = "<group>"; };
 		52165C0A2B13772500110579 /* IndustrialWatchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustrialWatchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52172CD72BF1EB8300165117 /* EmployeeRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRecordViewController.swift; sourceTree = "<group>"; };
+		52172CDE2BF2028700165117 /* EmployeeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCollectionViewCell.swift; sourceTree = "<group>"; };
+		52172CDF2BF2028700165117 /* EmployeeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeeCollectionViewCell.xib; sourceTree = "<group>"; };
 		5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatch_IndustrialWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		522848502BE25508002600FF /* ArchivedSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedSectionViewController.swift; sourceTree = "<group>"; };
+		5228AD662BF3537400940D8E /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		522EBEE42BFBB5DF006A41D1 /* HorizontalImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalImageSlider.swift; sourceTree = "<group>"; };
+		522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorDashBoardViewController.swift; sourceTree = "<group>"; };
 		525D926B2BB14B1200F2EA73 /* Batch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
 		525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchViewModel.swift; sourceTree = "<group>"; };
 		525D92702BB14DDF00F2EA73 /* APIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
@@ -169,6 +206,7 @@
 		52C14A8F2B91D16E007B549C /* RawMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawMaterial.swift; sourceTree = "<group>"; };
 		52C14A912B91D83E007B549C /* AddRawMaterialOldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRawMaterialOldViewController.swift; sourceTree = "<group>"; };
 		52C14A932B91EF80007B549C /* BatchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchDetailViewController.swift; sourceTree = "<group>"; };
+		52C5CB8B2BF4A2FD00DCCEE0 /* JobRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRole.swift; sourceTree = "<group>"; };
 		52D848E42BAC0BDB00795ACB /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		52D848E62BAC0D0800795ACB /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		52D848E82BAC0D4000795ACB /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
@@ -189,11 +227,12 @@
 		52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStockForRawMaterialTableViewCell.swift; sourceTree = "<group>"; };
 		52E6F2202BD02ACC0070DA67 /* StaticList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticList.swift; sourceTree = "<group>"; };
 		52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerViewController.swift; sourceTree = "<group>"; };
+		52F4F3A92BF8AD7800FCF4B5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		52F4F3AB2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
 		52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboardViewController.swift; sourceTree = "<group>"; };
 		52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewController.swift; sourceTree = "<group>"; };
 		52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorViewController.swift; sourceTree = "<group>"; };
-		52FA8DAD2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeProductivityViewController.swift; sourceTree = "<group>"; };
 		52FA8DAF2B85D3F9007F5AFE /* ProductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionViewController.swift; sourceTree = "<group>"; };
 		52FA8DB12B85EFE4007F5AFE /* SectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewCell.swift; sourceTree = "<group>"; };
 		52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -206,8 +245,7 @@
 		52FA8DC32B8875C5007F5AFE /* SupervisorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorTableViewCell.swift; sourceTree = "<group>"; };
 		52FA8DC52B887787007F5AFE /* Supervisor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supervisor.swift; sourceTree = "<group>"; };
 		52FA8DC72B88780F007F5AFE /* SupervisorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorViewModel.swift; sourceTree = "<group>"; };
-		52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSupervisorViewController.swift; sourceTree = "<group>"; };
-		52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSupervisorViewController.swift; sourceTree = "<group>"; };
+		52FA8DCB2B8885D0007F5AFE /* EditSupervisorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSupervisorViewController.swift; sourceTree = "<group>"; };
 		89DDD90D836219D9A5FE99E9 /* Pods-IndustrialWatchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatchTests.release.xcconfig"; path = "Target Support Files/Pods-IndustrialWatchTests/Pods-IndustrialWatchTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D494E09CDE91DF213437980 /* Pods_IndustrialWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F22864B34F65B51D9C5B4C /* Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig"; path = "Target Support Files/Pods-IndustrialWatch-IndustrialWatchUITests/Pods-IndustrialWatch-IndustrialWatchUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -243,6 +281,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520265862BDBB9E4008C3A64 /* EmployeeProductivity */ = {
+			isa = PBXGroup;
+			children = (
+				52056A802BF9DBB400C157AA /* ViolationsViewController.swift */,
+				520265872BDBBA06008C3A64 /* EmployeeProductivityViewController.swift */,
+				520265892BDBC000008C3A64 /* AddEmployeeViewController.swift */,
+				52172CD72BF1EB8300165117 /* EmployeeRecordViewController.swift */,
+				52F4F3AB2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift */,
+				52056A7A2BF9CBD300C157AA /* AttendanceViewController.swift */,
+				52056A842BF9E6B600C157AA /* ViolationDetailViewController.swift */,
+			);
+			path = EmployeeProductivity;
+			sourceTree = "<group>";
+		};
 		52165BDB2B13772200110579 = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +353,52 @@
 			path = IndustrialWatchUITests;
 			sourceTree = "<group>";
 		};
+		52172CDB2BF2014700165117 /* CollectionViewItem */ = {
+			isa = PBXGroup;
+			children = (
+				52172CDE2BF2028700165117 /* EmployeeCollectionViewCell.swift */,
+				52172CDF2BF2028700165117 /* EmployeeCollectionViewCell.xib */,
+			);
+			path = CollectionViewItem;
+			sourceTree = "<group>";
+		};
+		52225F832BEA596C00C7D909 /* Supervisor */ = {
+			isa = PBXGroup;
+			children = (
+				52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */,
+				52FA8DCB2B8885D0007F5AFE /* EditSupervisorViewController.swift */,
+			);
+			path = Supervisor;
+			sourceTree = "<group>";
+		};
+		522EBEE32BFBB5C1006A41D1 /* ImageSlider */ = {
+			isa = PBXGroup;
+			children = (
+				522EBEE42BFBB5DF006A41D1 /* HorizontalImageSlider.swift */,
+			);
+			path = ImageSlider;
+			sourceTree = "<group>";
+		};
+		522EBEE62BFBC841006A41D1 /* SupervisorSide */ = {
+			isa = PBXGroup;
+			children = (
+				522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */,
+			);
+			path = SupervisorSide;
+			sourceTree = "<group>";
+		};
+		5242784D2BDF7527005E4096 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */,
+				522848502BE25508002600FF /* ArchivedSectionViewController.swift */,
+				52FA8DBD2B86326F007F5AFE /* AddSectionViewController.swift */,
+				52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */,
+				52FA8DC12B8645D0007F5AFE /* EditViewController.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
 		525D926F2BB14DBE00F2EA73 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,9 +415,20 @@
 			path = StaticItems;
 			sourceTree = "<group>";
 		};
+		52F4F3A82BF8AD4F00FCF4B5 /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				52F4F3A92BF8AD7800FCF4B5 /* CircularProgressView.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
 		52FA8DA32B84B619007F5AFE /* CustomItems */ = {
 			isa = PBXGroup;
 			children = (
+				522EBEE32BFBB5C1006A41D1 /* ImageSlider */,
+				52F4F3A82BF8AD4F00FCF4B5 /* ProgressBar */,
+				52172CDB2BF2014700165117 /* CollectionViewItem */,
 				52E6F20D2BCCF0340070DA67 /* BatchesTableViewCell.swift */,
 				52FA8DA42B84B641007F5AFE /* TextFieldWithPadding.swift */,
 				52FA8DB12B85EFE4007F5AFE /* SectionsTableViewCell.swift */,
@@ -341,6 +450,9 @@
 				52E6F2172BCFBB320070DA67 /* ChoosedStockTableViewCell.swift */,
 				52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */,
 				52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */,
+				520DF2302BF342A700775512 /* EmployeesDetailTableViewCell.swift */,
+				52056A782BF9CB1500C157AA /* AttendanceTableViewCell.swift */,
+				52056A7E2BF9DA3100C157AA /* ViolationTableViewCell.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -348,17 +460,13 @@
 		52FA8DA62B85C544007F5AFE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				522EBEE62BFBC841006A41D1 /* SupervisorSide */,
+				52225F832BEA596C00C7D909 /* Supervisor */,
+				5242784D2BDF7527005E4096 /* Sections */,
+				520265862BDBB9E4008C3A64 /* EmployeeProductivity */,
 				52165BEB2B13772300110579 /* LoginViewController.swift */,
 				52FA8DA72B85C571007F5AFE /* AdminDashboardViewController.swift */,
-				52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */,
-				52FA8DAB2B85D398007F5AFE /* SupervisorViewController.swift */,
-				52FA8DAD2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift */,
 				52FA8DAF2B85D3F9007F5AFE /* ProductionViewController.swift */,
-				52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */,
-				52FA8DBD2B86326F007F5AFE /* AddSectionViewController.swift */,
-				52FA8DC12B8645D0007F5AFE /* EditViewController.swift */,
-				52FA8DC92B887E71007F5AFE /* EditSupervisorViewController.swift */,
-				52FA8DCB2B8885D0007F5AFE /* AddSupervisorViewController.swift */,
 				52C14A8B2B91C959007B549C /* CreateBatchViewController.swift */,
 				52C14A912B91D83E007B549C /* AddRawMaterialOldViewController.swift */,
 				52C14A932B91EF80007B549C /* BatchDetailViewController.swift */,
@@ -401,6 +509,10 @@
 				52E6F2112BCE7F080070DA67 /* LinkProduct.swift */,
 				52E6F2132BCEBCD50070DA67 /* BatchStatus.swift */,
 				52E6F2192BCFBE1B0070DA67 /* ProductFormula.swift */,
+				520DF2322BF34EB900775512 /* Employee.swift */,
+				52C5CB8B2BF4A2FD00DCCEE0 /* JobRole.swift */,
+				52056A7C2BF9CD0200C157AA /* Attendance.swift */,
+				52056A822BF9DD2400C157AA /* Violation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -416,6 +528,7 @@
 				52AD3F092BBEA177002E5587 /* FormulaViewModel.swift */,
 				52AD3F112BBF3E61002E5587 /* ProductViewModel.swift */,
 				52AD3F192BBF802B002E5587 /* InventoryViewModel.swift */,
+				5228AD662BF3537400940D8E /* EmployeeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -554,6 +667,7 @@
 			files = (
 				52165BF42B13772400110579 /* LaunchScreen.storyboard in Resources */,
 				52165BF12B13772400110579 /* Assets.xcassets in Resources */,
+				52172CE12BF2028700165117 /* EmployeeCollectionViewCell.xib in Resources */,
 				52165BEF2B13772300110579 /* Main.storyboard in Resources */,
 				52D848E92BAC0D4000795ACB /* Slide.xib in Resources */,
 			);
@@ -684,14 +798,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				526D32262BBD7A37008807CC /* ProductionMenuViewController.swift in Sources */,
+				522EBEE52BFBB5DF006A41D1 /* HorizontalImageSlider.swift in Sources */,
 				52AD3F0E2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift in Sources */,
 				5289FB592B9AEE3400570BEA /* DefectsTableViewCell.swift in Sources */,
 				52E3E0692BBAE6E200E4E107 /* SectionViewModel.swift in Sources */,
 				52C14A8A2B91C278007B549C /* BatchTableViewCell.swift in Sources */,
 				52FA8DBC2B86292F007F5AFE /* RuleViewModel.swift in Sources */,
-				52FA8DAE2B85D3DF007F5AFE /* EmployeeProductivityViewController.swift in Sources */,
 				52E6F2082BC5452F0070DA67 /* ProductTableViewCell.swift in Sources */,
+				52C5CB8C2BF4A2FD00DCCEE0 /* JobRole.swift in Sources */,
+				5202658A2BDBC000008C3A64 /* AddEmployeeViewController.swift in Sources */,
 				5289FB532B99D1C200570BEA /* Formula.swift in Sources */,
+				520DF2332BF34EB900775512 /* Employee.swift in Sources */,
 				52AD3F0C2BBEA435002E5587 /* CustomDropDownViewController.swift in Sources */,
 				52E3E0672BBAE5F400E4E107 /* Section.swift in Sources */,
 				52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */,
@@ -705,6 +822,7 @@
 				52AD3F242BBF9BBE002E5587 /* Stock.swift in Sources */,
 				52E6F2122BCE7F080070DA67 /* LinkProduct.swift in Sources */,
 				526D322E2BBDBC4A008807CC /* RawMaterialViewModel.swift in Sources */,
+				52056A7D2BF9CD0200C157AA /* Attendance.swift in Sources */,
 				52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */,
 				52E6F2162BCFB09B0070DA67 /* CreateOrAddBatchViewController.swift in Sources */,
 				52E6F2102BCD073A0070DA67 /* BatchesDetailViewController.swift in Sources */,
@@ -713,7 +831,8 @@
 				52E6F2062BC544280070DA67 /* ProductViewController.swift in Sources */,
 				52E6F20A2BCBAC680070DA67 /* LinkProductViewController.swift in Sources */,
 				52FA8DC42B8875C5007F5AFE /* SupervisorTableViewCell.swift in Sources */,
-				52FA8DCC2B8885D0007F5AFE /* AddSupervisorViewController.swift in Sources */,
+				520DF2312BF342A700775512 /* EmployeesDetailTableViewCell.swift in Sources */,
+				52FA8DCC2B8885D0007F5AFE /* EditSupervisorViewController.swift in Sources */,
 				52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */,
 				52FA8DBE2B86326F007F5AFE /* AddSectionViewController.swift in Sources */,
 				52FA8DC22B8645D0007F5AFE /* EditViewController.swift in Sources */,
@@ -722,22 +841,29 @@
 				5289FB572B9AE8B600570BEA /* DefectDetailsViewController.swift in Sources */,
 				525D926C2BB14B1200F2EA73 /* Batch.swift in Sources */,
 				52FA8DB62B8626DC007F5AFE /* RulesTableViewCell.swift in Sources */,
+				52056A792BF9CB1500C157AA /* AttendanceTableViewCell.swift in Sources */,
+				52056A812BF9DBB400C157AA /* ViolationsViewController.swift in Sources */,
+				52172CD82BF1EB8300165117 /* EmployeeRecordViewController.swift in Sources */,
 				52E6F21E2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift in Sources */,
 				52165BEC2B13772300110579 /* LoginViewController.swift in Sources */,
 				52AD3F182BBF7FB0002E5587 /* Inventory.swift in Sources */,
 				52641ED52B91ACB600C490E4 /* CustomDropDownTableViewCell.swift in Sources */,
 				52E6F21C2BCFC9F50070DA67 /* ChooseStockForSpecificRawMaterialViewController.swift in Sources */,
+				52F4F3AA2BF8AD7800FCF4B5 /* CircularProgressView.swift in Sources */,
 				52AD3F202BBF8A23002E5587 /* RawMaterialDetails.swift in Sources */,
 				52FA8DA52B84B641007F5AFE /* TextFieldWithPadding.swift in Sources */,
 				52AD3F162BBF7EF7002E5587 /* InventoryTableViewCell.swift in Sources */,
 				52AD3F102BBF3CDA002E5587 /* Product.swift in Sources */,
 				52E6F20C2BCBC2610070DA67 /* ProductDetailsViewController.swift in Sources */,
+				520265882BDBBA06008C3A64 /* EmployeeProductivityViewController.swift in Sources */,
+				52172CE02BF2028700165117 /* EmployeeCollectionViewCell.swift in Sources */,
 				52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */,
-				52FA8DCA2B887E71007F5AFE /* EditSupervisorViewController.swift in Sources */,
 				5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */,
 				52E6F20E2BCCF0340070DA67 /* BatchesTableViewCell.swift in Sources */,
 				525D926E2BB14D1C00F2EA73 /* BatchViewModel.swift in Sources */,
+				5228AD672BF3537400940D8E /* EmployeeViewModel.swift in Sources */,
 				52165BE82B13772300110579 /* AppDelegate.swift in Sources */,
+				522848512BE25508002600FF /* ArchivedSectionViewController.swift in Sources */,
 				5289FB552B9AE30900570BEA /* DefectProductViewController.swift in Sources */,
 				52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */,
 				52E6F2182BCFBB320070DA67 /* ChoosedStockTableViewCell.swift in Sources */,
@@ -745,6 +871,8 @@
 				52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */,
 				52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */,
 				526D32342BBE8079008807CC /* AddRawMaterialViewController.swift in Sources */,
+				52056A852BF9E6B600C157AA /* ViolationDetailViewController.swift in Sources */,
+				522EBEE82BFBC866006A41D1 /* SupervisorDashBoardViewController.swift in Sources */,
 				52FA8DB02B85D3F9007F5AFE /* ProductionViewController.swift in Sources */,
 				526D32282BBDA829008807CC /* RawMaterialViewController.swift in Sources */,
 				52C14A942B91EF80007B549C /* BatchDetailViewController.swift in Sources */,
@@ -752,12 +880,16 @@
 				526D32362BBE8B7C008807CC /* AddProductViewController.swift in Sources */,
 				52165BEA2B13772300110579 /* SceneDelegate.swift in Sources */,
 				52AD3F0A2BBEA177002E5587 /* FormulaViewModel.swift in Sources */,
+				52056A7B2BF9CBD300C157AA /* AttendanceViewController.swift in Sources */,
+				52F4F3AC2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift in Sources */,
+				52056A7F2BF9DA3100C157AA /* ViolationTableViewCell.swift in Sources */,
 				52FA8DC02B863C7B007F5AFE /* RulesAddorEditTableViewCell.swift in Sources */,
 				52AD3F1E2BBF8941002E5587 /* RawMaterialDetailsTableViewCell.swift in Sources */,
 				52C14A922B91D83E007B549C /* AddRawMaterialOldViewController.swift in Sources */,
 				52AD3F142BBF4D03002E5587 /* InventoryViewController.swift in Sources */,
 				52AD3F1C2BBF8837002E5587 /* RawMaterialDetailViewController.swift in Sources */,
 				52E6F2232BD245140070DA67 /* DownloadManagerViewController.swift in Sources */,
+				52056A832BF9DD2400C157AA /* Violation.swift in Sources */,
 				52E6F2212BD02ACC0070DA67 /* StaticList.swift in Sources */,
 				526D32302BBE3050008807CC /* RawTableViewCell.swift in Sources */,
 				52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */,
@@ -940,9 +1072,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IndustrialWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Industrial Watch";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -968,9 +1102,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IndustrialWatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Industrial Watch";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

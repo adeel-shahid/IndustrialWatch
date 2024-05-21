@@ -24,7 +24,7 @@ class ChooseStockForSpecificRawMaterialViewController: UIViewController, UITable
     
 
     var stockList = [String]()
-    var predicate : ((_ stocks: [String])->Void)?
+    var predicate : ((_ stocks: [String], _ raw_material_id: Int)->Void)?
     @IBOutlet weak var UICustomButton: UIView!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var lblRawMaterialName: UILabel!
@@ -64,7 +64,7 @@ class ChooseStockForSpecificRawMaterialViewController: UIViewController, UITable
         if stockList.count == 0{
             view.makeToast("Atleast one Stock should be selected",  duration: 1, position: .bottom)
         }else{
-            predicate?(stockList)
+            predicate?(stockList,productFormula.raw_material_id)
             self.dismiss(animated: true)
         }
     }

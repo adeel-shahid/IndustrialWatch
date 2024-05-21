@@ -14,30 +14,19 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-5F-tPd">
-                    <rect key="frame" x="16" y="179" width="358" height="309"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xWj-5F-tPd">
+                    <rect key="frame" x="16" y="47" width="358" height="309"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8r-nW-W1W">
-                    <rect key="frame" x="172" y="122" width="184" height="23"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWd-RR-GNP">
-                    <rect key="frame" x="174" y="143" width="182" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xWj-5F-tPd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Fok-qy-EqB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xWj-5F-tPd" secondAttribute="trailing" constant="16" id="Noz-oL-Hpn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="xWj-5F-tPd" secondAttribute="bottom" constant="454" id="c6l-AD-dJt"/>
+                <constraint firstItem="xWj-5F-tPd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="lAr-AK-YQh"/>
+            </constraints>
             <connections>
-                <outlet property="defectAngle" destination="U8r-nW-W1W" id="v0S-4Z-EKE"/>
-                <outlet property="defectCaptureTime" destination="gWd-RR-GNP" id="E39-Uq-14S"/>
                 <outlet property="imageView" destination="xWj-5F-tPd" id="Qgo-hi-9yG"/>
             </connections>
             <point key="canvasLocation" x="136.92307692307691" y="20.616113744075829"/>

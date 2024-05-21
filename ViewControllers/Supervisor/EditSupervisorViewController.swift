@@ -6,8 +6,8 @@
 //
 
 import UIKit
-
-class AddSupervisorViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+import Toast_Swift
+class EditSupervisorViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections.count
     }
@@ -39,11 +39,19 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource,UITabl
         cell.btnCheckbox.addTarget(self, action: #selector(btnCheckbox(_:)), for: .touchUpInside)
         cell.btnCheckbox.tag = indexPath.row
         // cell.btnCheckbox.accessibilityLabel = allSections[indexPath.row]
+        for sec in supervisor.sections{
+            if sec == sections[indexPath.row].name{
+                cell.btnCheckbox.isSelected = true
+            }
+        }
         uibuttons.append(cell.btnCheckbox)
+        cell.layer.cornerRadius = 10
         cell.isUserInteractionEnabled = true
         return cell
     }
     
+    
+    @IBOutlet weak var UICustomButtonUpdate: UIView!
     @IBOutlet weak var btnShowDropDown: UIButton!
     @IBOutlet weak var lblSelectSection: UILabel!
     @IBOutlet weak var dropdownTable: UITableView!
@@ -52,21 +60,27 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource,UITabl
     @IBOutlet weak var txtUsername: UITexfield_Additions!
     @IBOutlet weak var txtName: UITexfield_Additions!
     
-    var allSections = [String]()
+//    var allSections = [String]()
     var selectedSections = [Section]()
     var uibuttons = [UIButton]()
     var sections = [Section]()
-    
+    var supervisor = Supervisor(employee_id: 0, employee_name: "Not Found", sections: [])
+    var supervisorDetail = SupervisorDetail(username: "", password: "", sections: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         txtUsername.layer.cornerRadius = 15
         txtPassword.layer.cornerRadius = 15
         txtName.layer.cornerRadius = 15
         sectioAssignContainer.layer.cornerRadius = 15
-        sections = SectionViewModel().getAllSections()
-        allSections.append("Packing")
-        allSections.append("Management")
-        allSections.append("Marketing")
+        UICustomButtonUpdate.layer.cornerRadius = 15
+        UICustomButtonUpdate.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnUpdateSupervisor(_ :))))
+        sections = try! SectionViewModel().getAllSections(withStatus: 1)
+        txtName.text = supervisor.employee_name
+        supervisorDetail = SupervisorViewModel().getSupervisorById(id: supervisor.employee_id)
+        txtUsername.text = supervisorDetail.username
+        txtPassword.text = supervisorDetail.password
+        selectedSections = supervisorDetail.sections
+        setSections()
         dropdownTable.dataSource = self
         dropdownTable.delegate = self
         sectioAssignContainer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showNhideDropDown(_ :))))
@@ -76,24 +90,6 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource,UITabl
         self.dismiss(animated: true)
     }
     
-    @IBAction func btnCreateAccount(_ sender: Any) {
-        let s = Supervisor(id: 0, name: txtName.text!, username: txtUsername.text!, password: txtPassword.text!, role: "Supervisor", sections: selectedSections)
-        let response = SupervisorViewModel().insertSupervisor(supervisor: s)
-        if response.ResponseCode == 200{
-            // Swift tost
-            if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
-               let topViewController = window.rootViewController?.topMostViewController() {
-                topViewController.view.makeToast("Section Inserted Seccessfully", duration: 3.0, position: .bottom)
-            }
-            predicate?()
-            self.dismiss(animated: true)
-        }else{
-            let alert = UIAlertController(title: "Error", message: response.ResponseMessage, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .destructive))
-            self.present(alert, animated: true)
-        }
-        //self.dismiss(animated: true)
-    }
     var predicate : (() -> Void)?
     @objc func btnCheckbox(_ sender: UIButton){
         sender.isSelected = !sender.isSelected
@@ -136,6 +132,32 @@ class AddSupervisorViewController: UIViewController,UITableViewDataSource,UITabl
     @objc func showNhideDropDown(_ sender: Any){
         dropdownTable.isHidden = !dropdownTable.isHidden
         btnShowDropDown.isSelected = !btnShowDropDown.isSelected
+    }
+    
+    @objc func btnUpdateSupervisor(_ sender: Any){
+        guard let name = txtName.text, !txtName.text!.isEmpty,
+              let username = txtUsername.text, !txtUsername.text!.isEmpty,
+              let password = txtPassword.text, !txtPassword.text!.isEmpty,
+              selectedSections.count != 0
+        else{
+            view.makeToast("Fill the TextFields and select at least one Section!", duration: 2, position: .bottom)
+            return
+        }
+        var sectionIds = [Int]()
+        for section in selectedSections {
+            sectionIds.append(section.id)
+        }
+        let s = SupervisorDetail(employee_id: supervisor.employee_id,name: name,username: username, password: password, sections: selectedSections,sections_id: sectionIds)
+        let response = SupervisorViewModel().updateSupervisor(supervisor: s)
+        if response.ResponseCode == 200{
+            view.makeToast("Supervisor Updated Successfully", duration: 2, position: .bottom)
+            predicate?()
+            self.dismiss(animated: true)
+        }else{
+            let alert = UIAlertController(title: "Error", message: response.ResponseMessage, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(alert, animated: true)
+        }
     }
     
 }
