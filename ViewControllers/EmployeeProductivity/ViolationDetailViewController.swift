@@ -26,8 +26,8 @@ class ViolationDetailViewController: UIViewController,UIScrollViewDelegate {
         lblTime.text = "10 : 00 AM"
         lblDate.text = "23 August 2023"
         lblSectionName.text = "Packing"
-        imgArray.append(UIImage(named: "Defect1")!)
-        imgArray.append(UIImage(named: "Defect2")!)
+        imgArray.append(UIImage(named: "ViolationsSmoking")!)
+        imgArray.append(UIImage(named: "MobileUsageViolation")!)
         setUpImageScrollView()
     }
     func setUpImageScrollView() {

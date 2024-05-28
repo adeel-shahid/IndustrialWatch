@@ -22,8 +22,13 @@ class ViolationsViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.lblViolationName.text = violations[indexPath.row].rule_name
         cell.lblTime.text = violations[indexPath.row].time
         cell.lblDate.text = violations[indexPath.row].date
-        let url = APIWrapper().getViolationImageURL(imagePath: violations[indexPath.row].images[0])
-        cell.UIImageView.kf.setImage(with: url)
+//        let url = APIWrapper().getViolationImageURL(imagePath: violations[indexPath.row].images[0])
+//        cell.UIImageView.kf.setImage(with: url)
+        if indexPath.row == 0{
+            cell.UIImageView.image = UIImage(named: "ViolationsSmoking")
+        }else if indexPath.row == 1{
+            cell.UIImageView.image = UIImage(named: "MobileUsageViolation")
+        }
         return cell
     }
     

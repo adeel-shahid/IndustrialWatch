@@ -106,4 +106,52 @@ struct EmployeeViewModel{
         return violations
     }
     
+    func login(username: String, password: String) -> User?{
+        do{
+            var user = User(id: 0, name: "", user_role: "")
+            let api = APIWrapper()
+            let response = api.getMethodCall(controllerName: "Employee", actionName: "Login?username=\(username)&password=\(password)")
+            if response.ResponseCode == 200{
+                if let data = response.ResponseData{
+                    user = try JSONDecoder().decode(User.self, from: data)
+                }
+            }
+            return user
+        }catch{
+            return nil
+        }
+    }
+    
+    func getEmployeeProfileDetail(employeeId : Int) -> EmployeeProfileDetail{
+        var profile = EmployeeProfileDetail(name: "", job_type: "", job_role: "", section: "", username: "", password: "", image: "")
+        let api = APIWrapper()
+        let response = api.getMethodCall(controllerName: "Employee", actionName: "GetEmployeeProfile?employee_id=\(employeeId)")
+        if response.ResponseCode == 200{
+            if let data = response.ResponseData {
+                profile = try! JSONDecoder().decode(EmployeeProfileDetail.self, from: data)
+            }
+        }
+        return profile
+    }
+    
+    func updateEmployeeProfile(profile: EmployeeProfileDetail) -> APIMessage{
+        let json = try! JSONEncoder().encode(profile)
+        let api = APIWrapper()
+        let response = api.putMethodCall(controllerName: "Employee", actionName: "UpdateEmployeeProfile", httpBody: json)
+        return response
+    }
+    
+    
+    func getEmployeeSummary(employeeId: Int, date: String) -> EmployeeSummary{
+        let api = APIWrapper()
+        var summary = EmployeeSummary(total_fine: 0.0, violation_count: 0, attendance_rate: "0/0")
+        let response = api.getMethodCall(controllerName: "Employee", actionName: "GetEmployeeSummary?employee_id=\(employeeId)&date=\(date)")
+        if response.ResponseCode == 200 {
+            if let data = response.ResponseData{
+                summary = try! JSONDecoder().decode(EmployeeSummary.self, from: data)
+            }
+        }
+        return summary
+    }
+    
 }

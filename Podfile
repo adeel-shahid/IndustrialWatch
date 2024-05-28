@@ -8,6 +8,7 @@ target 'IndustrialWatch' do
 	pod 'Toast-Swift'
 	pod 'BSImagePicker'
 	pod 'Kingfisher'
+	pod 'Alamofire'
 
   # Pods for IndustrialWatch
 

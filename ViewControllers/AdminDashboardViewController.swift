@@ -9,14 +9,16 @@ import UIKit
 
 class AdminDashboardViewController: UIViewController {
 
+    @IBOutlet weak var lblAdminName: UILabel!
     @IBOutlet weak var btnSection: UIView!
     @IBOutlet weak var btnProduction: UIView!
     @IBOutlet weak var btnEmployeeProductivity: UIView!
     @IBOutlet weak var btnSupervisors: UIView!
-    
+    var adminName = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator.isHidden = true
+        lblAdminName.text = adminName
         optimizeUI()
     }
     @IBAction func btnLogout(_ sender: Any) {

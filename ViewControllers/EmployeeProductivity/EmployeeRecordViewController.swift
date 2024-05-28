@@ -19,6 +19,9 @@ class EmployeeRecordViewController: UIViewController, UITableViewDataSource, UIT
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! EmployeesDetailTableViewCell
+        if pos >= employees.count{
+            return cell
+        }
         cell.UIContainer2.isHidden = true
         cell.UIContainer1.isHidden = false
         let regContainer1 = CustomTapGestureRecognizer(target: self, action: #selector(btnEmployeeDetails(_ :)))
@@ -27,11 +30,14 @@ class EmployeeRecordViewController: UIViewController, UITableViewDataSource, UIT
         cell.Container1lblName.text = employees[pos].name
         cell.Container1JobRole.text = employees[pos].section_name
         cell.Container1Percentege.text = "\(employees[pos].productivity)%"
-        let url = APIWrapper().getImageURL(imagePath: employees[pos].image)
-        cell.container1ImageView.kf.setImage(with: url)
+        let url = APIWrapper().getImageURL(imagePath: employees[pos].image,employeeId: employees[pos].employee_id)
+         cell.container1ImageView.kf.setImage(with: url)
         cell.UIContainer1.tag = pos
         pos += 1
         if pos < employees.count{
+            if pos >= employees.count{
+                return cell
+            }
             cell.UIContainer2.isHidden = false
             let regContainer2 = CustomTapGestureRecognizer(target: self, action: #selector(btnEmployeeDetails(_ :)))
             regContainer2.index = pos
@@ -39,7 +45,7 @@ class EmployeeRecordViewController: UIViewController, UITableViewDataSource, UIT
             cell.Container2lblName.text = employees[pos].name
             cell.Container2JobRole.text = employees[pos].section_name
             cell.Container2Percentege.text = "\(employees[pos].productivity)%"
-            let url = APIWrapper().getImageURL(imagePath: employees[pos].image)
+            let url = APIWrapper().getImageURL(imagePath: employees[pos].image,employeeId: employees[pos].employee_id)
             cell.Container2ImageView.kf.setImage(with: url)
             cell.UIContainer2.tag = pos
             pos += 1

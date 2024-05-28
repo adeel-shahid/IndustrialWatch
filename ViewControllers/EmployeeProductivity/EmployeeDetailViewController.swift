@@ -33,6 +33,7 @@ class EmployeeDetailViewController: UIViewController {
         UICustomButtonSummary.layer.cornerRadius = 10
         UICustomButtonAttendance.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnAttendance(_ :))))
         UICustomButtonViolations.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnViolations(_ :))))
+        UICustomButtonSummary.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(btnSummary(_ :))))
         self.progressViewContainer.setProgressColor = UIColor.green
         self.progressViewContainer.setTrackColor = UIColor.gray
         self.progressViewContainer.setProgressWithAnimation(duration: 2.0, value: (self.employeeDetail.productivity / 100))
@@ -52,6 +53,13 @@ class EmployeeDetailViewController: UIViewController {
     }
     @objc func btnViolations(_ sender: Any){
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViolationsViewController") as! ViolationsViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.employeeId = self.employeeId
+        controller.employeeName = self.employeeName
+        self.present(controller, animated: true)
+    }
+    @objc func btnSummary(_ sender: Any){
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SummaryViewController") as! SummaryViewController
         controller.modalPresentationStyle = .fullScreen
         controller.employeeId = self.employeeId
         controller.employeeName = self.employeeName

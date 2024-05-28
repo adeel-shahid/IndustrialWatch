@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Toast_Swift
 class LoginViewController: UIViewController {
     @IBOutlet weak var btnEye: UIButton!
     @IBOutlet weak var txtUsername: UITextField!
@@ -29,46 +29,45 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnLogin(_ sender: Any) {
-        if txtUsername.text == "adeel"
-            && txtPassword.text == "123"{
-            let controller = storyboard?.instantiateViewController(withIdentifier: "AdminDashboardViewController")
-            controller?.modalPresentationStyle = .fullScreen
-            self.present(controller!, animated: true)
-        }else{
-            let alert = UIAlertController(title: "Alert", message: "Invalid Username or password", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default))
-            self.present(alert, animated: true)
+        authenticateUser()
+    }
+    
+    private func authenticateUser(){
+        if let username = txtUsername.text, !txtUsername.text!.isEmpty,
+           let password = txtPassword.text, !txtPassword.text!.isEmpty
+        {
+            let responseUser = EmployeeViewModel().login(username: username, password: password)
+            if responseUser != nil{
+                if responseUser?.user_role == "Admin"{
+                    self.txtUsername.text = ""
+                    self.txtPassword.text = ""
+                    let controller = storyboard?.instantiateViewController(withIdentifier: "AdminDashboardViewController") as! AdminDashboardViewController
+                    controller.modalPresentationStyle = .fullScreen
+                    controller.adminName = responseUser!.name
+                    self.present(controller, animated: true)
+                }else if responseUser?.user_role == "Supervisor"{
+                    self.txtUsername.text = ""
+                    self.txtPassword.text = ""
+                    let controller = storyboard?.instantiateViewController(withIdentifier: "SupervisorDashBoardViewController") as! SupervisorDashBoardViewController
+                    controller.supervisorName = responseUser!.name
+                    controller.modalPresentationStyle = .fullScreen
+                    self.present(controller, animated: true)
+                }else if responseUser?.user_role == "Employee"{
+                    self.txtUsername.text = ""
+                    self.txtPassword.text = ""
+                    let controller = storyboard?.instantiateViewController(withIdentifier: "EmployeeDashboard")
+                    let objUserDefault = UserDefaults.standard
+                    objUserDefault.set(responseUser!.name, forKey: "username")
+                    objUserDefault.set(responseUser!.id, forKey: "employeeId")
+                    controller?.modalPresentationStyle = .fullScreen
+                    self.present(controller!, animated: true)
+                }else{
+                    self.view.makeToast("Invalid Crediential Please Try Again", duration: 3.0, position: .bottom)
+                }
+            }else{
+                self.view.makeToast("Invalid Crediential Please Try Again", duration: 3.0, position: .bottom)
+            }
         }
     }
     
-    
-    //Custom eye visibility on and off
-    
-    
-//    var iconsClick = false
-//    let imageicon = UIImageView()
-    //        imageicon.image = UIImage(named: "eyeclose")
-    //        let contentView = UIView()
-    //        contentView.addSubview(imageicon)
-    //        contentView.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-    //        imageicon.frame = CGRect(x: -10, y: 0, width: 20, height: 20)
-    //        txtPassword.rightView = contentView
-    //        txtPassword.rightViewMode = .always
-    //        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped(Gesture:)))
-    //        imageicon.isUserInteractionEnabled = true
-    //        imageicon.addGestureRecognizer(tapGesture)
-    
-    
-    //    @objc func imageTapped(Gesture:UITapGestureRecognizer){
-    //        let tappedImage = Gesture.view as! UIImageView
-    //        if iconsClick{
-    //            iconsClick = false
-    //            tappedImage.image = UIImage(named: "eyeopen")
-    //            txtPassword.isSecureTextEntry = false
-    //        }else{
-    //            iconsClick = true
-    //            tappedImage.image = UIImage(named: "eyeclose")
-    //            txtPassword.isSecureTextEntry = true
-    //        }
-    //    }
 }

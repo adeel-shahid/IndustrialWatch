@@ -603,7 +603,7 @@ extension Data {
 }
 
 extension APIWrapper {
-    func getImageURL(imagePath: String)->URL{
+    func getImageURL(imagePath: String, employeeId: Int)->URL{
         var Converted = imagePath
         if imagePath.contains("#"){
             let originalString = imagePath
@@ -611,8 +611,7 @@ extension APIWrapper {
                 Converted = encodedString
             }
         }
-        let api = APIWrapper()
-        let url = URL(string: "\(baseURLString)EmployeeImage/\(Converted)")
+        let url = URL(string: "\(baseURLString)EmployeeImage/\(employeeId)/\(Converted)")
         return url!
     }
     
