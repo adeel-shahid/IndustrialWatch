@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
                     self.txtPassword.text = ""
                     let controller = storyboard?.instantiateViewController(withIdentifier: "SupervisorDashBoardViewController") as! SupervisorDashBoardViewController
                     controller.supervisorName = responseUser!.name
+                    controller.supervisorId = responseUser!.id
                     controller.modalPresentationStyle = .fullScreen
                     self.present(controller, animated: true)
                 }else if responseUser?.user_role == "Employee"{

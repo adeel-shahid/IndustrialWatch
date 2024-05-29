@@ -14,20 +14,22 @@ class ViolationsViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 123
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViolationDetailViewController") as! ViolationDetailViewController
+        controller.modalPresentationStyle = .fullScreen
+        controller.employeeName = self.employeeName
+        controller.violationId = violations[indexPath.row].violation_id
+        self.present(controller, animated: true)
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! ViolationTableViewCell
         cell.lblViolationName.text = violations[indexPath.row].rule_name
-        cell.lblTime.text = violations[indexPath.row].time
+        cell.lblTime.text = violations[indexPath.row].start_time
         cell.lblDate.text = violations[indexPath.row].date
-//        let url = APIWrapper().getViolationImageURL(imagePath: violations[indexPath.row].images[0])
-//        cell.UIImageView.kf.setImage(with: url)
-        if indexPath.row == 0{
-            cell.UIImageView.image = UIImage(named: "ViolationsSmoking")
-        }else if indexPath.row == 1{
-            cell.UIImageView.image = UIImage(named: "MobileUsageViolation")
+        if violations[indexPath.row].images.count > 0
+        && violations[indexPath.row].images[0].image_url != nil{
+            let url = APIWrapper().getViolationImageURL(imagePath: violations[indexPath.row].images[0].image_url!)
+            cell.UIImageView.kf.setImage(with: url)
         }
         return cell
     }

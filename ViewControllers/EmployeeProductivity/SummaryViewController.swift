@@ -20,7 +20,7 @@ class SummaryViewController: UIViewController {
     @IBOutlet weak var circularView: CircularProgressView!
     var employeeName = ""
     var employeeId = 0
-    var summary = EmployeeSummary(total_fine: 0.0, violation_count: 0, attendance_rate: "0/0")
+    var summary = EmployeeSummary(total_fine: 0.0, violation_count: 0, attendance_rate: "")
     override func viewDidLoad() {
         super.viewDidLoad()
         lblEmployeeName.text = employeeName
@@ -66,18 +66,26 @@ class SummaryViewController: UIViewController {
     }
     
     private func setData(){
+        
         let date = formateTime(self.datePicker)
         summary = EmployeeViewModel().getEmployeeSummary(employeeId: self.employeeId, date: date)
         lblTotalAttendance.text = summary.attendance_rate
         lblTotalFine.text = "\(summary.total_fine)"
         lblViolations.text = "\(summary.violation_count)"
+        if self.summary.attendance_rate == ""{
+            return
+        }
         circularView.setProgressColor = UIColor.green
         circularView.setTrackColor = UIColor.gray
         let atdarr = summary.attendance_rate.split(separator: "/")
         print(atdarr)
-        let presents = Float(atdarr[0])!
-        let total = Float(atdarr[1])!
-        circularView.setProgressWithAnimation(duration: 2.0, value: (presents / total))
+        if let presents = Float(atdarr[0]),
+        let total = Float(atdarr[1])
+        {
+            circularView.setProgressWithAnimation(duration: 2.0, value: (presents / total))
+        }else{
+            circularView.setProgressWithAnimation(duration: 2.0, value: 0)
+        }
     }
     
     

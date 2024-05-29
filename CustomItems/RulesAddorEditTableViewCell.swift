@@ -9,9 +9,10 @@ import UIKit
 import Toast_Swift
 class RulesAddorEditTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerTime: UIView!
+    @IBOutlet weak var txtTime: UILabel!
     @IBOutlet weak var lblRuleName: UILabel!
     @IBOutlet weak var btnCheckBoxOutlet: UIButton!
-    @IBOutlet weak var txtTime: UITexfield_Additions!
     @IBOutlet weak var txtFine: UITexfield_Additions!
     
     override func awakeFromNib() {
@@ -22,7 +23,7 @@ class RulesAddorEditTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         txtFine.layer.cornerRadius = 10
-        txtTime.layer.cornerRadius = 10
+        containerTime.layer.cornerRadius = 10
         rules = RuleViewModel().getRules()
         
     }
@@ -30,6 +31,8 @@ class RulesAddorEditTableViewCell: UITableViewCell {
     @IBAction func btnCheckBox(_ sender: UIButton) {
         
     }
+    
+    
 }
 
 

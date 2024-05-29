@@ -13,7 +13,8 @@ class DownloadManagerViewController: UIViewController, DownloadDelegate {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var container: UIView!
     
-    let downloadURLString = "http://10.211.55.3:5000/api/Production/GetAllDefectedImages?product_number=Cei%2306042024124659"
+    let downloadURLString = "http://10.211.55.3:5000/api/Production/GetAllDefectedImages?product_number=Dis%2321052024003405"
+    
     var download: Download?
     
     override func viewDidLoad() {

@@ -302,7 +302,7 @@ class AddEmployeeViewController: UIViewController, UIImagePickerControllerDelega
            let url = URL(string: "http://10.211.55.3:5000/api/Employee/AddEmployee")!
            var request = URLRequest(url: url)
            request.httpMethod = "POST"
-
+        request.timeoutInterval = 300 // 5 minutes in seconds
            let boundary = UUID().uuidString
            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 

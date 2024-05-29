@@ -21,6 +21,7 @@ class EmployeeProductivityViewController: UIViewController {
         btnEmployeesRecord.layer.cornerRadius = 20
         btnAddEmployee.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToAddEmployyee(_ :))))
         btnEmployeesRecord.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToEmployyeeRecord(_ :))))
+        btnEmployeeRanking.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigateToEmployeeRanking(_ :))))
     }
 
     @IBAction func btnBack(_ sender: Any) {
@@ -33,6 +34,11 @@ class EmployeeProductivityViewController: UIViewController {
     }
     @objc func navigateToEmployyeeRecord(_ sender: Any){
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "EmployeeRecordViewController")
+        controller?.modalPresentationStyle = .fullScreen
+        self.present(controller!, animated: true)
+    }
+    @objc func navigateToEmployeeRanking(_ sender: Any){
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "EmployeeRankingViewController")
         controller?.modalPresentationStyle = .fullScreen
         self.present(controller!, animated: true)
     }

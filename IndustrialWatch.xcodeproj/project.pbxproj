@@ -19,6 +19,7 @@
 		52056A832BF9DD2400C157AA /* Violation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A822BF9DD2400C157AA /* Violation.swift */; };
 		52056A852BF9E6B600C157AA /* ViolationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A842BF9E6B600C157AA /* ViolationDetailViewController.swift */; };
 		520580422C04FFD700DFB4FC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520580412C04FFD700DFB4FC /* User.swift */; };
+		520859502C065DA0001168C9 /* AutomationResponseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208594F2C065DA0001168C9 /* AutomationResponseTableViewCell.swift */; };
 		520DF2312BF342A700775512 /* EmployeesDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DF2302BF342A700775512 /* EmployeesDetailTableViewCell.swift */; };
 		520DF2332BF34EB900775512 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520DF2322BF34EB900775512 /* Employee.swift */; };
 		52165BE82B13772300110579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52165BE72B13772300110579 /* AppDelegate.swift */; };
@@ -97,6 +98,7 @@
 		52E6F21E2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */; };
 		52E6F2212BD02ACC0070DA67 /* StaticList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2202BD02ACC0070DA67 /* StaticList.swift */; };
 		52E6F2232BD245140070DA67 /* DownloadManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */; };
+		52F29DDC2C06CC8200284236 /* ScanningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F29DDB2C06CC8200284236 /* ScanningViewController.swift */; };
 		52F4F3AA2BF8AD7800FCF4B5 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F3A92BF8AD7800FCF4B5 /* CircularProgressView.swift */; };
 		52F4F3AC2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4F3AB2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift */; };
 		52F959B72BFCA9F800FBE3C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F959B62BFCA9F800FBE3C1 /* HomeViewController.swift */; };
@@ -164,6 +166,7 @@
 		52056A822BF9DD2400C157AA /* Violation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Violation.swift; sourceTree = "<group>"; };
 		52056A842BF9E6B600C157AA /* ViolationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationDetailViewController.swift; sourceTree = "<group>"; };
 		520580412C04FFD700DFB4FC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5208594F2C065DA0001168C9 /* AutomationResponseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationResponseTableViewCell.swift; sourceTree = "<group>"; };
 		520DF2302BF342A700775512 /* EmployeesDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesDetailTableViewCell.swift; sourceTree = "<group>"; };
 		520DF2322BF34EB900775512 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		52165BE42B13772300110579 /* IndustrialWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IndustrialWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +250,7 @@
 		52E6F21D2BCFCA560070DA67 /* ChooseStockForRawMaterialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseStockForRawMaterialTableViewCell.swift; sourceTree = "<group>"; };
 		52E6F2202BD02ACC0070DA67 /* StaticList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticList.swift; sourceTree = "<group>"; };
 		52E6F2222BD245140070DA67 /* DownloadManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManagerViewController.swift; sourceTree = "<group>"; };
+		52F29DDB2C06CC8200284236 /* ScanningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningViewController.swift; sourceTree = "<group>"; };
 		52F4F3A92BF8AD7800FCF4B5 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		52F4F3AB2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailViewController.swift; sourceTree = "<group>"; };
 		52F959B62BFCA9F800FBE3C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 				522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */,
 				52FB72E12BFD0D95005F74C3 /* SupervisorEmployeeMonitoringViewController.swift */,
 				52FB72E32BFD103A005F74C3 /* SupervisorDefectMonitoringViewController.swift */,
+				52F29DDB2C06CC8200284236 /* ScanningViewController.swift */,
 			);
 			path = SupervisorSide;
 			sourceTree = "<group>";
@@ -504,6 +509,7 @@
 				52056A782BF9CB1500C157AA /* AttendanceTableViewCell.swift */,
 				52056A7E2BF9DA3100C157AA /* ViolationTableViewCell.swift */,
 				52FB72E92BFD1708005F74C3 /* EmployeeRankingTableViewCell.swift */,
+				5208594F2C065DA0001168C9 /* AutomationResponseTableViewCell.swift */,
 			);
 			path = CustomItems;
 			sourceTree = "<group>";
@@ -880,6 +886,7 @@
 				526D32322BBE596E008807CC /* UpdateRawMaterialViewController.swift in Sources */,
 				52AD3F122BBF3E61002E5587 /* ProductViewModel.swift in Sources */,
 				52FA8DAA2B85D1D0007F5AFE /* SectionViewController.swift in Sources */,
+				520859502C065DA0001168C9 /* AutomationResponseTableViewCell.swift in Sources */,
 				52E6F21A2BCFBE1B0070DA67 /* ProductFormula.swift in Sources */,
 				52AD3F242BBF9BBE002E5587 /* Stock.swift in Sources */,
 				52E6F2122BCE7F080070DA67 /* LinkProduct.swift in Sources */,
@@ -937,6 +944,7 @@
 				52FA8DC62B887787007F5AFE /* Supervisor.swift in Sources */,
 				52E6F2182BCFBB320070DA67 /* ChoosedStockTableViewCell.swift in Sources */,
 				52E6F2142BCEBCD50070DA67 /* BatchStatus.swift in Sources */,
+				52F29DDC2C06CC8200284236 /* ScanningViewController.swift in Sources */,
 				52FA8DC82B88780F007F5AFE /* SupervisorViewModel.swift in Sources */,
 				52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */,
 				526D32342BBE8079008807CC /* AddRawMaterialViewController.swift in Sources */,

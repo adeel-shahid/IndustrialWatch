@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Kingfisher
 class ViolationDetailViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var lblEmployeeName: UILabel!
@@ -17,49 +17,63 @@ class ViolationDetailViewController: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var ScrollViewContainer: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageController: UIPageControl!
-    var employeeName = "Muhammad Anees"
+    var employeeName = "Not Found"
+    var violationId = 0
     var imgArray = [UIImage]()
+    var urls = [String]()
+    var violations = Violation(allowed_time: "", end_time: "", start_time: "", section_id: 0, section_name: "", violation_id: 0, date: "", rule_name: "", images: [])
     override func viewDidLoad() {
         super.viewDidLoad()
         lblEmployeeName.text = employeeName
-        lblviolatedRuleName.text = "Mobile Usage"
-        lblTime.text = "10 : 00 AM"
-        lblDate.text = "23 August 2023"
-        lblSectionName.text = "Packing"
-        imgArray.append(UIImage(named: "ViolationsSmoking")!)
-        imgArray.append(UIImage(named: "MobileUsageViolation")!)
+        violations = EmployeeViewModel().getEmployeeViolationDetails(violationId: violationId)
+        lblviolatedRuleName.text = violations.rule_name
+        lblTime.text = violations.start_time
+        lblDate.text = violations.date
+        lblSectionName.text = violations.section_name
+        
+        for img in violations.images{
+            if let url = img.image_url{
+                urls.append(url)
+            }
+        }
         setUpImageScrollView()
     }
+    
+    
     func setUpImageScrollView() {
-            // Calculate the height of the scroll view to fit within the parent view
-            let scrollViewHeight = self.ScrollViewContainer.frame.height - 40
-            
-            scrollView.isPagingEnabled = true
-            scrollView.showsHorizontalScrollIndicator = false
-            scrollView.showsVerticalScrollIndicator = false
-            scrollView.delegate = self
-            scrollView.bounces = false // Optional: to prevent bouncing effect vertically
-            
-            for i in 0..<imgArray.count {
+        // Calculate the height of the scroll view to fit within the parent view
+        let scrollViewHeight = self.ScrollViewContainer.frame.height - 40
+        
+        scrollView.isPagingEnabled = true
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.delegate = self
+        scrollView.bounces = false // Optional: to prevent bouncing effect vertically
+        
+        DispatchQueue.main.async { [self] in
+            for i in 0..<self.urls.count {
                 let imageView = UIImageView(frame: CGRect(x: CGFloat(i) * scrollView.frame.width, y: 0, width: scrollView.frame.width, height: scrollViewHeight))
                 imageView.contentMode = .scaleAspectFit
-                imageView.image = imgArray[i]
+                let url = APIWrapper().getViolationImageURL(imagePath: urls[i])
+                imageView.kf.setImage(with: url) { [self] _ in
+                    // Once the image is loaded, update the content size of the scroll view
+                    let contentWidth = CGFloat(self.urls.count) * self.scrollView.frame.width
+                    scrollView.contentSize = CGSize(width: contentWidth, height: scrollViewHeight)
+                }
                 scrollView.addSubview(imageView)
             }
-            
-            scrollView.contentSize = CGSize(width: CGFloat(imgArray.count) * scrollView.frame.width, height: scrollViewHeight)
-            
-            self.ScrollViewContainer.addSubview(scrollView)
-            
-        pageController.numberOfPages = imgArray.count
+        }
+        
+        pageController.numberOfPages = urls.count
         pageController.currentPage = 0
         pageController.tintColor = UIColor.red // Change color as needed
         pageController.pageIndicatorTintColor = UIColor.lightGray // Change color as needed
         pageController.currentPageIndicatorTintColor = UIColor.black // Change color as needed
         pageController.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControl.Event.valueChanged)
-            
-            self.ScrollViewContainer.addSubview(pageController)
-        }
+        
+        self.ScrollViewContainer.addSubview(scrollView)
+    }
+
         
         @objc func changePage(sender: UIPageControl) {
             let x = CGFloat(sender.currentPage) * scrollView.frame.size.width

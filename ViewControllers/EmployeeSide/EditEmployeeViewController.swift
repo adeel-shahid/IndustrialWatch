@@ -31,6 +31,10 @@ class EditEmployeeViewController: UIViewController {
         txtName.text = profile.name
         txtUserName.text = profile.username
         txtPassword.text = profile.password
+        let obj = UserDefaults.standard
+        let employeeId = obj.integer(forKey: "employeeId")
+        let url = APIWrapper().getImageURL(imagePath: profile.image, employeeId: employeeId)
+        imageView.kf.setImage(with: url)
     }
     
 

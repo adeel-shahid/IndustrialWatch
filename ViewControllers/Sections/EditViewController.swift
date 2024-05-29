@@ -22,6 +22,7 @@ class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.lblRuleName.text = rules[indexPath.row].name
         cell.btnCheckBoxOutlet.tag = indexPath.row
         cell.btnCheckBoxOutlet.addTarget(self, action: #selector(btnCheckbox(_ :)), for: .touchUpInside)
+        
         for rule in selectedRules{
             if rule.id == rules[indexPath.row].id{
                 cell.btnCheckBoxOutlet.isSelected = true
@@ -29,6 +30,7 @@ class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 cell.txtTime.text = "\(rule.allowed_time!)"
             }
         }
+        cell.containerTime.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleContainerTimeTap(_ :))))
         cells.append(cell)
         return cell
     }
@@ -36,6 +38,7 @@ class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var cells = [RulesAddorEditTableViewCell]()
     var selectedRules = [Rule]()
     @IBOutlet weak var txtSectionName: UITexfield_Additions!
+    
     @IBOutlet weak var tableView: UITableView!
     var sectionName : String = ""
     var section_id : Int = 0
@@ -166,4 +169,28 @@ class EditViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         print("\n\(rules)")
         cells[sender.tag].btnCheckBoxOutlet.isSelected = true
     }
+    
+    @objc func handleContainerTimeTap(_ sender: UITapGestureRecognizer) {
+            guard let tappedView = sender.view else { return }
+            
+            // Find the cell containing the tapped view
+            var view: UIView? = tappedView
+            while view != nil, !(view is RulesAddorEditTableViewCell) {
+                view = view?.superview
+            }
+            
+            guard let cell = view as? RulesAddorEditTableViewCell else { return }
+            
+            // Access the label within the cell
+        let label = cell.txtTime
+        print("Label text: \(label?.text ?? "No text")")
+            
+            // Navigate to AllowedTimeViewController
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "AllowedTimeViewController") as! AllowedTimeViewController
+            controller.predicate = { [unowned self] time in
+                cell.txtTime.text = time
+                print("Received time: \(time)")
+            }
+        self.present(controller, animated: true)
+        }
 }

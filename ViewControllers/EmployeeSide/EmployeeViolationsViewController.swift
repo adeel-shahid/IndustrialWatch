@@ -18,16 +18,23 @@ class EmployeeViolationsViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "ViolationDetailViewController") as! ViolationDetailViewController
         controller.modalPresentationStyle = .fullScreen
-        controller.employeeName = "Malik Umer"
+        let obj = UserDefaults.standard
+        if let name = obj.string(forKey: "username"){
+            controller.employeeName = name
+            controller.violationId = self.violations[indexPath.row].violation_id
+            self.present(controller, animated: true)
+        }
         
-        self.present(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! ViolationTableViewCell
         cell.lblViolationName.text = violations[indexPath.row].rule_name
-        cell.lblTime.text = violations[indexPath.row].time
+        cell.lblTime.text = violations[indexPath.row].start_time
         cell.lblDate.text = violations[indexPath.row].date
-        cell.imageView?.image = UIImage(named: violations[indexPath.row].images[0])
+        if let url = violations[indexPath.row].images[0].image_url{
+            let url = APIWrapper().getViolationImageURL(imagePath: url)
+            cell.UIImageView.kf.setImage(with: url)
+        }
         return cell
     }
     
@@ -35,8 +42,9 @@ class EmployeeViolationsViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        violations.append(Violation(violation_id: 0, date: "2024-05-03", time: "10:30 AM", rule_name: "Mobile Usage", images: ["MobileUsageViolation"]))
-        violations.append(Violation(violation_id: 0, date: "2024-04-23", time: "11:30 AM", rule_name: "Smoking", images: ["ViolationsSmoking"]))
+        let obj = UserDefaults.standard
+        let employeeId = obj.integer(forKey: "employeeId")
+        violations = EmployeeViewModel().getEmployeeViolations(employeeId: employeeId)
         tableView.dataSource = self
         tableView.delegate = self
     }

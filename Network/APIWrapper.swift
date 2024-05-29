@@ -58,7 +58,9 @@ class APIMessage{
 class APIWrapper{
     static let imgBaseURLString = "http://10.211.55.3:5000/"
     private let baseURLString = "http://10.211.55.3:5000/api/"
-    
+    func getbaseURLString() -> String{
+        return baseURLString
+    }
     ///////////////////////////
     //// This is for HTTPGet methods
     ////////////////////////////
@@ -623,8 +625,10 @@ extension APIWrapper {
                 Converted = encodedString
             }
         }
-        let api = APIWrapper()
-        let url = URL(string: "\(baseURLString)ViolationImage/\(Converted)")
+        if imagePath.contains("\\") {
+            Converted = Converted.replacingOccurrences(of: "\\", with: "//")
+            }
+        let url = URL(string: "\(baseURLString)ViolationImages/\(Converted)")
         return url!
     }
 }

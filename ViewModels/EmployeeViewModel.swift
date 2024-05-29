@@ -19,9 +19,29 @@ struct EmployeeViewModel{
         }
         return employees
     }
-    
+    func getAllEmployeesWithRanking()->[Employee]{
+        let api = APIWrapper()
+        var employees = [Employee]()
+        let response = api.getMethodCall(controllerName: "Employee", actionName: "GetAllEmployees?section_id=-1&ranking_required=1")
+        if response.ResponseCode == 200 {
+            if let data = response.ResponseData{
+                employees = try! JSONDecoder().decode([Employee].self, from: data)
+            }
+        }
+        return employees
+    }
     func getEmployees(withSection: String)->[Employee]{
         let employees = getAllEmployees()
+        var filterResult = [Employee]()
+        for employee in employees {
+            if employee.section_name == withSection{
+                filterResult.append(employee)
+            }
+        }
+        return filterResult
+    }
+    func getEmployeesOfRanking(withSection: String)->[Employee]{
+        let employees = getAllEmployeesWithRanking()
         var filterResult = [Employee]()
         for employee in employees {
             if employee.section_name == withSection{
@@ -144,7 +164,7 @@ struct EmployeeViewModel{
     
     func getEmployeeSummary(employeeId: Int, date: String) -> EmployeeSummary{
         let api = APIWrapper()
-        var summary = EmployeeSummary(total_fine: 0.0, violation_count: 0, attendance_rate: "0/0")
+        var summary = EmployeeSummary(total_fine: 0.0, violation_count: 0, attendance_rate: "")
         let response = api.getMethodCall(controllerName: "Employee", actionName: "GetEmployeeSummary?employee_id=\(employeeId)&date=\(date)")
         if response.ResponseCode == 200 {
             if let data = response.ResponseData{
@@ -154,4 +174,16 @@ struct EmployeeViewModel{
         return summary
     }
     
+    
+    func getEmployeeViolationDetails(violationId: Int) -> Violation{
+        var violations = Violation(allowed_time: "", end_time: "", start_time: "", section_id: 0, section_name: "", violation_id: 0, date: "", rule_name: "", images: [])
+        let api = APIWrapper()
+        let response = api.getMethodCall(controllerName: "Employee", actionName: "GetViolationDetails?violation_id=\(violationId)")
+        if response.ResponseCode == 200{
+            if let data = response.ResponseData{
+                violations = try! JSONDecoder().decode(Violation.self, from: data)
+            }
+        }
+        return violations
+    }
 }

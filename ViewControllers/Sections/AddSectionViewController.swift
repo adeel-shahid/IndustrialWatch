@@ -24,6 +24,7 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
         cell.btnCheckBoxOutlet.tag = indexPath.row
         cell.btnCheckBoxOutlet.addTarget(self, action: #selector(btnCheckbox(_ :)), for: .touchUpInside)
         cells.append(cell)
+        cell.containerTime.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleContainerTimeTap(_ :))))
         return cell
     }
     var selectedRules = [Rule]()
@@ -149,5 +150,29 @@ class AddSectionViewController: UIViewController,UITableViewDelegate,UITableView
         print("\n\(rules)")
         cells[sender.tag].btnCheckBoxOutlet.isSelected = true
     }
+    
+    @objc func handleContainerTimeTap(_ sender: UITapGestureRecognizer) {
+            guard let tappedView = sender.view else { return }
+            
+            // Find the cell containing the tapped view
+            var view: UIView? = tappedView
+            while view != nil, !(view is RulesAddorEditTableViewCell) {
+                view = view?.superview
+            }
+            
+            guard let cell = view as? RulesAddorEditTableViewCell else { return }
+            
+            // Access the label within the cell
+        let label = cell.txtTime
+        print("Label text: \(label?.text ?? "No text")")
+            
+            // Navigate to AllowedTimeViewController
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "AllowedTimeViewController") as! AllowedTimeViewController
+            controller.predicate = { [unowned self] time in
+                cell.txtTime.text = time
+                print("Received time: \(time)")
+            }
+        self.present(controller, animated: true)
+        }
     
 }

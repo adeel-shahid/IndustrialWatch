@@ -11,7 +11,23 @@ import UniformTypeIdentifiers
 import AVKit
 import Photos
 
-class SupervisorEmployeeMonitoringViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class SupervisorEmployeeMonitoringViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate , UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return violatedRules.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! AutomationResponseTableViewCell
+        cell.lblRuleName.text = violatedRules[indexPath.row].rule_name
+        cell.lblTotalTime.text = "\(violatedRules[indexPath.row].total_time)s"
+        return cell
+    }
+    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var videoview: UIView!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             // 2. Get the selected video URL
@@ -54,7 +70,7 @@ class SupervisorEmployeeMonitoringViewController: UIViewController, UIImagePicke
             // 5. Dismiss the UIImagePickerController if the user cancels
             picker.dismiss(animated: true, completion: nil)
         }
-    
+    var violatedRules = [ViolatedRule]()
     var videoURL = URL(string: "")
     @IBOutlet weak var lblFileName: UILabel!
     let imagePicker = UIImagePickerController()
@@ -68,10 +84,11 @@ class SupervisorEmployeeMonitoringViewController: UIViewController, UIImagePicke
                 print("access denied")
             default:
                 break;
-            
             }
+            
         }
-        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
         imagePicker.delegate = self
         imagePicker.mediaTypes = [UTType.movie.identifier]
     }
@@ -122,49 +139,71 @@ class SupervisorEmployeeMonitoringViewController: UIViewController, UIImagePicke
 //
 //        return
         // 1. Create a URL request with the API endpoint
-        var request = URLRequest(url: URL(string: "http://192.168.100.22:5000/api/Automation/PredictEmployeeViolation")!)
-        request.httpMethod = "POST"
-        
-        // 2. Create a boundary string for the multipart/form-data upload
-        let boundary = UUID().uuidString
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
-        
-        // 3. Create the multipart/form-data request body
-        var requestBodyData = Data()
-        
-        do {
-            // Add the video data to the request body
-            let videoData = try Data(contentsOf: videoURL)
-            requestBodyData.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
-            requestBodyData.append("Content-Disposition: form-data; name=\"files\"; filename=\"\(videoURL.lastPathComponent)\"\r\n".data(using: .utf8)!)
-            requestBodyData.append("Content-Type: video/mp4\r\n\r\n".data(using: .utf8)!)
-            requestBodyData.append(videoData)
-            requestBodyData.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
-        } catch {
-            print("Error loading video data: \(error.localizedDescription)")
-            return
-        }
-        
-        request.httpBody = requestBodyData
-        
-        // 4. Create a URLSessionUploadTask and start the upload
-        let task = URLSession.shared.uploadTask(with: request, from: requestBodyData) { data, response, error in
-            if let error = error {
-                print("Error uploading video: \(error.localizedDescription)")
+            var request = URLRequest(url: URL(string: "http://10.211.55.3:5000/api/Automation/PredictEmployeeViolation")!)
+            request.httpMethod = "POST"
+            
+            // 2. Create a boundary string for the multipart/form-data upload
+            let boundary = UUID().uuidString
+            request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            
+            // 3. Create the multipart/form-data request body
+            var requestBodyData = Data()
+            
+            do {
+                // Add the video data to the request body
+                let videoData = try Data(contentsOf: videoURL)
+                requestBodyData.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+                requestBodyData.append("Content-Disposition: form-data; name=\"files\"; filename=\"\(videoURL.lastPathComponent)\"\r\n".data(using: .utf8)!)
+                requestBodyData.append("Content-Type: video/mp4\r\n\r\n".data(using: .utf8)!)
+                requestBodyData.append(videoData)
+                requestBodyData.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+            } catch {
+                print("Error loading video data: \(error.localizedDescription)")
                 return
             }
             
-            if let httpResponse = response as? HTTPURLResponse {
-                print("Upload response status code: \(httpResponse.statusCode)")
+            request.httpBody = requestBodyData
+            
+            // 4. Create a custom URLSessionConfiguration with extended timeout intervals
+            let configuration = URLSessionConfiguration.default
+            configuration.timeoutIntervalForRequest = 3600.0  // 300 seconds for the request timeout (5 minutes)
+            configuration.timeoutIntervalForResource = 3600.0 // 300 seconds for the resource timeout (5 minutes)
+            
+            // 5. Create a URLSession with the custom configuration
+            let session = URLSession(configuration: configuration)
+            
+            // 6. Create a URLSessionUploadTask and start the upload
+            let task = session.uploadTask(with: request, from: requestBodyData) { data, response, error in
+                if let error = error {
+                    print("Error uploading video: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("Upload response status code: \(httpResponse.statusCode)")
+                }
+                
+                if let data = data {
+                    DispatchQueue.main.async {
+                        do{
+                            self.violatedRules = try JSONDecoder().decode([ViolatedRule].self, from: data)
+                            self.tableView.reloadData()
+                        }catch{
+                            print("Error loading API data: \(error.localizedDescription)")
+                        }
+                    }
+                    let responseString = String(data: data, encoding: .utf8)
+                    
+                    print("API response: \(responseString ?? "No response data")")
+                }
             }
             
-            if let data = data {
-                let responseString = String(data: data, encoding: .utf8)
-                print("API response: \(responseString ?? "No response data")")
-            }
-        }
-        
-        task.resume()
+            task.resume()
     }
     
+}
+
+struct ViolatedRule:Codable{
+    var rule_name : String
+    var total_time : Int
 }
