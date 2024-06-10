@@ -52,8 +52,6 @@ class APIMessage{
     var ResponseMessage : String = "OK"
 }
 
-
-//////////////////////
 /// This class Is a wrapper which will handle Web API get and post method calls.
 class APIWrapper{
     static let imgBaseURLString = "http://10.211.55.3:5000/"
