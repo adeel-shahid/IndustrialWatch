@@ -9,7 +9,7 @@ import UIKit
 import Toast_Swift
 class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sections.count
+        return (!sections.isEmpty) ? sections.count : 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 74
@@ -22,6 +22,10 @@ class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.present(controller, animated: true)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyTableViewCell")as! EmptyTableViewCell
+        if sections.isEmpty {
+            return emptyCell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1") as! SectionsTableViewCell
         cell.sectionName = sections[indexPath.row].name
         cell.btnEditOutlet.tag = indexPath.row
@@ -30,7 +34,6 @@ class SectionViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.btnArchievedOutlet.addTarget(self, action: #selector(btnArchieved(_:)), for: .touchUpInside)
         return cell
     }
-    
     @IBOutlet weak var UICustomButtonArchieve: UIView!
     @IBOutlet weak var tableView: UITableView!
     var sections = [Section]()

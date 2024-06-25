@@ -186,8 +186,11 @@ class SupervisorEmployeeMonitoringViewController: UIViewController, UIImagePicke
                 if let data = data {
                     DispatchQueue.main.async {
                         do{
-                            self.violatedRules = try JSONDecoder().decode([ViolatedRule].self, from: data)
-                            self.tableView.reloadData()
+                            let employeeData : EmployeeData = try JSONDecoder().decode(EmployeeData.self, from: data)
+                            let controller = self.storyboard?.instantiateViewController(withIdentifier: "EmployeeViolationSummmaryDetailViewController") as! EmployeeViolationSummmaryDetailViewController
+                            controller.modalPresentationStyle = .fullScreen
+                            controller.employeeData = employeeData
+                            self.present(controller, animated: true)
                         }catch{
                             print("Error loading API data: \(error.localizedDescription)")
                         }

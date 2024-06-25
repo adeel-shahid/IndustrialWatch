@@ -15,9 +15,9 @@ class AdminDashboardViewController: UIViewController {
     @IBOutlet weak var btnEmployeeProductivity: UIView!
     @IBOutlet weak var btnSupervisors: UIView!
     var adminName = ""
+    let loader = LoaderViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityIndicator.isHidden = true
         lblAdminName.text = adminName
         optimizeUI()
     }
@@ -25,8 +25,6 @@ class AdminDashboardViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private func optimizeUI(){
         btnSection.layer.cornerRadius = 20
         btnProduction.layer.cornerRadius = 20
@@ -49,11 +47,9 @@ class AdminDashboardViewController: UIViewController {
     }
     
     func asyncNavigationToSectionView() async {
-        showActivityIndicator()
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SectionViewController")
         controller?.modalPresentationStyle = .fullScreen
         self.present(controller!, animated: true)
-        hideActivityIndicator()
     }
     
     @objc private func navigateToSupervisorView(){
@@ -75,12 +71,12 @@ class AdminDashboardViewController: UIViewController {
     }
     
     private func showActivityIndicator(){
-        self.activityIndicator.isHidden = false
-        self.activityIndicator.startAnimating()
+//        self.activityIndicator.isHidden = false
+//        self.activityIndicator.startAnimating()
     }
     
     private func hideActivityIndicator(){
-        self.activityIndicator.stopAnimating()
-        self.activityIndicator.isHidden = true
+//        self.activityIndicator.stopAnimating()
+//        self.activityIndicator.isHidden = true
     }
 }

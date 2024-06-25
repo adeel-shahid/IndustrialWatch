@@ -144,7 +144,8 @@ var selectedImages = [UIImage]() // Array to hold selected images
     let batchesDropDown = DropDown()
     var productString = [String]()
     var batchesString = [String]()
-    
+    var product_number = ""
+    var batch_number = ""
     var imagepicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -188,6 +189,7 @@ var selectedImages = [UIImage]() // Array to hold selected images
             Int, item: String) in
             lblProductDropDown.text = item
             self.batches = BatchViewModel().getAllBatchesOf(productNumber: self.products[index].product_number)
+            self.product_number = self.products[index].product_number
             for batchname in batches{
                 batchesString.append(batchname.batch_number)
             }
@@ -210,6 +212,7 @@ var selectedImages = [UIImage]() // Array to hold selected images
         batchesDropDown.selectionAction = { [unowned self] (index:
             Int, item: String) in
             lblBatchesDropDown.text = item
+            self.batch_number = item
             self.btnUploadOutlet.isHidden = false
         }
         batchesDropDown.bottomOffset = CGPoint(x: 0,
@@ -234,13 +237,18 @@ var selectedImages = [UIImage]() // Array to hold selected images
             view.makeToast("Please Select 6 Images", duration: 2.0, position: .bottom)
         }
         do{
-            try uploadImages(images: self.selectedImages)
+            if self.product_number == "" &&
+                self.batch_number == ""{
+                view.makeToast("Product Number and Batch Number is Empty", duration: 2, position: .bottom)
+                return
+            }
+            try uploadImages(images: self.selectedImages, productNumber: self.product_number, batchNumber: self.batch_number)
         }catch{
             print("Error: \(error.localizedDescription)")
         }
     }
     
-    func uploadImages(images: [UIImage]) throws {
+    func uploadImages(images: [UIImage], productNumber: String, batchNumber: String) throws {
         let url = URL(string: "\(APIWrapper().getbaseURLString())Production/DefectMonitoring")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -251,6 +259,17 @@ var selectedImages = [UIImage]() // Array to hold selected images
 
         var body = Data()
 
+        // Append product_number
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"product_number\"\r\n\r\n".data(using: .utf8)!)
+        body.append("\(productNumber)\r\n".data(using: .utf8)!)
+
+        // Append batch_number
+        body.append("--\(boundary)\r\n".data(using: .utf8)!)
+        body.append("Content-Disposition: form-data; name=\"batch_number\"\r\n\r\n".data(using: .utf8)!)
+        body.append("\(batchNumber)\r\n".data(using: .utf8)!)
+
+        // Append images
         for (index, image) in images.enumerated() {
             if let imageData = image.jpegData(compressionQuality: 1.0) {
                 body.append("--\(boundary)\r\n".data(using: .utf8)!)
@@ -277,39 +296,57 @@ var selectedImages = [UIImage]() // Array to hold selected images
             }
 
             if let data = data {
-                            let decoder = JSONDecoder()
-                            do {
-                                let responseString = String(data: data, encoding: .utf8)
-                                                print("Response: \(responseString ?? "No response data")")
-                                let defectedItem = try decoder.decode(DefectedItem.self, from: data)
-                                print("Defected Item: \(defectedItem)")
-                                DispatchQueue.main.async {
-                                    self.lblDefectedPieces.text = "\(defectedItem.total_defected_items)"
-                                    self.lblTotalPieces.text = "\(defectedItem.total_discs)"
-                                    for def in defectedItem.defects{
-                                        if let casting = def.casting{
-                                            self.lblCasting.text = "\(casting)"
-                                        }else if let milling = def.milling{
-                                            self.lblMilling.text = "\(milling)"
-                                        }else if let tolling = def.tooling{
-                                            self.lblToling.text = "\(tolling)"
-                                        }
-                                    }
-                                }
-                            } catch {
-                                print("Decoding error: \(error.localizedDescription)")
+                let decoder = JSONDecoder()
+                do {
+                    let responseString = String(data: data, encoding: .utf8)
+                    print("Response: \(responseString ?? "No response data")")
+                    let defectedItem = try decoder.decode(DefectedItem.self, from: data)
+                    print("Defected Item: \(defectedItem)")
+                    var diskSummary = [DiskSumary]()
+                    DispatchQueue.main.async {
+                        self.lblDefectedPieces.text = "\(defectedItem.total_defected_items)"
+                        self.lblTotalPieces.text = "\(defectedItem.total_items)"
+                        for def in defectedItem.defects {
+                            var summary = DiskSumary(name: "", count: 0)
+                            if let casting = def.casting {
+                                self.lblCasting.text = "\(casting)"
+                                summary.name = "casting"
+                                summary.count = casting
+                                diskSummary.append(summary)
+                            } else if let milling = def.milling {
+                                self.lblMilling.text = "\(milling)"
+                                summary.name = "milling"
+                                summary.count = milling
+                                diskSummary.append(summary)
+                            } else if let tolling = def.tooling {
+                                self.lblToling.text = "\(tolling)"
+                                summary.name = "tolling"
+                                summary.count = tolling
+                                diskSummary.append(summary)
                             }
                         }
+                        let controller = self.storyboard?.instantiateViewController(withIdentifier: "DefectDetectionSummaryViewController") as! DefectDetectionSummaryViewController
+                        controller.modalPresentationStyle = .fullScreen
+                        controller.diskSummary = diskSummary
+                        controller.total = defectedItem.total_items
+                        controller.defected = defectedItem.total_defected_items
+                        self.present(controller, animated: true)
+                    }
+                } catch {
+                    print("Decoding error: \(error.localizedDescription)")
+                }
+            }
         }
 
         task.resume()
     }
+
     
 }
 struct DefectedItem:Codable{
     var defects : [Defects]
     var total_defected_items : Int
-    var total_discs : Int
+    var total_items : Int
 }
 
 struct Defects: Codable {

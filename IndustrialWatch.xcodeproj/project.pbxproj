@@ -10,6 +10,15 @@
 		212E9E2132D138F98D23E96D /* Pods_IndustrialWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D494E09CDE91DF213437980 /* Pods_IndustrialWatch.framework */; };
 		520265882BDBBA06008C3A64 /* EmployeeProductivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520265872BDBBA06008C3A64 /* EmployeeProductivityViewController.swift */; };
 		5202658A2BDBC000008C3A64 /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520265892BDBC000008C3A64 /* AddEmployeeViewController.swift */; };
+		520430C42C281F9A001EEB8B /* MarkAttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430C32C281F9A001EEB8B /* MarkAttendanceViewController.swift */; };
+		520430C62C282AFF001EEB8B /* MultipleAngleMonitoringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430C52C282AFF001EEB8B /* MultipleAngleMonitoringViewController.swift */; };
+		520430C82C28432F001EEB8B /* MultipleAngleMonitoringResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430C72C28432F001EEB8B /* MultipleAngleMonitoringResponseViewController.swift */; };
+		520430CA2C284618001EEB8B /* DefectDetectionSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430C92C284618001EEB8B /* DefectDetectionSummaryViewController.swift */; };
+		520430CD2C2846B3001EEB8B /* DefectDetectionSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430CC2C2846B3001EEB8B /* DefectDetectionSummaryTableViewCell.swift */; };
+		520430CF2C2847EC001EEB8B /* DiskSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430CE2C2847EC001EEB8B /* DiskSummary.swift */; };
+		520430D12C285CF9001EEB8B /* ViolationSummaryDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430D02C285CF9001EEB8B /* ViolationSummaryDetailTableViewCell.swift */; };
+		520430D32C285D93001EEB8B /* EmployeeViolationSummmaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430D22C285D93001EEB8B /* EmployeeViolationSummmaryDetailViewController.swift */; };
+		520430D52C285DE9001EEB8B /* VioaltionSummaryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520430D42C285DE9001EEB8B /* VioaltionSummaryDetail.swift */; };
 		5204531A2C02F66000A79179 /* AllowedTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520453192C02F66000A79179 /* AllowedTimeViewController.swift */; };
 		52056A792BF9CB1500C157AA /* AttendanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A782BF9CB1500C157AA /* AttendanceTableViewCell.swift */; };
 		52056A7B2BF9CBD300C157AA /* AttendanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52056A7A2BF9CBD300C157AA /* AttendanceViewController.swift */; };
@@ -38,8 +47,12 @@
 		521D731C2C05C97300D83350 /* EmployeeProfileDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521D731B2C05C97300D83350 /* EmployeeProfileDetail.swift */; };
 		522848512BE25508002600FF /* ArchivedSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522848502BE25508002600FF /* ArchivedSectionViewController.swift */; };
 		5228AD672BF3537400940D8E /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228AD662BF3537400940D8E /* EmployeeViewModel.swift */; };
+		52291B882C2A99BD003198F6 /* EmployeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291B872C2A99BD003198F6 /* EmployeeData.swift */; };
+		52291B8A2C2AA74C003198F6 /* EmptyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52291B892C2AA74C003198F6 /* EmptyTableViewCell.swift */; };
 		522EBEE52BFBB5DF006A41D1 /* HorizontalImageSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EBEE42BFBB5DF006A41D1 /* HorizontalImageSlider.swift */; };
 		522EBEE82BFBC866006A41D1 /* SupervisorDashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */; };
+		523B6B8D2C1853EB00283276 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523B6B8B2C1853EB00283276 /* LoaderViewController.swift */; };
+		523B6B8E2C1853EB00283276 /* LoaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523B6B8C2C1853EB00283276 /* LoaderViewController.xib */; };
 		525D926C2BB14B1200F2EA73 /* Batch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D926B2BB14B1200F2EA73 /* Batch.swift */; };
 		525D926E2BB14D1C00F2EA73 /* BatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */; };
 		525D92712BB14DDF00F2EA73 /* APIWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D92702BB14DDF00F2EA73 /* APIWrapper.swift */; };
@@ -157,6 +170,15 @@
 		42D3562E3E9347C26F271969 /* Pods-IndustrialWatchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IndustrialWatchTests.debug.xcconfig"; path = "Target Support Files/Pods-IndustrialWatchTests/Pods-IndustrialWatchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		520265872BDBBA06008C3A64 /* EmployeeProductivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeProductivityViewController.swift; sourceTree = "<group>"; };
 		520265892BDBC000008C3A64 /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
+		520430C32C281F9A001EEB8B /* MarkAttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkAttendanceViewController.swift; sourceTree = "<group>"; };
+		520430C52C282AFF001EEB8B /* MultipleAngleMonitoringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAngleMonitoringViewController.swift; sourceTree = "<group>"; };
+		520430C72C28432F001EEB8B /* MultipleAngleMonitoringResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAngleMonitoringResponseViewController.swift; sourceTree = "<group>"; };
+		520430C92C284618001EEB8B /* DefectDetectionSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectDetectionSummaryViewController.swift; sourceTree = "<group>"; };
+		520430CC2C2846B3001EEB8B /* DefectDetectionSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefectDetectionSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		520430CE2C2847EC001EEB8B /* DiskSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiskSummary.swift; sourceTree = "<group>"; };
+		520430D02C285CF9001EEB8B /* ViolationSummaryDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViolationSummaryDetailTableViewCell.swift; sourceTree = "<group>"; };
+		520430D22C285D93001EEB8B /* EmployeeViolationSummmaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViolationSummmaryDetailViewController.swift; sourceTree = "<group>"; };
+		520430D42C285DE9001EEB8B /* VioaltionSummaryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VioaltionSummaryDetail.swift; sourceTree = "<group>"; };
 		520453192C02F66000A79179 /* AllowedTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowedTimeViewController.swift; sourceTree = "<group>"; };
 		52056A782BF9CB1500C157AA /* AttendanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceTableViewCell.swift; sourceTree = "<group>"; };
 		52056A7A2BF9CBD300C157AA /* AttendanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewController.swift; sourceTree = "<group>"; };
@@ -190,8 +212,12 @@
 		5225979FB009FD8E7AEAD97C /* Pods_IndustrialWatch_IndustrialWatchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndustrialWatch_IndustrialWatchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		522848502BE25508002600FF /* ArchivedSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchivedSectionViewController.swift; sourceTree = "<group>"; };
 		5228AD662BF3537400940D8E /* EmployeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeViewModel.swift; sourceTree = "<group>"; };
+		52291B872C2A99BD003198F6 /* EmployeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeData.swift; sourceTree = "<group>"; };
+		52291B892C2AA74C003198F6 /* EmptyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableViewCell.swift; sourceTree = "<group>"; };
 		522EBEE42BFBB5DF006A41D1 /* HorizontalImageSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalImageSlider.swift; sourceTree = "<group>"; };
 		522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorDashBoardViewController.swift; sourceTree = "<group>"; };
+		523B6B8B2C1853EB00283276 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		523B6B8C2C1853EB00283276 /* LoaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoaderViewController.xib; sourceTree = "<group>"; };
 		525D926B2BB14B1200F2EA73 /* Batch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Batch.swift; sourceTree = "<group>"; };
 		525D926D2BB14D1C00F2EA73 /* BatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchViewModel.swift; sourceTree = "<group>"; };
 		525D92702BB14DDF00F2EA73 /* APIWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWrapper.swift; sourceTree = "<group>"; };
@@ -333,6 +359,15 @@
 			path = EmployeeProductivity;
 			sourceTree = "<group>";
 		};
+		520430CB2C28468E001EEB8B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				520430CC2C2846B3001EEB8B /* DefectDetectionSummaryTableViewCell.swift */,
+				520430D02C285CF9001EEB8B /* ViolationSummaryDetailTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		52165BDB2B13772200110579 = {
 			isa = PBXGroup;
 			children = (
@@ -420,18 +455,34 @@
 		522EBEE62BFBC841006A41D1 /* SupervisorSide */ = {
 			isa = PBXGroup;
 			children = (
+				520430CB2C28468E001EEB8B /* TableViewCell */,
 				522EBEE72BFBC866006A41D1 /* SupervisorDashBoardViewController.swift */,
 				52FB72E12BFD0D95005F74C3 /* SupervisorEmployeeMonitoringViewController.swift */,
 				52FB72E32BFD103A005F74C3 /* SupervisorDefectMonitoringViewController.swift */,
 				52F29DDB2C06CC8200284236 /* ScanningViewController.swift */,
+				520430C32C281F9A001EEB8B /* MarkAttendanceViewController.swift */,
+				520430C52C282AFF001EEB8B /* MultipleAngleMonitoringViewController.swift */,
+				520430C72C28432F001EEB8B /* MultipleAngleMonitoringResponseViewController.swift */,
+				520430C92C284618001EEB8B /* DefectDetectionSummaryViewController.swift */,
+				520430D22C285D93001EEB8B /* EmployeeViolationSummmaryDetailViewController.swift */,
 			);
 			path = SupervisorSide;
+			sourceTree = "<group>";
+		};
+		523B6B8A2C1853D100283276 /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				523B6B8B2C1853EB00283276 /* LoaderViewController.swift */,
+				523B6B8C2C1853EB00283276 /* LoaderViewController.xib */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		5242784D2BDF7527005E4096 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
 				52FA8DA92B85D1D0007F5AFE /* SectionViewController.swift */,
+				52291B892C2AA74C003198F6 /* EmptyTableViewCell.swift */,
 				522848502BE25508002600FF /* ArchivedSectionViewController.swift */,
 				52FA8DBD2B86326F007F5AFE /* AddSectionViewController.swift */,
 				52FA8DB32B85FC68007F5AFE /* SectionDetailsViewController.swift */,
@@ -481,6 +532,7 @@
 		52FA8DA32B84B619007F5AFE /* CustomItems */ = {
 			isa = PBXGroup;
 			children = (
+				523B6B8A2C1853D100283276 /* Loader */,
 				522EBEE32BFBB5C1006A41D1 /* ImageSlider */,
 				52F4F3A82BF8AD4F00FCF4B5 /* ProgressBar */,
 				52172CDB2BF2014700165117 /* CollectionViewItem */,
@@ -575,6 +627,9 @@
 				520580412C04FFD700DFB4FC /* User.swift */,
 				521D73132C05BF4300D83350 /* EmployeeSummary.swift */,
 				521D731B2C05C97300D83350 /* EmployeeProfileDetail.swift */,
+				520430CE2C2847EC001EEB8B /* DiskSummary.swift */,
+				520430D42C285DE9001EEB8B /* VioaltionSummaryDetail.swift */,
+				52291B872C2A99BD003198F6 /* EmployeeData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -728,6 +783,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52165BF42B13772400110579 /* LaunchScreen.storyboard in Resources */,
+				523B6B8E2C1853EB00283276 /* LoaderViewController.xib in Resources */,
 				52165BF12B13772400110579 /* Assets.xcassets in Resources */,
 				52172CE12BF2028700165117 /* EmployeeCollectionViewCell.xib in Resources */,
 				52165BEF2B13772300110579 /* Main.storyboard in Resources */,
@@ -859,6 +915,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520430CA2C284618001EEB8B /* DefectDetectionSummaryViewController.swift in Sources */,
 				526D32262BBD7A37008807CC /* ProductionMenuViewController.swift in Sources */,
 				522EBEE52BFBB5DF006A41D1 /* HorizontalImageSlider.swift in Sources */,
 				52AD3F0E2BBEB4AA002E5587 /* ChooseRawMaterialViewController.swift in Sources */,
@@ -879,6 +936,7 @@
 				52AD3F0C2BBEA435002E5587 /* CustomDropDownViewController.swift in Sources */,
 				52E3E0672BBAE5F400E4E107 /* Section.swift in Sources */,
 				52C14A8E2B91CF79007B549C /* RawMaterialsTableViewCell.swift in Sources */,
+				520430D52C285DE9001EEB8B /* VioaltionSummaryDetail.swift in Sources */,
 				5204531A2C02F66000A79179 /* AllowedTimeViewController.swift in Sources */,
 				526D322C2BBDBBE0008807CC /* RawMaterials.swift in Sources */,
 				52AD3F222BBF928C002E5587 /* AddNewStockViewController.swift in Sources */,
@@ -892,17 +950,22 @@
 				52E6F2122BCE7F080070DA67 /* LinkProduct.swift in Sources */,
 				526D322E2BBDBC4A008807CC /* RawMaterialViewModel.swift in Sources */,
 				52056A7D2BF9CD0200C157AA /* Attendance.swift in Sources */,
+				520430C82C28432F001EEB8B /* MultipleAngleMonitoringResponseViewController.swift in Sources */,
 				52F959BB2BFCB25D00FBE3C1 /* EmployeeAttendanceViewController.swift in Sources */,
 				52FA8DA82B85C571007F5AFE /* AdminDashboardViewController.swift in Sources */,
 				52F959BD2BFCB60E00FBE3C1 /* EmployeeViolationsViewController.swift in Sources */,
 				52E6F2162BCFB09B0070DA67 /* CreateOrAddBatchViewController.swift in Sources */,
+				520430CD2C2846B3001EEB8B /* DefectDetectionSummaryTableViewCell.swift in Sources */,
 				52FB72EA2BFD1708005F74C3 /* EmployeeRankingTableViewCell.swift in Sources */,
 				52E6F2102BCD073A0070DA67 /* BatchesDetailViewController.swift in Sources */,
 				52D848E52BAC0BDB00795ACB /* ImageDetailsViewController.swift in Sources */,
 				52AD3F1A2BBF802B002E5587 /* InventoryViewModel.swift in Sources */,
 				52E6F2062BC544280070DA67 /* ProductViewController.swift in Sources */,
 				52E6F20A2BCBAC680070DA67 /* LinkProductViewController.swift in Sources */,
+				52291B8A2C2AA74C003198F6 /* EmptyTableViewCell.swift in Sources */,
+				52291B882C2A99BD003198F6 /* EmployeeData.swift in Sources */,
 				52FA8DC42B8875C5007F5AFE /* SupervisorTableViewCell.swift in Sources */,
+				520430C62C282AFF001EEB8B /* MultipleAngleMonitoringViewController.swift in Sources */,
 				520DF2312BF342A700775512 /* EmployeesDetailTableViewCell.swift in Sources */,
 				52FA8DCC2B8885D0007F5AFE /* EditSupervisorViewController.swift in Sources */,
 				52FA8DB22B85EFE4007F5AFE /* SectionsTableViewCell.swift in Sources */,
@@ -929,10 +992,12 @@
 				52AD3F162BBF7EF7002E5587 /* InventoryTableViewCell.swift in Sources */,
 				52AD3F102BBF3CDA002E5587 /* Product.swift in Sources */,
 				52E6F20C2BCBC2610070DA67 /* ProductDetailsViewController.swift in Sources */,
+				520430C42C281F9A001EEB8B /* MarkAttendanceViewController.swift in Sources */,
 				520265882BDBBA06008C3A64 /* EmployeeProductivityViewController.swift in Sources */,
 				52172CE02BF2028700165117 /* EmployeeCollectionViewCell.swift in Sources */,
 				52C14A8C2B91C959007B549C /* CreateBatchViewController.swift in Sources */,
 				5289FB512B99D0FE00570BEA /* FormulaTableViewCell.swift in Sources */,
+				520430D32C285D93001EEB8B /* EmployeeViolationSummmaryDetailViewController.swift in Sources */,
 				52FB72EC2BFD181F005F74C3 /* EmployeeRanking.swift in Sources */,
 				52E6F20E2BCCF0340070DA67 /* BatchesTableViewCell.swift in Sources */,
 				525D926E2BB14D1C00F2EA73 /* BatchViewModel.swift in Sources */,
@@ -949,6 +1014,7 @@
 				52C14A902B91D16E007B549C /* RawMaterial.swift in Sources */,
 				526D32342BBE8079008807CC /* AddRawMaterialViewController.swift in Sources */,
 				52056A852BF9E6B600C157AA /* ViolationDetailViewController.swift in Sources */,
+				523B6B8D2C1853EB00283276 /* LoaderViewController.swift in Sources */,
 				522EBEE82BFBC866006A41D1 /* SupervisorDashBoardViewController.swift in Sources */,
 				52FA8DB02B85D3F9007F5AFE /* ProductionViewController.swift in Sources */,
 				526D32282BBDA829008807CC /* RawMaterialViewController.swift in Sources */,
@@ -958,6 +1024,7 @@
 				526D32362BBE8B7C008807CC /* AddProductViewController.swift in Sources */,
 				52FB72E62BFD125C005F74C3 /* SummaryViewController.swift in Sources */,
 				52165BEA2B13772300110579 /* SceneDelegate.swift in Sources */,
+				520430D12C285CF9001EEB8B /* ViolationSummaryDetailTableViewCell.swift in Sources */,
 				52AD3F0A2BBEA177002E5587 /* FormulaViewModel.swift in Sources */,
 				52056A7B2BF9CBD300C157AA /* AttendanceViewController.swift in Sources */,
 				52F4F3AC2BF8AE9C00FCF4B5 /* EmployeeDetailViewController.swift in Sources */,
@@ -971,6 +1038,7 @@
 				52E6F2232BD245140070DA67 /* DownloadManagerViewController.swift in Sources */,
 				52056A832BF9DD2400C157AA /* Violation.swift in Sources */,
 				52E6F2212BD02ACC0070DA67 /* StaticList.swift in Sources */,
+				520430CF2C2847EC001EEB8B /* DiskSummary.swift in Sources */,
 				526D32302BBE3050008807CC /* RawTableViewCell.swift in Sources */,
 				52FA8DAC2B85D398007F5AFE /* SupervisorViewController.swift in Sources */,
 			);

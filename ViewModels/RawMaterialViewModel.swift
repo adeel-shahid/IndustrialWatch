@@ -32,7 +32,7 @@ struct RawMaterialViewModel{
     func insertRawMaterial(rawMaterial : RawMaterials)-> APIMessage{
         let api = APIWrapper()
         let json = try! JSONEncoder().encode(rawMaterial)
-        let response = api.postMethodCall(controllerName: "Production", actionName: "AddRawMaterial", httpBody: json)
+        let response = api.postMethodCall(controllerName: "Production", actionName: "AddRawMaterial?name=\(rawMaterial.name)", httpBody: json)
         return response
     }
     
