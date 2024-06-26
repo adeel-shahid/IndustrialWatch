@@ -323,6 +323,22 @@ var selectedImages = [UIImage]() // Array to hold selected images
                                 summary.name = "tolling"
                                 summary.count = tolling
                                 diskSummary.append(summary)
+                            } else if let cap = def.cap{
+                                summary.name = "cap"
+                                summary.count = cap
+                                diskSummary.append(summary)
+                            } else if let label = def.label{
+                                summary.name = "label"
+                                summary.count = label
+                                diskSummary.append(summary)
+                            }else if let yarn = def.yarn{
+                                summary.name = "yarn"
+                                summary.count = yarn
+                                diskSummary.append(summary)
+                            }else if let hole = def.hole{
+                                summary.name = "hole"
+                                summary.count = hole
+                                diskSummary.append(summary)
                             }
                         }
                         let controller = self.storyboard?.instantiateViewController(withIdentifier: "DefectDetectionSummaryViewController") as! DefectDetectionSummaryViewController
@@ -353,4 +369,8 @@ struct Defects: Codable {
     var casting: Int?
     var tooling: Int?
     var milling: Int?
+    var hole : Int?
+    var yarn : Int?
+    var cap : Int?
+    var label : Int?
 }

@@ -30,15 +30,15 @@ class DefectDetectionSummaryViewController: UIViewController, UITableViewDataSou
     @IBOutlet weak var totalItems: UILabel!
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var tableView: UITableView!
-    var total = 4
-    var defected = 3
+    var total = 0
+    var defected = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         container.layer.cornerRadius = 20
         lblTotalItems.text = "\(total)"
         lblDefectedItems.text = "\(defected)"
-        diskSummary.append(DiskSumary(name: "yarn defect", count: 2))
-        diskSummary.append(DiskSumary(name: "hole", count: 1))
+//        diskSummary.append(DiskSumary(name: "yarn defect", count: 2))
+//        diskSummary.append(DiskSumary(name: "hole", count: 1))
         self.tableView.dataSource = self
         self.tableView.delegate = self
     }

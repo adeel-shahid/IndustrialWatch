@@ -17,6 +17,7 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "BatchesDetailViewController") as! BatchesDetailViewController
         controller.batchNumber = batches[indexPath.row].batch_number
+        controller.productNumber = self.product.product_number
         controller.modalPresentationStyle = .fullScreen
         self.present(controller, animated: true)
     }
@@ -78,10 +79,27 @@ class ProductDetailsViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     @objc func downloadZipImages(_ sender: Any){
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "DownloadManagerViewController")
-        controller?.modalPresentationStyle = .overFullScreen
-        self.present(controller!, animated: false)
+        let encodedProductNumber = encodeString(self.product.product_number)
+        let api = APIWrapper()
+        let response = api.getMethodCall(controllerName: "Production", actionName: "GetAllDefectedImages?product_number=\(encodedProductNumber)")
+        if response.ResponseCode == 200{
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "DownloadManagerViewController") as! DownloadManagerViewController
+            controller.assignDownloadData(batch_number: "", product_number: self.product.product_number, isAllBatches: true)
+            controller.modalPresentationStyle = .overFullScreen
+            self.present(controller, animated: false)
+        }else{
+            let alert = UIAlertController(title: "Not Found", message: "Rejected Batch Not Found", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            self.present(alert, animated: true)
+        }
     }
     
+    func encodeString(_ stringNumber: String) -> String {
+        if stringNumber.contains("#") {
+            return stringNumber.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? stringNumber
+        } else {
+            return stringNumber
+        }
+    }
     
 }

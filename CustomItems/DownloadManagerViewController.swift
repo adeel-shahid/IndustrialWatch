@@ -13,10 +13,34 @@ class DownloadManagerViewController: UIViewController, DownloadDelegate {
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var container: UIView!
     
-    let downloadURLString = "http://10.211.55.3:5000/api/Production/GetAllDefectedImages?product_number=Dis%2321052024003405"
+    var downloadURLString = "http://10.211.55.3:5000/api/Production/GetAllDefectedImages?product_number=Dis%2321052024003405"
     
     var download: Download?
     
+    func assignDownloadData(batch_number: String, product_number: String, isAllBatches: Bool) {
+           // Encode the product number
+           let encodedProductNumber: String
+           if product_number.contains("#") {
+               encodedProductNumber = product_number.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? product_number
+           } else {
+               encodedProductNumber = product_number
+           }
+           
+        // Encode the batch number
+        let encodedBatchNumber: String
+        if batch_number.contains("#") {
+            encodedBatchNumber = batch_number.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? batch_number
+        } else {
+            encodedBatchNumber = batch_number
+        }
+        
+           // Construct the download URL string
+        if isAllBatches{
+            self.downloadURLString = "http://10.211.55.3:5000/api/Production/GetAllDefectedImages?product_number=\(encodedProductNumber)"
+        }else{
+            self.downloadURLString = "http://10.211.55.3:5000/api/Production/GetDefectedImagesOfBatch?product_number=\(encodedProductNumber)&batch_number=\(encodedBatchNumber)"
+        }
+       }
     override func viewDidLoad() {
         super.viewDidLoad()
         container.layer.cornerRadius = 15
